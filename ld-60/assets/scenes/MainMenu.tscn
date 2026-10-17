@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://dijmjt66bmxr7"]
+
+[ext_resource type="Texture2D" uid="uid://bw2iuicfcd85k" path="res://assets/images/title.png" id="1_vqap6"]
+[ext_resource type="Script" uid="uid://8fxqps718mvv" path="res://assets/scenes/clickable_sprite.gd" id="2_t6dbj"]
+[ext_resource type="Texture2D" uid="uid://bpi1i5axgd5v7" path="res://assets/images/title_recorder.png" id="2_u804d"]
+[ext_resource type="Texture2D" uid="uid://vnfdypnxhk86" path="res://assets/images/title_records.png" id="4_c1eu8"]
+
+[node name="MainMenu" type="Node2D" unique_id=1578142257]
+
+[node name="Title" type="Sprite2D" parent="." unique_id=1976505043]
+texture_filter = 3
+position = Vector2(160, 90)
+texture = ExtResource("1_vqap6")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=335737121]
+position = Vector2(160, 90)
+texture = ExtResource("2_u804d")
+script = ExtResource("2_t6dbj")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=858536519]
+position = Vector2(160, 90)
+texture = ExtResource("4_c1eu8")
+script = ExtResource("2_t6dbj")

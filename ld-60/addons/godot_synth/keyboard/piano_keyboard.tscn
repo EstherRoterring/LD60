@@ -1,0 +1,580 @@
+[gd_scene load_steps=10 format=3 uid="uid://cyndffxmsa4rn"]
+
+[ext_resource type="Script" uid="uid://n0quo1dyvxfv" path="res://addons/godot_synth/keyboard/synth_keyboard_player.gd" id="1_n5yr4"]
+[ext_resource type="Script" uid="uid://cwv0buggdocub" path="res://addons/godot_synth/keyboard/key_note.gd" id="3_d7j1h"]
+[ext_resource type="Theme" uid="uid://dmft0dpsjewks" path="res://addons/godot_synth/keyboard/piano_key_theme.tres" id="4_110ew"]
+
+[sub_resource type="ADSR" id="ADSR_25ggw"]
+
+[sub_resource type="ModulatedParameter" id="ModulatedParameter_atbcq"]
+mod_amount = 1.0
+source = SubResource("ADSR_25ggw")
+mod_type = 2
+
+[sub_resource type="ModulatedParameter" id="ModulatedParameter_0fark"]
+base_value = 0.5
+
+[sub_resource type="ModulatedParameter" id="ModulatedParameter_ef4au"]
+mod_min = -24.0
+mod_max = 24.0
+
+[sub_resource type="ModulatedParameter" id="ModulatedParameter_egihy"]
+base_value = 0.5
+
+[sub_resource type="VASynthConfiguration" id="VASynthConfiguration_wcv74"]
+waveform_modulation = SubResource("ModulatedParameter_0fark")
+amplitude_modulation = SubResource("ModulatedParameter_atbcq")
+pitch_modulation = SubResource("ModulatedParameter_ef4au")
+pulse_width_modulation = SubResource("ModulatedParameter_egihy")
+parameters = {
+"amplitude": SubResource("ModulatedParameter_atbcq"),
+"pitch": SubResource("ModulatedParameter_ef4au"),
+"pulse_width": SubResource("ModulatedParameter_egihy"),
+"waveform": SubResource("ModulatedParameter_0fark")
+}
+
+[node name="Control" type="CanvasLayer"]
+script = ExtResource("1_n5yr4")
+sound = SubResource("VASynthConfiguration_wcv74")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(1024, 256)
+layout_mode = 2
+alignment = 1
+
+[node name="key_white_c" type="Control" parent="CenterContainer/HBoxContainer"]
+custom_minimum_size = Vector2(24, 256)
+layout_mode = 2
+script = ExtResource("3_d7j1h")
+note = 48
+
+[node name="button" type="Button" parent="CenterContainer/HBoxContainer/key_white_c"]
+custom_minimum_size = Vector2(48, 256)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+theme = ExtResource("4_110ew")
+
+[node name="key_label" type="Label" parent="CenterContainer/HBoxContainer/key_white_c"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -23.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "C3"
+horizontal_alignment = 1
+
+[node name="key_black_c#" type="Control" parent="CenterContainer/HBoxContainer"]
+z_index = 1
+custom_minimum_size = Vector2(24, 186)
+layout_mode = 2
+size_flags_vertical = 0
+script = ExtResource("3_d7j1h")
+note = 49
+
+[node name="button" type="Button" parent="CenterContainer/HBoxContainer/key_black_c#"]
+modulate = Color(0, 0, 0, 1)
+custom_minimum_size = Vector2(48, 186)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -24.0
+offset_right = 24.0
+offset_bottom = 186.0
+grow_horizontal = 2
+mouse_default_cursor_shape = 2
+theme = ExtResource("4_110ew")
+
+[node name="key_label" type="Label" parent="CenterContainer/HBoxContainer/key_black_c#"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -23.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "C3"
+horizontal_alignment = 1
+
+[node name="key_white_d" type="Control" parent="CenterContainer/HBoxContainer"]
+custom_minimum_size = Vector2(24, 256)
+layout_mode = 2
+script = ExtResource("3_d7j1h")
+note = 50
+
+[node name="button" type="Button" parent="CenterContainer/HBoxContainer/key_white_d"]
+custom_minimum_size = Vector2(48, 256)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+theme = ExtResource("4_110ew")
+
+[node name="key_label" type="Label" parent="CenterContainer/HBoxContainer/key_white_d"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -23.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "C3"
+horizontal_alignment = 1
+
+[node name="key_black_d#" type="Control" parent="CenterContainer/HBoxContainer"]
+z_index = 1
+custom_minimum_size = Vector2(24, 186)
+layout_mode = 2
+size_flags_vertical = 0
+script = ExtResource("3_d7j1h")
+note = 51
+
+[node name="button" type="Button" parent="CenterContainer/HBoxContainer/key_black_d#"]
+modulate = Color(0, 0, 0, 1)
+custom_minimum_size = Vector2(48, 186)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -24.0
+offset_right = 24.0
+offset_bottom = 186.0
+grow_horizontal = 2
+mouse_default_cursor_shape = 2
+theme = ExtResource("4_110ew")
+
+[node name="key_label" type="Label" parent="CenterContainer/HBoxContainer/key_black_d#"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -23.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "C3"
+horizontal_alignment = 1
+
+[node name="key_white_e" type="Control" parent="CenterContainer/HBoxContainer"]
+custom_minimum_size = Vector2(24, 256)
+layout_mode = 2
+script = ExtResource("3_d7j1h")
+note = 52
+
+[node name="button" type="Button" parent="CenterContainer/HBoxContainer/key_white_e"]
+custom_minimum_size = Vector2(48, 256)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+theme = ExtResource("4_110ew")
+
+[node name="key_label" type="Label" parent="CenterContainer/HBoxContainer/key_white_e"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -23.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "C3"
+horizontal_alignment = 1
+
+[node name="key_black_null_1" type="Control" parent="CenterContainer/HBoxContainer"]
+z_index = 1
+custom_minimum_size = Vector2(24, 186)
+layout_mode = 2
+size_flags_vertical = 0
+script = ExtResource("3_d7j1h")
+note = 48
+
+[node name="button" type="Button" parent="CenterContainer/HBoxContainer/key_black_null_1"]
+visible = false
+modulate = Color(0, 0, 0, 1)
+custom_minimum_size = Vector2(48, 186)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -24.0
+offset_right = 24.0
+offset_bottom = 186.0
+grow_horizontal = 2
+mouse_default_cursor_shape = 2
+theme = ExtResource("4_110ew")
+
+[node name="key_label" type="Label" parent="CenterContainer/HBoxContainer/key_black_null_1"]
+visible = false
+modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -23.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "C3"
+horizontal_alignment = 1
+
+[node name="key_white_f" type="Control" parent="CenterContainer/HBoxContainer"]
+custom_minimum_size = Vector2(24, 256)
+layout_mode = 2
+script = ExtResource("3_d7j1h")
+note = 53
+
+[node name="button" type="Button" parent="CenterContainer/HBoxContainer/key_white_f"]
+custom_minimum_size = Vector2(48, 256)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+theme = ExtResource("4_110ew")
+
+[node name="key_label" type="Label" parent="CenterContainer/HBoxContainer/key_white_f"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -23.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "C3"
+horizontal_alignment = 1
+
+[node name="key_black_f#" type="Control" parent="CenterContainer/HBoxContainer"]
+z_index = 1
+custom_minimum_size = Vector2(24, 186)
+layout_mode = 2
+size_flags_vertical = 0
+script = ExtResource("3_d7j1h")
+note = 54
+
+[node name="button" type="Button" parent="CenterContainer/HBoxContainer/key_black_f#"]
+modulate = Color(0, 0, 0, 1)
+custom_minimum_size = Vector2(48, 186)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -24.0
+offset_right = 24.0
+offset_bottom = 186.0
+grow_horizontal = 2
+mouse_default_cursor_shape = 2
+theme = ExtResource("4_110ew")
+
+[node name="key_label" type="Label" parent="CenterContainer/HBoxContainer/key_black_f#"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -23.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "C3"
+horizontal_alignment = 1
+
+[node name="key_white_g" type="Control" parent="CenterContainer/HBoxContainer"]
+custom_minimum_size = Vector2(24, 256)
+layout_mode = 2
+script = ExtResource("3_d7j1h")
+note = 55
+
+[node name="button" type="Button" parent="CenterContainer/HBoxContainer/key_white_g"]
+custom_minimum_size = Vector2(48, 256)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+theme = ExtResource("4_110ew")
+
+[node name="key_label" type="Label" parent="CenterContainer/HBoxContainer/key_white_g"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -23.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "C3"
+horizontal_alignment = 1
+
+[node name="key_black_g#" type="Control" parent="CenterContainer/HBoxContainer"]
+z_index = 1
+custom_minimum_size = Vector2(24, 186)
+layout_mode = 2
+size_flags_vertical = 0
+script = ExtResource("3_d7j1h")
+note = 56
+
+[node name="button" type="Button" parent="CenterContainer/HBoxContainer/key_black_g#"]
+modulate = Color(0, 0, 0, 1)
+custom_minimum_size = Vector2(48, 186)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -24.0
+offset_right = 24.0
+offset_bottom = 186.0
+grow_horizontal = 2
+mouse_default_cursor_shape = 2
+theme = ExtResource("4_110ew")
+
+[node name="key_label" type="Label" parent="CenterContainer/HBoxContainer/key_black_g#"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -23.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "C3"
+horizontal_alignment = 1
+
+[node name="key_white_a" type="Control" parent="CenterContainer/HBoxContainer"]
+custom_minimum_size = Vector2(24, 256)
+layout_mode = 2
+script = ExtResource("3_d7j1h")
+note = 57
+
+[node name="button" type="Button" parent="CenterContainer/HBoxContainer/key_white_a"]
+custom_minimum_size = Vector2(48, 256)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+theme = ExtResource("4_110ew")
+
+[node name="key_label" type="Label" parent="CenterContainer/HBoxContainer/key_white_a"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -23.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "C3"
+horizontal_alignment = 1
+
+[node name="key_black_a#" type="Control" parent="CenterContainer/HBoxContainer"]
+z_index = 1
+custom_minimum_size = Vector2(24, 186)
+layout_mode = 2
+size_flags_vertical = 0
+script = ExtResource("3_d7j1h")
+note = 58
+
+[node name="button" type="Button" parent="CenterContainer/HBoxContainer/key_black_a#"]
+modulate = Color(0, 0, 0, 1)
+custom_minimum_size = Vector2(48, 186)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -24.0
+offset_right = 24.0
+offset_bottom = 186.0
+grow_horizontal = 2
+mouse_default_cursor_shape = 2
+theme = ExtResource("4_110ew")
+
+[node name="key_label" type="Label" parent="CenterContainer/HBoxContainer/key_black_a#"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -23.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "C3"
+horizontal_alignment = 1
+
+[node name="key_white_b" type="Control" parent="CenterContainer/HBoxContainer"]
+custom_minimum_size = Vector2(24, 256)
+layout_mode = 2
+script = ExtResource("3_d7j1h")
+note = 59
+
+[node name="button" type="Button" parent="CenterContainer/HBoxContainer/key_white_b"]
+custom_minimum_size = Vector2(48, 256)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+theme = ExtResource("4_110ew")
+
+[node name="key_label" type="Label" parent="CenterContainer/HBoxContainer/key_white_b"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -23.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "C3"
+horizontal_alignment = 1
+
+[node name="key_black_null_3" type="Control" parent="CenterContainer/HBoxContainer"]
+z_index = 1
+custom_minimum_size = Vector2(24, 186)
+layout_mode = 2
+size_flags_vertical = 0
+script = ExtResource("3_d7j1h")
+note = 48
+
+[node name="button" type="Button" parent="CenterContainer/HBoxContainer/key_black_null_3"]
+visible = false
+modulate = Color(0, 0, 0, 1)
+custom_minimum_size = Vector2(48, 186)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -24.0
+offset_right = 24.0
+offset_bottom = 186.0
+grow_horizontal = 2
+mouse_default_cursor_shape = 2
+theme = ExtResource("4_110ew")
+
+[node name="key_label" type="Label" parent="CenterContainer/HBoxContainer/key_black_null_3"]
+visible = false
+modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -23.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "C3"
+horizontal_alignment = 1
+
+[node name="key_white_c2" type="Control" parent="CenterContainer/HBoxContainer"]
+custom_minimum_size = Vector2(24, 256)
+layout_mode = 2
+script = ExtResource("3_d7j1h")
+note = 60
+
+[node name="button" type="Button" parent="CenterContainer/HBoxContainer/key_white_c2"]
+custom_minimum_size = Vector2(48, 256)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+theme = ExtResource("4_110ew")
+
+[node name="key_label" type="Label" parent="CenterContainer/HBoxContainer/key_white_c2"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -23.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "C3"
+horizontal_alignment = 1

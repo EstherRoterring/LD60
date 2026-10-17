@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://dxuampwjxtg6h"]
+
+[ext_resource type="Script" uid="uid://bm23dta0mfeft" path="res://assets/scenes/synthtest.gd" id="1_rj22v"]
+[ext_resource type="Script" uid="uid://kab7n84x5yvd" path="res://addons/godot_synth/keyboard/synth_keyboard_player.gd" id="2_s6ogt"]
+
+[sub_resource type="SynthAudioStream" id="SynthAudioStream_s6ogt"]
+
+[node name="Synthtest" type="Node2D" unique_id=1176553388]
+script = ExtResource("1_rj22v")
+
+[node name="Container" type="Container" parent="." unique_id=1909139216]
+offset_right = 961.0
+offset_bottom = 496.0
+
+[node name="Button" type="Button" parent="Container" unique_id=331790281]
+layout_mode = 2
+text = "kling"
+
+[node name="SynthPlayer" type="Node" parent="." unique_id=1115368364]
+script = ExtResource("2_s6ogt")
+metadata/_custom_type_script = "uid://kab7n84x5yvd"
+
+[node name="AudioSynthPlayer" type="AudioSynthPlayer" parent="SynthPlayer" unique_id=341267849]
+stream = SubResource("SynthAudioStream_s6ogt")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SynthPlayer" unique_id=817260815]

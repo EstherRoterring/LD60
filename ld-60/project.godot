@@ -22,6 +22,14 @@ window/size/viewport_height=180
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
+[dotnet]
+
+project/assembly_name="LD60"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/godot_synth/plugin.cfg")
+
 [physics]
 
 3d/physics_engine="Jolt Physics"
@@ -29,3 +37,4 @@ window/stretch/aspect="expand"
 [rendering]
 
 rendering_device/driver.windows="d3d12"
+renderer/rendering_method="gl_compatibility"
