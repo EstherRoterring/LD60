@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://b0qhwbik48ont"]
+
+[ext_resource type="Script" uid="uid://bgdiyhg0sdwqy" path="res://assets/skripts/monster_01.gd" id="2_m2nj6"]
+
+[node name="Icon" type="Sprite2D" unique_id=1087966743]
+position = Vector2(15, 15)
+scale = Vector2(0.13671884, 0.12890624)
+script = ExtResource("2_m2nj6")
