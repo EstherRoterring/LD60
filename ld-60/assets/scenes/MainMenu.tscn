@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://dijmjt66bmxr7"]
 
+[ext_resource type="Script" uid="uid://cftxv5l23itnn" path="res://assets/scenes/main_menu.gd" id="1_7metd"]
 [ext_resource type="Texture2D" uid="uid://bw2iuicfcd85k" path="res://assets/images/title.png" id="1_vqap6"]
 [ext_resource type="Theme" uid="uid://b1hi8gn0ro35b" path="res://assets/retro_theme.tres" id="2_kj6rs"]
 [ext_resource type="Script" uid="uid://8fxqps718mvv" path="res://assets/scenes/clickable_sprite.gd" id="2_t6dbj"]
@@ -9,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://doravxy1wol85" path="res://assets/images/title_settings.png" id="6_nory3"]
 
 [node name="MainMenu" type="Node2D" unique_id=1578142257]
+script = ExtResource("1_7metd")
 
 [node name="Title" type="Sprite2D" parent="." unique_id=1976505043]
 texture_filter = 3
@@ -74,3 +76,5 @@ offset_right = 67.0
 offset_bottom = 90.0
 theme = ExtResource("2_kj6rs")
 text = "Settings"
+
+[connection signal="clicked" from="Container/Sprite_Compose" to="." method="load_game"]
