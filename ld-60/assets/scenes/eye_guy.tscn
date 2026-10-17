@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b465b82h0iy7x"]
 
-[ext_resource type="Script" uid="uid://fkjy75tqqb1v" path="res://assets/scenes/eye_guy.gd" id="1_fm3m6"]
+[ext_resource type="Script" uid="uid://fkjy75tqqb1v" path="res://assets/skripts/eye_guy.gd" id="1_fm3m6"]
 [ext_resource type="Texture2D" uid="uid://dvl6cwlidycbi" path="res://assets/sprites and animations/eye.png" id="2_mpset"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_78elf"]
