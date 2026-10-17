@@ -17,7 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-ApiClient="*uid://dfeijpl2kj1qx"
+API="*uid://dfeijpl2kj1qx"
 
 [display]
 
