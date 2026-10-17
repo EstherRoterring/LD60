@@ -1,8 +1,25 @@
 [gd_scene format=3 uid="uid://b0qhwbik48ont"]
 
-[ext_resource type="Script" uid="uid://bgdiyhg0sdwqy" path="res://assets/skripts/monster_01.gd" id="2_m2nj6"]
+[ext_resource type="Texture2D" uid="uid://rpbk4xqjma7b" path="res://icon.svg" id="1_gmnnb"]
+[ext_resource type="Script" uid="uid://bot634kxnt14w" path="res://assets/skripts/monster.gd" id="2_m2nj6"]
 
-[node name="Icon" type="Sprite2D" unique_id=1087966743]
-position = Vector2(15, 15)
-scale = Vector2(0.13671884, 0.12890624)
+[sub_resource type="GDScript" id="GDScript_53gkj"]
+script/source = "extends Control
+"
+
+[node name="Monster" type="Control" unique_id=153908453]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_53gkj")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=768737498]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_gmnnb")
+expand_mode = 1
 script = ExtResource("2_m2nj6")

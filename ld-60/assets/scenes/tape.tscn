@@ -3,7 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://by02ixbbutrcd" path="res://assets/sprites and animations/Tape.png" id="1_jelrx"]
 [ext_resource type="Texture2D" uid="uid://b48udonpqxynb" path="res://assets/sprites and animations/Panel.png" id="2_4we70"]
 [ext_resource type="Script" uid="uid://cgo0egccbmpsv" path="res://assets/skripts/slot.gd" id="3_4we70"]
-[ext_resource type="PackedScene" uid="uid://b0qhwbik48ont" path="res://assets/scenes/monster01.tscn" id="4_jtx1k"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d6784"]
 texture = ExtResource("2_4we70")
@@ -31,16 +30,12 @@ layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_d6784")
 script = ExtResource("3_4we70")
 
-[node name="Icon" parent="GridContainer/Slot1" unique_id=1087966743 instance=ExtResource("4_jtx1k")]
-
 [node name="Slot2" type="Panel" parent="GridContainer" unique_id=1165443140]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 offset_transform_enabled = true
 theme_override_styles/panel = SubResource("StyleBoxTexture_d6784")
 script = ExtResource("3_4we70")
-
-[node name="Icon" parent="GridContainer/Slot2" unique_id=1124828886 instance=ExtResource("4_jtx1k")]
 
 [node name="Slot3" type="Panel" parent="GridContainer" unique_id=626200224]
 custom_minimum_size = Vector2(32, 32)
@@ -59,8 +54,6 @@ custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_d6784")
 script = ExtResource("3_4we70")
-
-[node name="Icon" parent="GridContainer/Slot5" unique_id=704518591 instance=ExtResource("4_jtx1k")]
 
 [node name="Slot6" type="Panel" parent="GridContainer" unique_id=376758170]
 custom_minimum_size = Vector2(32, 32)
