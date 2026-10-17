@@ -90,7 +90,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_qidnu")
 }],
-"loop": 0,
+"loop": 1,
 "name": &"zupfen",
 "speed": 5.0
 }]
