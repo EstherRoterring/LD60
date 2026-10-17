@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b0qhwbik48ont"]
 
 [ext_resource type="Texture2D" uid="uid://rpbk4xqjma7b" path="res://icon.svg" id="1_gmnnb"]
-[ext_resource type="Script" uid="uid://bot634kxnt14w" path="res://assets/skripts/monster.gd" id="2_m2nj6"]
+[ext_resource type="Script" uid="uid://bot634kxnt14w" path="res://scripts/monster.gd" id="2_m2nj6"]
 
 [sub_resource type="GDScript" id="GDScript_53gkj"]
 script/source = "extends Control

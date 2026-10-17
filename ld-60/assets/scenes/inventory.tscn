@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://by02ixbbutrcd" path="res://assets/sprites and animations/Tape.png" id="1_2sjf0"]
 [ext_resource type="Texture2D" uid="uid://b48udonpqxynb" path="res://assets/sprites and animations/Panel.png" id="2_rm8x4"]
 [ext_resource type="PackedScene" uid="uid://b0qhwbik48ont" path="res://assets/scenes/monster01.tscn" id="3_rm8x4"]
-[ext_resource type="Script" uid="uid://dnug5wdypwof8" path="res://assets/skripts/panel.gd" id="3_s1ftr"]
+[ext_resource type="Script" uid="uid://dnug5wdypwof8" path="res://scripts/panel.gd" id="3_s1ftr"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k3qaj"]
 texture = ExtResource("2_rm8x4")
