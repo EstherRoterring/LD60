@@ -26,7 +26,7 @@ func _process(delta: float) -> void:
 
 	play_time += delta
 
-	var step = int(play_time / STEP_DURATION) % 32
+	var step = int(play_time / STEP_DURATION) % track.length
 	if step == last_played_step:
 		return
 
@@ -38,7 +38,7 @@ func _process(delta: float) -> void:
 func play_note(pitch: int, duration: float):
 	var context = synth.get_context()
 	
-	context.note_on(pitch, 0.8)
+	context.note_on(pitch, 3)
 	await  get_tree().create_timer(duration).timeout
 	context.note_off(context.absolute_time)
 

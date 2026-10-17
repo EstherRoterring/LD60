@@ -2,16 +2,23 @@ class_name Track
 
 var data
 var instruments: Dictionary[String, Dictionary]
+var length: int = 0
 
 func _init(p_data: String):
 	data = JSON.parse_string(p_data)
+	
+	length = data.get("length", 0)
 
 	instruments = {}
 	for instrument in data["voices"].keys():
 		var note_map: Dictionary[int, Array] = {}
 		for note in data["voices"][instrument]:
 			var parsed = Track.parse_note(note)
-			note_map.get_or_add(parsed[0], []).append(parsed[1])
+			var time = parsed[0]
+			var pitch = parsed[1]
+			note_map.get_or_add(time, []).append(pitch)
+			if time >= length:
+				length = time + 1
 		instruments.set(instrument, note_map)
 
 func get_notes_for_instrument(value: String, time: int) -> Array:
