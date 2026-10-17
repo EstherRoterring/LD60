@@ -1,36 +1,8 @@
 [gd_scene format=3 uid="uid://gdwaw6jrub4d"]
 
 [ext_resource type="Script" uid="uid://dbe28pco2d4gr" path="res://assets/scenes/play_track.gd" id="1_luh4r"]
-
-[sub_resource type="ADSR" id="ADSR_luh4r"]
-
-[sub_resource type="ModulatedParameter" id="ModulatedParameter_wyg12"]
-mod_amount = 1.0
-source = SubResource("ADSR_luh4r")
-mod_type = 2
-
-[sub_resource type="ModulatedParameter" id="ModulatedParameter_cvogm"]
-base_value = 0.5
-
-[sub_resource type="ModulatedParameter" id="ModulatedParameter_s2cib"]
-mod_min = -24.0
-mod_max = 24.0
-
-[sub_resource type="ModulatedParameter" id="ModulatedParameter_s21op"]
-base_value = 0.5
-
-[sub_resource type="VASynthConfiguration" id="VASynthConfiguration_wyg12"]
-waveform_modulation = SubResource("ModulatedParameter_cvogm")
-amplitude_modulation = SubResource("ModulatedParameter_wyg12")
-pitch_modulation = SubResource("ModulatedParameter_s2cib")
-pulse_width_modulation = SubResource("ModulatedParameter_s21op")
-parameters = {
-"amplitude": SubResource("ModulatedParameter_wyg12"),
-"pitch": SubResource("ModulatedParameter_s2cib"),
-"pulse_width": SubResource("ModulatedParameter_s21op"),
-"waveform": SubResource("ModulatedParameter_cvogm")
-}
+[ext_resource type="VASynthConfiguration" uid="uid://rb7axbqyc8bf" path="res://resources/new_va_synth_configuration.tres" id="2_wyg12"]
 
 [node name="Node2D" type="Node2D" unique_id=359462611]
 script = ExtResource("1_luh4r")
-sound = SubResource("VASynthConfiguration_wyg12")
+sound = ExtResource("2_wyg12")
