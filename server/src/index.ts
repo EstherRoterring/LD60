@@ -1,4 +1,5 @@
 import express, { type Express } from "express";
+import api from "./api/";
 
 const app: Express = express();
 
@@ -8,6 +9,8 @@ app.use(express.urlencoded({ extended: true }));
 app.get("/", (request, response) => {
   response.send("Hello World!");
 });
+
+app.use("/api", api);
 
 const server = app.listen(3000, () => {
   console.info("Server listening on http://localhost:3000/");
