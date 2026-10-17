@@ -1,0 +1,7 @@
+[gd_resource type="Theme" format=3 uid="uid://b1hi8gn0ro35b"]
+
+[ext_resource type="FontFile" uid="uid://bhs5oudan4iqg" path="res://assets/ConnectionII.otf" id="1_kujxa"]
+
+[resource]
+default_base_scale = 0.45
+default_font = ExtResource("1_kujxa")
