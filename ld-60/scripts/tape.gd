@@ -39,16 +39,19 @@ func scroll_to_next_segment() -> void:
 		return
 	#Schleife über 8 Monster-slots
 	for i in range(8):
-		var m = current_monsters[i]
-		var realSlot = i + (current_segment * 8)
-		#save monster to Track
-			#add_note(instrument: String, time: int, pitch: int)
-		current_track.add_note(m.instrument, realSlot, m.pitch)
+		#Schleife über Monster in dem slot
+		for j in current_monsters[i]: 
+			var m = current_monsters[i][j]
+			var realSlot = i + (current_segment * 8)
+			#save monster to Track
+				#add_note(instrument: String, time: int, pitch: int)
+			current_track.add_note(m.name, realSlot, m.pitch)
 		#delete monsters from UI and Load Monsteri+8
 		current_segment = current_segment + 1
 		var newRealSlot =  i + (current_segment * 8)
-		var newMonster = current_track.getMonstersAndPitchbyTime(newRealSlot)
-		set_current_monster(newMonster, m)
+		var newMonsters = current_track.getMonstersAndPitchbyTime(newRealSlot)
+		set_current_monsters(newMonsters, i)
+		
 		
 	
 func scroll_to_prev_segment() -> void:
@@ -58,8 +61,9 @@ func scroll_to_prev_segment() -> void:
 func get_current_monsters() -> Array:
 	return []
 	
-#should spawn Monsters m: [{"monster": "amo", "pitch": 36}] to slot 
-func set_current_monster(m:Array, slot:int) -> void:
+# should spawn Monsters m: [{"monster": "amo", "pitch": 36}] to slot 
+# should remove old Monsters
+func set_current_monsters(m:Array, slot:int) -> void:
 	# ToDo
 	# monsternames = note["monster"]
 	# pitch = note["pitch"]
