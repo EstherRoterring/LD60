@@ -54,10 +54,11 @@ func scroll_to_next_segment() -> void:
 func scroll_to_prev_segment() -> void:
 	pass
 	
+#should return current visible monsters as Array[TapeSlot]
 func get_current_monsters() -> Array:
 	return []
 	
-#should spawn Monster m: {"monster": "amo", "pitch": 36}, Pitch] to slot 
+#should spawn Monsters m: [{"monster": "amo", "pitch": 36}] to slot 
 func set_current_monster(m:Array, slot:int) -> void:
 	# ToDo
 	# monsternames = note["monster"]
