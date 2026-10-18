@@ -10,6 +10,20 @@ var length: int = 0
 
 func get_notes_for_instrument(value: String, time: int) -> Array:
 	return instruments.get(value, {}).get(time, [])
+	
+#returns Monster Name and Pitch
+func getMonstersAndPitchbyTime(time: int) -> Array :
+	var result: Array = []
+
+	for i in instruments:
+		if instruments[i].has(time):
+			for pitch in instruments[i][time]:
+				result.append({
+					"monster": i,
+					"pitch": pitch
+				})
+
+	return result
 
 func add_note(instrument: String, time: int, pitch: int):
 	instruments.get_or_add(instrument, {}).get_or_add(time, []).append(pitch)

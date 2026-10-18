@@ -1,11 +1,12 @@
 extends Node2D
 
-@export var slots : Array[TapeSlot]
+#Tapeslot = array of multiple Monsters 
+#should hold the 8 visable monsters (maybee multiple in one slot)
+@export var current_monsters : Array[TapeSlot]
 
 #holds track thats currently edited
 @export var current_track : Track
-#should hold the 8 visable monsters
-@export var current_monsters : Array[MusicMonster]
+
 
 var total_number_of_tape_segments : int
 var current_segment : int 	#0: 0-7, 1: 8-15 ...
@@ -34,27 +35,36 @@ func place_music_monster(monster : MusicMonster, slot_id : int):
 func scroll_to_next_segment() -> void:
 	current_monsters = get_current_monsters()
 	if current_monsters.size() != 8:
-		printerr('not 08 Monsters')
+		printerr('not 08 Slots')
 		return
-	#Schleife über 8 Monster
+	#Schleife über 8 Monster-slots
 	for i in range(8):
 		var m = current_monsters[i]
-		var slot = i + (current_segment * 8)
+		var realSlot = i + (current_segment * 8)
 		#save monster to Track
 			#add_note(instrument: String, time: int, pitch: int)
-		current_track.add_note(m.instrument, slot, m.pitch)
+		current_track.add_note(m.instrument, realSlot, m.pitch)
 		#delete monsters from UI and Load Monsteri+8
-		#ToDo
-		#current_monsters[m] = 
 		current_segment = current_segment + 1
+		var newRealSlot =  i + (current_segment * 8)
+		var newMonster = current_track.getMonstersAndPitchbyTime(newRealSlot)
+		set_current_monster(newMonster, m)
+		
 	
 func scroll_to_prev_segment() -> void:
 	pass
 	
 func get_current_monsters() -> Array:
 	return []
-func set_monster(m:MusicMonster, pos:int) -> void:
+	
+#should spawn Monster m: {"monster": "amo", "pitch": 36}, Pitch] to slot 
+func set_current_monster(m:Array, slot:int) -> void:
+	# ToDo
+	# monsternames = note["monster"]
+	# pitch = note["pitch"]
+	# current_monsters[slot] = monster
 	pass
+	
 	
 func set_preview_play_position() -> void:
 	pass
