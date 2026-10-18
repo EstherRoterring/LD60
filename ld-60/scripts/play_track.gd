@@ -14,7 +14,7 @@ var last_played_step: int = -1
 
 func _ready() -> void:
 	API.fetch_track_data("sample01")
-	API.data_received.connect(parse_track)
+	API.track_data_result.connect(parse_track)
 	
 	synth = AudioSynthPlayer.new()
 	synth.configuration = sound
@@ -38,7 +38,7 @@ func _process(delta: float) -> void:
 func play_note(pitch: int, duration: float):
 	var context = synth.get_context()
 	
-	context.note_on(pitch, 3)
+	context.note_on(pitch, 6)
 	await  get_tree().create_timer(duration).timeout
 	context.note_off(context.absolute_time)
 
