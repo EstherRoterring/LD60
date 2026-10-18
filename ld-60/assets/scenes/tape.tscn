@@ -1,11 +1,13 @@
-[gd_scene format=3 uid="uid://bmowvvjc83dmu"]
+[gd_scene format=3 uid="uid://gh81trgswhjs"]
 
 [ext_resource type="Script" uid="uid://b1mvar663mno1" path="res://scripts/tape.gd" id="1_7yeak"]
-[ext_resource type="Texture2D" uid="uid://dvvhuuyop52aq" path="res://assets/images/TestTape.png" id="1_eksoh"]
+[ext_resource type="Texture2D" uid="uid://dwka55ufcjwiw" path="res://assets/sprites and animations/TapeSpritesheet.png" id="2_jelrx"]
 
-[node name="Tape2" type="Node2D" unique_id=401317544]
+[node name="Tape" type="Node2D" unique_id=401317544]
 script = ExtResource("1_7yeak")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=561393659]
-position = Vector2(160, 90)
-texture = ExtResource("1_eksoh")
+[node name="Tape" type="Sprite2D" parent="." unique_id=561393659]
+position = Vector2(160, 120)
+texture = ExtResource("2_jelrx")
+region_enabled = true
+region_rect = Rect2(0, 93.96534, 320, 35.996758)
