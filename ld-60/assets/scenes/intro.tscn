@@ -1,0 +1,119 @@
+[gd_scene format=3 uid="uid://l8mlbo5lolrt"]
+
+[ext_resource type="PackedScene" uid="uid://b465b82h0iy7x" path="res://assets/scenes/eye_guy.tscn" id="1_e2c8y"]
+[ext_resource type="Script" uid="uid://5k7uiu6jcw1g" path="res://assets/scenes/intro.gd" id="1_vxlar"]
+
+[sub_resource type="Animation" id="Animation_vxlar"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1, -76)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label2:visible_ratio")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_y745p"]
+resource_name = "intro"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.5, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-1, -76), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label2:visible_ratio")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(2, 4.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_w7g36"]
+_data = {
+&"RESET": SubResource("Animation_vxlar"),
+&"intro": SubResource("Animation_y745p")
+}
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=504829179]
+layer = 3
+script = ExtResource("1_vxlar")
+
+[node name="Background" type="ColorRect" parent="." unique_id=126020952]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.1254902, 0.078431375, 0.2, 1)
+
+[node name="EyeGuy" parent="." unique_id=915826791 instance=ExtResource("1_e2c8y")]
+position = Vector2(-93, 14)
+scale = Vector2(0.3, 0.3)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1106415569]
+libraries/ = SubResource("AnimationLibrary_w7g36")
+
+[node name="Label" type="Label" parent="." unique_id=594490152]
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = -1.0
+offset_top = -76.0
+offset_right = -1.0
+offset_bottom = -1.0
+grow_horizontal = 2
+size_flags_vertical = 8
+text = "
+BEKES KITCHEN DEVELOPMENT
+PRESENTS:"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Label2" type="Label" parent="." unique_id=973547739]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 105.0
+offset_top = 27.0
+offset_right = -20.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "NOSIY MONSTERS"
+horizontal_alignment = 1
+visible_characters = 0
+visible_ratio = 0.0
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
