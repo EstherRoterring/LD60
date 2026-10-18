@@ -14,14 +14,6 @@ name = "TestMonster"
 synthPreset = SubResource("WindPreset_q77r6")
 metadata/_custom_type_script = "uid://cobddku7hmwoc"
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_7blep"]
-atlas = ExtResource("5_uimll")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6ay74"]
-atlas = ExtResource("5_uimll")
-region = Rect2(32, 0, 32, 32)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_5jwa6"]
 atlas = ExtResource("5_uimll")
 region = Rect2(64, 0, 32, 32)
@@ -34,43 +26,9 @@ region = Rect2(96, 0, 32, 32)
 atlas = ExtResource("5_uimll")
 region = Rect2(128, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_dnhma"]
-atlas = ExtResource("5_uimll")
-region = Rect2(160, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hjqu5"]
-atlas = ExtResource("5_uimll")
-region = Rect2(192, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_c0o1h"]
-atlas = ExtResource("5_uimll")
-region = Rect2(224, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_sqfxh"]
-atlas = ExtResource("5_uimll")
-region = Rect2(256, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_cd7ni"]
-atlas = ExtResource("5_uimll")
-region = Rect2(288, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_lf46u"]
-atlas = ExtResource("5_uimll")
-region = Rect2(320, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_t64h5"]
-atlas = ExtResource("5_uimll")
-region = Rect2(352, 0, 32, 32)
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_hnd7g"]
 animations = [{
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7blep")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6ay74")
-}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_5jwa6")
 }, {
@@ -79,27 +37,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_gvgiw")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_dnhma")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_hjqu5")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_c0o1h")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_sqfxh")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_cd7ni")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_lf46u")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_t64h5")
 }],
 "loop": 1,
 "name": &"default",
@@ -122,8 +59,7 @@ script = ExtResource("3_q1xnm")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="DraggableSprite" unique_id=775967568]
 material = ExtResource("4_rx7fs")
 sprite_frames = SubResource("SpriteFrames_hnd7g")
-frame = 7
-frame_progress = 0.703137
+frame_progress = 0.21040069
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DraggableSprite" unique_id=1093783211]
 position = Vector2(0, 1)
