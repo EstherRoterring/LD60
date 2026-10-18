@@ -1,5 +1,7 @@
 class_name DraggableSprite extends Area2D
 
+@export var is_monster : bool = true # tag
+
 var dragging_is_enabled : bool
 var is_being_dragged : bool
 var is_hovered_over : bool
@@ -25,7 +27,9 @@ func handle_mouse_enter() -> void:
 func handle_mouse_exit() -> void:
 	if id_for_drag_manager != -1:
 		MonsterDragManager.unregister_hovered_sprite(id_for_drag_manager)
+		id_for_drag_manager = -1
 	is_hovered_over = false
+"res://assets/scenes/tape.tscn"
 
 func _input(event: InputEvent) -> void:
 	handle_dragging_state_logic(event)
@@ -59,6 +63,8 @@ func handle_just_released():
 
 # Signals when dragging starts
 func start_dragging() -> void:
+	if is_monster:
+		MonsterDragManager.monster_sprite_is_dragged = true
 	is_being_dragged = true
 	dragging_started.emit()
 	drag(get_global_mouse_position())
@@ -79,5 +85,7 @@ func drag(mouse_position : Vector2) -> void:
 
 # Signals when dragging ends
 func end_dragging() -> void:
+	if is_monster:
+		MonsterDragManager.monster_sprite_is_dragged = false
 	is_being_dragged = false
 	dragging_ended.emit(get_global_mouse_position())
