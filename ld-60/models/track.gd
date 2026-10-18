@@ -1,7 +1,9 @@
 class_name Track
 
+const NOTES = ["c", "c#", "d", "d#", "e", "f", "f#", "g", "g#", "a", "a#", "b"]
+
 var data
-var instruments: Dictionary[String, Dictionary]
+var instruments: Dictionary[String, Dictionary] = {}
 var length: int = 0
 
 func get_notes_for_instrument(value: String, time: int) -> Array:
@@ -9,14 +11,22 @@ func get_notes_for_instrument(value: String, time: int) -> Array:
 
 func add_note(instrument: String, time: int, pitch: int):
 	instruments.get_or_add(instrument, {}).get_or_add(time, []).append(pitch)
+	if (time >= length):
+		length = time + 1
 
-static func deserialize(p_data: String):
+func delete_note(instrument: String, time: int, pitch: int):
+	if not instruments.has(instrument): return
+	if not instruments[instrument].has(time): return
+	if not instruments[instrument][time].has(pitch): return
+
+	instruments[instrument][time].remove_at(instruments[instrument][time].find(pitch))
+
+static func deserialize(p_data: String) -> Track:
 	var track = Track.new()
 	track.data = JSON.parse_string(p_data)
 
 	track.length = track.data.get("length", 0)
 
-	track.instruments = {}
 	for instrument in track.data["voices"].keys():
 		var note_map: Dictionary[int, Array] = {}
 		for note in track.data["voices"][instrument]:
@@ -30,24 +40,30 @@ static func deserialize(p_data: String):
 
 	return track
 
-static func deserialize_note(value: String):
+static func deserialize_note(value: String) -> Array[int]:
 	var results = RegEx.create_from_string("^(?<time>\\d+):(?<note>[a-gA-G]\\#?)(?<octave>\\d+)").search(value)
 	var time = int(results.get_string("time"))
 	var note = results.get_string("note")
 	var octave = results.get_string("octave")
-	var note_offset = {
-		"c": 0,
-		"c#": 1,
-		"d": 2,
-		"d#": 3,
-		"e": 4,
-		"f": 5,
-		"f#": 6,
-		"g": 7,
-		"g#": 8,
-		"a": 9,
-		"a#": 10,
-		"b": 11,
-	}[note.to_lower()]
+	var note_offset = NOTES.find(note.to_lower())
 	var octave_offset = int(octave) * 12 + 12
 	return [time, octave_offset + note_offset]
+
+static func serialize(track: Track) -> String:
+	var output = {
+		"version": 1,
+		"voices": {},
+		"length": track.length
+	}
+
+	for instrument in track.instruments:
+		for time in track.instruments[instrument]:
+			for pitch in track.instruments[instrument][time]:
+				output.voices.get_or_add(instrument, []).append(serialize_note(pitch, time))
+
+	return JSON.stringify(output)
+
+static func serialize_note(pitch: int, time: int) -> String:
+	var note: String = NOTES[pitch % 12]
+	@warning_ignore("integer_division")
+	return str(time) + ":" + note + str(pitch / 12 - 1)

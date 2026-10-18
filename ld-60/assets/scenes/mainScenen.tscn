@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://0ci8pia73fyg"]
+
+[ext_resource type="Texture2D" uid="uid://cdryywpuqxohw" path="res://assets/sprites and animations/Scene01Background.png" id="1_crt2f"]
+[ext_resource type="PackedScene" uid="uid://cvlfrrgrryens" path="res://assets/scenes/inventory.tscn" id="2_a55cb"]
+[ext_resource type="PackedScene" uid="uid://gh81trgswhjs" path="res://assets/scenes/tape.tscn" id="3_lldoe"]
+
+[node name="Node2D" type="Node2D" unique_id=1915051101]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=126575879]
+position = Vector2(160, 90)
+texture = ExtResource("1_crt2f")
+
+[node name="Inventory" parent="." unique_id=2024570262 instance=ExtResource("2_a55cb")]
+
+[node name="Tape" parent="." unique_id=126190304 instance=ExtResource("3_lldoe")]
