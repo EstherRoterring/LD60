@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 API="*uid://dfeijpl2kj1qx"
 SceneTransition="*uid://bu73jyl5m1na1"
+MonsterDragManager="*uid://c1w3lkpe3tf5a"
 
 [display]
 

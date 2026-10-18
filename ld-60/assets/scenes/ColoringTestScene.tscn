@@ -1,17 +1,25 @@
 [gd_scene format=3 uid="uid://b8cv04ww638xh"]
 
 [ext_resource type="PackedScene" uid="uid://da2k3gq02v51n" path="res://assets/scenes/synth_monster.tscn" id="1_jhj55"]
+[ext_resource type="PackedScene" uid="uid://bmowvvjc83dmu" path="res://assets/scenes/Tape.tscn" id="4_khwuv"]
+[ext_resource type="Script" uid="uid://ct8aboxqxjupu" path="res://scripts/tape_slot.gd" id="5_5jwa6"]
+[ext_resource type="Texture2D" uid="uid://b48udonpqxynb" path="res://assets/sprites and animations/Panel.png" id="5_6ay74"]
 [ext_resource type="Script" uid="uid://cni5312bglolc" path="res://coloring_pot.gd" id="5_7blep"]
 [ext_resource type="Texture2D" uid="uid://rpbk4xqjma7b" path="res://icon.svg" id="5_vbl84"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3rtpm"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_khwuv"]
+size = Vector2(25, 50)
+
 [node name="ColoringTestScene" type="Node2D" unique_id=2078247448]
 
 [node name="SynthMonster" parent="." unique_id=130309528 instance=ExtResource("1_jhj55")]
 
+[node name="SynthMonster2" parent="." unique_id=1763127153 instance=ExtResource("1_jhj55")]
+
 [node name="ColoringPot" type="Area2D" parent="." unique_id=1506903609]
-position = Vector2(100, 100)
+position = Vector2(41, 30)
 script = ExtResource("5_7blep")
 pitchID = 1
 
@@ -23,7 +31,7 @@ texture = ExtResource("5_vbl84")
 shape = SubResource("CircleShape2D_3rtpm")
 
 [node name="ColoringPot2" type="Area2D" parent="." unique_id=1621462780]
-position = Vector2(174, 76)
+position = Vector2(106, 38)
 script = ExtResource("5_7blep")
 pitchID = 2
 
@@ -33,3 +41,21 @@ texture = ExtResource("5_vbl84")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ColoringPot2" unique_id=623733377]
 shape = SubResource("CircleShape2D_3rtpm")
+
+[node name="MusicTape" parent="." unique_id=401317544 instance=ExtResource("4_khwuv")]
+
+[node name="TapeSlot" type="Area2D" parent="." unique_id=2017800742]
+position = Vector2(200, 94)
+script = ExtResource("5_5jwa6")
+
+[node name="Background" type="Sprite2D" parent="TapeSlot" unique_id=1854674993]
+texture = ExtResource("5_6ay74")
+
+[node name="Border" type="Sprite2D" parent="TapeSlot" unique_id=2090783332]
+visible = false
+modulate = Color(0.05000007, 1, 0, 1)
+texture = ExtResource("5_6ay74")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TapeSlot" unique_id=1407642711]
+position = Vector2(-1, -1.5)
+shape = SubResource("RectangleShape2D_khwuv")

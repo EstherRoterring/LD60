@@ -20,12 +20,12 @@ func _process(delta: float) -> void:
 func place_music_monster(monster : MusicMonster, slot_id : int):
 	pass
 
-func load_track(track : Track) -> void:
-	pass
-	
-func export_track() -> Track:
-	var track : Track
-	return track
+#func load_track(track : Track) -> void:
+	#pass
+	#
+#func export_track() -> Track:
+	#var track : Track
+	#return track
 
 func scroll_to_next_segment() -> void:
 	pass

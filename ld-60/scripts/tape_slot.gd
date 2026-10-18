@@ -1,6 +1,6 @@
-extends Node
+class_name TapeSlot extends Node
 
-class_name TapeSlot
+var monsters
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

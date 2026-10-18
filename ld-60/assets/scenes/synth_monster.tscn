@@ -59,7 +59,7 @@ script = ExtResource("3_q1xnm")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="DraggableSprite" unique_id=775967568]
 material = ExtResource("4_rx7fs")
 sprite_frames = SubResource("SpriteFrames_hnd7g")
-frame_progress = 0.21040069
+frame_progress = 0.48801413
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DraggableSprite" unique_id=1093783211]
 position = Vector2(0, 1)

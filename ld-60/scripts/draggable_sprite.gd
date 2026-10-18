@@ -3,6 +3,7 @@ class_name DraggableSprite extends Area2D
 var dragging_is_enabled : bool
 var is_being_dragged : bool
 var is_hovered_over : bool
+var id_for_drag_manager : int
 
 signal dragged_over_trigger
 signal dragging_started
@@ -10,11 +11,21 @@ signal dragging_ended
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	id_for_drag_manager = -1
 	is_being_dragged = false
 	dragging_is_enabled = true
 	is_hovered_over = false
-	mouse_entered.connect(func(): is_hovered_over = true)
-	mouse_exited.connect(func(): is_hovered_over = false)
+	mouse_entered.connect(handle_mouse_enter)
+	mouse_exited.connect(handle_mouse_exit)
+
+func handle_mouse_enter() -> void:
+	id_for_drag_manager = MonsterDragManager.register_hovered_sprite()
+	is_hovered_over = true
+
+func handle_mouse_exit() -> void:
+	if id_for_drag_manager != -1:
+		MonsterDragManager.unregister_hovered_sprite(id_for_drag_manager)
+	is_hovered_over = false
 
 func _input(event: InputEvent) -> void:
 	handle_dragging_state_logic(event)
@@ -38,9 +49,8 @@ func handle_mouse_drag(event: InputEventMouseMotion) -> void:
 	
 func handle_just_clicked():
 	if is_being_dragged:
-		return
-		
-	if is_hovered_over:
+		return	
+	if is_hovered_over and MonsterDragManager.sprite_is_draggable(id_for_drag_manager):
 		start_dragging()
 
 func handle_just_released():
