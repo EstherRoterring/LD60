@@ -1,0 +1,117 @@
+[gd_resource type="Resource" script_class="SynthMonsterData" format=3 uid="uid://cim0varg0g3j5"]
+
+[ext_resource type="Texture2D" uid="uid://50tx4tis4uhn" path="res://assets/sprites and animations/KLEST.png" id="1_key5k"]
+[ext_resource type="Script" uid="uid://cobddku7hmwoc" path="res://scripts/SynthMonsterResource.gd" id="1_y1ydf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pyb8j"]
+atlas = ExtResource("1_key5k")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0v2tl"]
+atlas = ExtResource("1_key5k")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0w8h6"]
+atlas = ExtResource("1_key5k")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_abyu5"]
+atlas = ExtResource("1_key5k")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h758o"]
+atlas = ExtResource("1_key5k")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dgcu8"]
+atlas = ExtResource("1_key5k")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7bxkw"]
+atlas = ExtResource("1_key5k")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ystoa"]
+atlas = ExtResource("1_key5k")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6a74o"]
+atlas = ExtResource("1_key5k")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c6f7y"]
+atlas = ExtResource("1_key5k")
+region = Rect2(288, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iwi1t"]
+atlas = ExtResource("1_key5k")
+region = Rect2(320, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1bqr7"]
+atlas = ExtResource("1_key5k")
+region = Rect2(352, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x804j"]
+atlas = ExtResource("1_key5k")
+region = Rect2(384, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_68gcv"]
+atlas = ExtResource("1_key5k")
+region = Rect2(416, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_key5k"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pyb8j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0v2tl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0w8h6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_abyu5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h758o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dgcu8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7bxkw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ystoa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6a74o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c6f7y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iwi1t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1bqr7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x804j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_68gcv")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[resource]
+script = ExtResource("1_y1ydf")
+name = "Klest"
+soundFrame = 7
+animation = SubResource("SpriteFrames_key5k")
+metadata/_custom_type_script = "uid://cobddku7hmwoc"

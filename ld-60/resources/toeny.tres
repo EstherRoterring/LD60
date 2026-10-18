@@ -1,0 +1,103 @@
+[gd_resource type="Resource" script_class="SynthMonsterData" format=3 uid="uid://i1hwxlwhkrsy"]
+
+[ext_resource type="Script" uid="uid://cobddku7hmwoc" path="res://scripts/SynthMonsterResource.gd" id="1_njnqj"]
+[ext_resource type="Texture2D" uid="uid://lvap7t8vxsi0" path="res://assets/sprites and animations/Toeny.png" id="1_ye08e"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bg5ue"]
+atlas = ExtResource("1_ye08e")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fhq4x"]
+atlas = ExtResource("1_ye08e")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b0jhh"]
+atlas = ExtResource("1_ye08e")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xt3q0"]
+atlas = ExtResource("1_ye08e")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d7dco"]
+atlas = ExtResource("1_ye08e")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_80lab"]
+atlas = ExtResource("1_ye08e")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_87lyg"]
+atlas = ExtResource("1_ye08e")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vp486"]
+atlas = ExtResource("1_ye08e")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pryms"]
+atlas = ExtResource("1_ye08e")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qjpn3"]
+atlas = ExtResource("1_ye08e")
+region = Rect2(288, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ahg31"]
+atlas = ExtResource("1_ye08e")
+region = Rect2(320, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lliwy"]
+atlas = ExtResource("1_ye08e")
+region = Rect2(352, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ye08e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bg5ue")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fhq4x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b0jhh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xt3q0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d7dco")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_80lab")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_87lyg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vp486")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pryms")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qjpn3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ahg31")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lliwy")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[resource]
+script = ExtResource("1_njnqj")
+name = "Toeny"
+soundFrame = 3
+animation = SubResource("SpriteFrames_ye08e")
+metadata/_custom_type_script = "uid://cobddku7hmwoc"

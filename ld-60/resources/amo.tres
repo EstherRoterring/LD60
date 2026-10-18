@@ -1,0 +1,71 @@
+[gd_resource type="Resource" script_class="SynthMonsterData" format=3 uid="uid://6yeq1hcfaxmq"]
+
+[ext_resource type="Texture2D" uid="uid://dfgnv8in30ooe" path="res://assets/sprites and animations/AMO.png" id="1_3wgx3"]
+[ext_resource type="Script" uid="uid://cobddku7hmwoc" path="res://scripts/SynthMonsterResource.gd" id="2_vgj1c"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ajd1v"]
+atlas = ExtResource("1_3wgx3")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_an6ue"]
+atlas = ExtResource("1_3wgx3")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j10ly"]
+atlas = ExtResource("1_3wgx3")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s2bpn"]
+atlas = ExtResource("1_3wgx3")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q31qa"]
+atlas = ExtResource("1_3wgx3")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_04lym"]
+atlas = ExtResource("1_3wgx3")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_67x12"]
+atlas = ExtResource("1_3wgx3")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w76dg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ajd1v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_an6ue")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j10ly")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s2bpn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q31qa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_04lym")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_67x12")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="WindPreset" id="WindPreset_0vpvg"]
+
+[resource]
+script = ExtResource("2_vgj1c")
+name = "Amo"
+synthPreset = SubResource("WindPreset_0vpvg")
+soundFrame = 3
+animation = SubResource("SpriteFrames_w76dg")
+metadata/_custom_type_script = "uid://cobddku7hmwoc"
