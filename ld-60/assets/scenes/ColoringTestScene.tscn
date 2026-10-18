@@ -61,3 +61,6 @@ region_rect = Rect2(75.38733, 29.467129, 33.205154, 33.044987)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TapeSlot" unique_id=1407642711]
 position = Vector2(-1, -1.5)
 shape = SubResource("RectangleShape2D_khwuv")
+
+[connection signal="mouse_entered" from="TapeSlot" to="TapeSlot" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="TapeSlot" to="TapeSlot" method="_on_mouse_exited"]
