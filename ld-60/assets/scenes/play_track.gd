@@ -43,4 +43,4 @@ func play_note(pitch: int, duration: float):
 	context.note_off(context.absolute_time)
 
 func parse_track(data: String):
-	track = Track.new(data)
+	track = Track.deserialize(data)
