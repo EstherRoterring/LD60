@@ -2,7 +2,7 @@ extends Node2D
 
 func load_game() -> void:
 	#zoom_to_position(get_viewport_rect().size / 2.0)
-	get_tree().change_scene_to_file("res://assets/scenes/mainScenen.tscn")
+	SceneTransition.change_scene_to_file("res://assets/scenes/mainScene.tscn")
 
 func zoom_to_position(screen_position: Vector2) -> void:
 	var original_scale := scale
