@@ -43,10 +43,9 @@ func scroll_to_next_segment() -> void:
 		#save monster to Track
 			#add_note(instrument: String, time: int, pitch: int)
 		current_track.add_note(m.instrument, slot, m.pitch)
-		#delete monsters from UI
+		#delete monsters from UI and Load Monsteri+8
 		#ToDo
-		#Load Monsteri+8
-		#ToDo
+		#current_monsters[m] = 
 		current_segment = current_segment + 1
 	
 func scroll_to_prev_segment() -> void:
@@ -54,6 +53,8 @@ func scroll_to_prev_segment() -> void:
 	
 func get_current_monsters() -> Array:
 	return []
+func set_current_monsters(MusicMonster) -> void:
+	pass
 	
 func set_preview_play_position() -> void:
 	pass
