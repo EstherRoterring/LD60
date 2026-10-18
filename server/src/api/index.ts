@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { exists, readFile, writeFile } from "fs/promises";
+import { exists, readdir, readFile, writeFile } from "fs/promises";
 
 const DATA_DIRECTORY = "/home/moritz/LD60/data";
 
@@ -41,6 +41,38 @@ function isSerializedTrack(value: string) {
 		return false;
 	}
 }
+
+router.get("/tracks", async (request, response) => {
+	const { limit = "100", offset = "0" } = request.query;
+	if (
+		typeof limit !== "string" ||
+		!/^\d+$/.test(limit) ||
+		!Number.isSafeInteger(Number(limit)) ||
+		Number(limit) < 1 ||
+		typeof offset !== "string" ||
+		!/^\d+$/.test(offset) ||
+		!Number.isSafeInteger(Number(offset))
+	) {
+		response.status(400).send("Invalid pagination parameters.");
+		return;
+	}
+
+	try {
+		const entries = await readdir(DATA_DIRECTORY, { withFileTypes: true });
+		const ids = entries
+			.filter((entry) => entry.isFile() && entry.name.endsWith(".json"))
+			.map((entry) => entry.name.slice(0, -5))
+			.filter(isTrackIdValid)
+			.sort();
+
+		response.json({
+			ids: ids.slice(Number(offset), Number(offset) + Number(limit)),
+			total: ids.length,
+		});
+	} catch {
+		response.status(500).send("Internal server error");
+	}
+});
 
 router.get("/tracks/:track_id", (request, response) => {
 	const trackId = request.params.track_id;
