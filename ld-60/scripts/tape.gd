@@ -53,7 +53,7 @@ func scroll_to_prev_segment() -> void:
 	
 func get_current_monsters() -> Array:
 	return []
-func set_current_monsters(MusicMonster) -> void:
+func set_monster(m:MusicMonster, pos:int) -> void:
 	pass
 	
 func set_preview_play_position() -> void:
