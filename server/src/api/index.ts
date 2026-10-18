@@ -1,5 +1,6 @@
+import { randomUUIDv7 } from "bun";
 import { Router } from "express";
-import { exists, readFile, writeFile } from "fs/promises";
+import { exists, readdir, readFile, writeFile } from "fs/promises";
 
 const DATA_DIRECTORY = "/home/moritz/LD60/data";
 
@@ -42,6 +43,38 @@ function isSerializedTrack(value: string) {
 	}
 }
 
+router.get("/tracks", async (request, response) => {
+	const { limit = "100", offset = "0" } = request.query;
+	if (
+		typeof limit !== "string" ||
+		!/^\d+$/.test(limit) ||
+		!Number.isSafeInteger(Number(limit)) ||
+		Number(limit) < 1 ||
+		typeof offset !== "string" ||
+		!/^\d+$/.test(offset) ||
+		!Number.isSafeInteger(Number(offset))
+	) {
+		response.status(400).send("Invalid pagination parameters.");
+		return;
+	}
+
+	try {
+		const entries = await readdir(DATA_DIRECTORY, { withFileTypes: true });
+		const ids = entries
+			.filter((entry) => entry.isFile() && entry.name.endsWith(".json"))
+			.map((entry) => entry.name.slice(0, -5))
+			.filter(isTrackIdValid)
+			.sort();
+
+		response.json({
+			ids: ids.slice(Number(offset), Number(offset) + Number(limit)),
+			total: ids.length,
+		});
+	} catch {
+		response.status(500).send("Internal server error");
+	}
+});
+
 router.get("/tracks/:track_id", (request, response) => {
 	const trackId = request.params.track_id;
 	if (!isTrackIdValid(trackId)) {
@@ -64,19 +97,14 @@ router.get("/tracks/:track_id", (request, response) => {
 	);
 });
 
-router.post("/tracks/:track_id", async (request, response) => {
-	const trackId = request.params.track_id;
-	if (!isTrackIdValid(trackId)) {
-		response.status(400).send(`Invalid track id ${trackId}.`);
-		return;
-	}
-
+router.post("/tracks", async (request, response) => {
 	const body = request.body;
 	if (typeof body !== "string" || !isSerializedTrack(body)) {
 		response.status(400).send("Invalid track data.");
 		return;
 	}
 
+	const trackId = randomUUIDv7();
 	if (await exists(`${DATA_DIRECTORY}/${trackId}.json`)) {
 		response.status(400).send(`Track with id ${trackId} already exists.`);
 		return;
@@ -84,7 +112,7 @@ router.post("/tracks/:track_id", async (request, response) => {
 
 	writeFile(`${DATA_DIRECTORY}/${trackId}.json`, body, "utf-8").then(
 		() => {
-			response.status(202).send("Track created.");
+			response.status(202).json({ id: trackId });
 		},
 		() => {
 			response.status(500).send("Internal server error");
