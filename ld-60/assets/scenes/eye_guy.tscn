@@ -104,4 +104,3 @@ position = Vector2(568, 306)
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_tkpwu")
 animation = &"zupfen"
-frame_progress = 0.7237044
