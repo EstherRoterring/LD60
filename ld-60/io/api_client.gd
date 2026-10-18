@@ -9,7 +9,7 @@ func fetch_track_data(track_id: String):
 	add_child(http)
 
 	http.request_completed.connect(
-		func(result, status, headers, body):
+		func(result, status, _headers, body):
 			if result == HTTPRequest.RESULT_SUCCESS and status == 200:
 				data_received.emit(body.get_string_from_utf8())
 			else:
