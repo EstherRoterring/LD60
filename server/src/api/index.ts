@@ -1,3 +1,4 @@
+import { randomUUIDv7 } from "bun";
 import { Router } from "express";
 import { exists, readdir, readFile, writeFile } from "fs/promises";
 
@@ -96,19 +97,14 @@ router.get("/tracks/:track_id", (request, response) => {
 	);
 });
 
-router.post("/tracks/:track_id", async (request, response) => {
-	const trackId = request.params.track_id;
-	if (!isTrackIdValid(trackId)) {
-		response.status(400).send(`Invalid track id ${trackId}.`);
-		return;
-	}
-
+router.post("/tracks", async (request, response) => {
 	const body = request.body;
 	if (typeof body !== "string" || !isSerializedTrack(body)) {
 		response.status(400).send("Invalid track data.");
 		return;
 	}
 
+	const trackId = randomUUIDv7();
 	if (await exists(`${DATA_DIRECTORY}/${trackId}.json`)) {
 		response.status(400).send(`Track with id ${trackId} already exists.`);
 		return;
@@ -116,7 +112,7 @@ router.post("/tracks/:track_id", async (request, response) => {
 
 	writeFile(`${DATA_DIRECTORY}/${trackId}.json`, body, "utf-8").then(
 		() => {
-			response.status(202).send("Track created.");
+			response.status(202).json({ id: trackId });
 		},
 		() => {
 			response.status(500).send("Internal server error");
