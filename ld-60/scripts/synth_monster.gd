@@ -13,8 +13,7 @@ func _process(delta: float) -> void:
 
 
 func play_music_animation() -> void:
-	print_debug("Playing music animation")
-	pass
+	$DraggableSprite/AnimatedSprite2D.play("default")
 
 
 func play_sound() -> void:

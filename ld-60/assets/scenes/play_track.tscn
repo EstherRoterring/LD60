@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://gdwaw6jrub4d"]
 
-[ext_resource type="Script" uid="uid://dbe28pco2d4gr" path="res://assets/scenes/play_track.gd" id="1_luh4r"]
+[ext_resource type="Script" uid="uid://dbe28pco2d4gr" path="res://scripts/play_track.gd" id="1_luh4r"]
 [ext_resource type="VASynthConfiguration" uid="uid://bq7iotne3th7a" path="res://resources/piano_synth_configuration.tres" id="2_wyg12"]
 
 [node name="Node2D" type="Node2D" unique_id=359462611]

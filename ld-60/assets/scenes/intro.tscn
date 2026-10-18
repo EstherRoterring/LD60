@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://l8mlbo5lolrt"]
 
 [ext_resource type="PackedScene" uid="uid://b465b82h0iy7x" path="res://assets/scenes/eye_guy.tscn" id="1_e2c8y"]
-[ext_resource type="Script" uid="uid://5k7uiu6jcw1g" path="res://assets/scenes/intro.gd" id="1_vxlar"]
+[ext_resource type="Script" uid="uid://5k7uiu6jcw1g" path="res://scripts/intro.gd" id="1_vxlar"]
 
 [sub_resource type="Animation" id="Animation_vxlar"]
 length = 0.001
