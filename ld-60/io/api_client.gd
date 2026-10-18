@@ -2,7 +2,7 @@ extends Node
 
 signal data_received(data)
 
-const BASE_URL = "http://localhost:3000/api"
+const BASE_URL = "http://home.liegmanns.de/ld60/api"
 
 func fetch_track_data(track_id: String):
 	var http = HTTPRequest.new()

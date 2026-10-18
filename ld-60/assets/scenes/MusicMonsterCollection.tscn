@@ -1,6 +1,10 @@
 [gd_scene format=3 uid="uid://chjtggsqgk4qb"]
 
-[ext_resource type="Script" uid="uid://t36ts1jnn4h6" path="res://scripts/music_monster_collection.gd" id="1_il344"]
+[sub_resource type="GDScript" id="GDScript_ehqrn"]
+script/source = "extends Node
+
+@export var synthMonsters : Array[SynthMonsterData]
+"
 
 [node name="MusicMonsterCollection" type="Node" unique_id=83800091]
-script = ExtResource("1_il344")
+script = SubResource("GDScript_ehqrn")

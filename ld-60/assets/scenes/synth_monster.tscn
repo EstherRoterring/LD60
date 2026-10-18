@@ -1,0 +1,133 @@
+[gd_scene format=3 uid="uid://da2k3gq02v51n"]
+
+[ext_resource type="Script" uid="uid://cim6lgmbh4t2v" path="res://scripts/synth_monster.gd" id="1_pc5ha"]
+[ext_resource type="Script" uid="uid://cobddku7hmwoc" path="res://scripts/SynthMonsterResource.gd" id="2_2yyqo"]
+[ext_resource type="Script" uid="uid://412i0eihh4pi" path="res://scripts/draggable_sprite.gd" id="3_q1xnm"]
+[ext_resource type="Material" uid="uid://brgqrf8wucgvg" path="res://assets/materials/monster_material.tres" id="4_rx7fs"]
+[ext_resource type="Texture2D" uid="uid://lvap7t8vxsi0" path="res://assets/sprites and animations/Toeny.png" id="5_uimll"]
+
+[sub_resource type="WindPreset" id="WindPreset_q77r6"]
+
+[sub_resource type="Resource" id="Resource_3rtpm"]
+script = ExtResource("2_2yyqo")
+name = "TestMonster"
+synthPreset = SubResource("WindPreset_q77r6")
+metadata/_custom_type_script = "uid://cobddku7hmwoc"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7blep"]
+atlas = ExtResource("5_uimll")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ay74"]
+atlas = ExtResource("5_uimll")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5jwa6"]
+atlas = ExtResource("5_uimll")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e2xi8"]
+atlas = ExtResource("5_uimll")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gvgiw"]
+atlas = ExtResource("5_uimll")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dnhma"]
+atlas = ExtResource("5_uimll")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hjqu5"]
+atlas = ExtResource("5_uimll")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c0o1h"]
+atlas = ExtResource("5_uimll")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sqfxh"]
+atlas = ExtResource("5_uimll")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cd7ni"]
+atlas = ExtResource("5_uimll")
+region = Rect2(288, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lf46u"]
+atlas = ExtResource("5_uimll")
+region = Rect2(320, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t64h5"]
+atlas = ExtResource("5_uimll")
+region = Rect2(352, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hnd7g"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7blep")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ay74")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5jwa6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e2xi8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gvgiw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dnhma")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hjqu5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c0o1h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sqfxh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cd7ni")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lf46u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t64h5")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 15.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_q77r6"]
+radius = 9.0
+height = 28.0
+
+[node name="SynthMonster" type="Node" unique_id=130309528]
+script = ExtResource("1_pc5ha")
+data = SubResource("Resource_3rtpm")
+metadata/_custom_type_script = "uid://cim6lgmbh4t2v"
+
+[node name="DraggableSprite" type="Area2D" parent="." unique_id=343549944]
+position = Vector2(78, 68)
+script = ExtResource("3_q1xnm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="DraggableSprite" unique_id=775967568]
+material = ExtResource("4_rx7fs")
+sprite_frames = SubResource("SpriteFrames_hnd7g")
+frame = 7
+frame_progress = 0.703137
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DraggableSprite" unique_id=1093783211]
+position = Vector2(0, 1)
+shape = SubResource("CapsuleShape2D_q77r6")
+
+[connection signal="dragged_over_trigger" from="DraggableSprite" to="." method="_on_draggable_sprite_dragged_over_trigger"]
+[connection signal="mouse_entered" from="DraggableSprite" to="DraggableSprite" method="_on_mouse_entered"]

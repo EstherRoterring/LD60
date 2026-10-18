@@ -1,0 +1,10 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://brgqrf8wucgvg"]
+
+[ext_resource type="Shader" uid="uid://df46x1m5jf624" path="res://shaders/monster_material.gdshader" id="1_2ugtg"]
+[ext_resource type="Texture2D" uid="uid://1d6g055x2k3w" path="res://assets/images/ColorTexture.png" id="2_jeqlp"]
+
+[resource]
+resource_local_to_scene = true
+shader = ExtResource("1_2ugtg")
+shader_parameter/pitch_id = 0
+shader_parameter/pitch_colors_texure = ExtResource("2_jeqlp")
