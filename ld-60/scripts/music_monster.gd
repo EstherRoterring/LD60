@@ -1,4 +1,4 @@
-@abstract class_name MusicMonster extends Node
+@abstract class_name MusicMonster extends Node2D
 
 var pitch : int = 0
 var prev_slot : TapeSlot = null # null for monsters picked from bench

@@ -1,0 +1,104 @@
+[gd_resource type="Resource" script_class="SynthMonsterData" format=3 uid="uid://dcbo0jqqp5hkh"]
+
+[ext_resource type="Texture2D" uid="uid://lvap7t8vxsi0" path="res://assets/sprites and animations/Toeny.png" id="1_jmrh2"]
+[ext_resource type="Script" uid="uid://cobddku7hmwoc" path="res://scripts/SynthMonsterResource.gd" id="1_ksc7t"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_senua"]
+atlas = ExtResource("1_jmrh2")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_je6n8"]
+atlas = ExtResource("1_jmrh2")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v2gh8"]
+atlas = ExtResource("1_jmrh2")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xlw34"]
+atlas = ExtResource("1_jmrh2")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_52brh"]
+atlas = ExtResource("1_jmrh2")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dcchr"]
+atlas = ExtResource("1_jmrh2")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oms7u"]
+atlas = ExtResource("1_jmrh2")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rl1uj"]
+atlas = ExtResource("1_jmrh2")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7yiks"]
+atlas = ExtResource("1_jmrh2")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ijq3j"]
+atlas = ExtResource("1_jmrh2")
+region = Rect2(288, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_03yhp"]
+atlas = ExtResource("1_jmrh2")
+region = Rect2(320, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wsarj"]
+atlas = ExtResource("1_jmrh2")
+region = Rect2(352, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jmrh2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_senua")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_je6n8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v2gh8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xlw34")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_52brh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dcchr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oms7u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rl1uj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7yiks")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ijq3j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_03yhp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wsarj")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[resource]
+script = ExtResource("1_ksc7t")
+name = "piano"
+soundFrame = 3
+animation = SubResource("SpriteFrames_jmrh2")
+default_pitch = 1
+metadata/_custom_type_script = "uid://cobddku7hmwoc"

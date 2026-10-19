@@ -4,19 +4,60 @@
 [ext_resource type="PackedScene" uid="uid://gdwaw6jrub4d" path="res://assets/scenes/play_track.tscn" id="1_lwufx"]
 [ext_resource type="Texture2D" uid="uid://dwka55ufcjwiw" path="res://assets/sprites and animations/TapeSpritesheet.png" id="2_ow4v7"]
 [ext_resource type="Texture2D" uid="uid://dplk15mj2tcbd" path="res://assets/sprites and animations/PlayerWithWindow1.png" id="3_lwufx"]
+[ext_resource type="Script" uid="uid://b3nnv3wn5yte3" path="res://scripts/monster_spawner.gd" id="5_ngxxl"]
+[ext_resource type="Script" uid="uid://cobddku7hmwoc" path="res://scripts/SynthMonsterResource.gd" id="6_l3nmc"]
+[ext_resource type="Resource" uid="uid://6yeq1hcfaxmq" path="res://resources/amo.tres" id="7_p8ybu"]
+[ext_resource type="Resource" uid="uid://cim0varg0g3j5" path="res://resources/klest.tres" id="8_wdwci"]
+[ext_resource type="Resource" uid="uid://i1hwxlwhkrsy" path="res://resources/toeny.tres" id="9_sx041"]
+[ext_resource type="Resource" uid="uid://dcbo0jqqp5hkh" path="res://resources/piano.tres" id="10_l3nmc"]
 
 [sub_resource type="GDScript" id="GDScript_lwufx"]
 script/source = "extends Node2D
 
+@onready var monsters_container: Node2D = $Monsters
+@onready var monster_spawner = $MonsterSpawner
 
-# Called when the node enters the scene tree for the first time.
+const START_POSITION := Vector2(75, 45)
+const MONSTER_SPACING := 35.0
+
 func _ready() -> void:
-	pass # Replace with function body.
+	$Track.track_ready.connect(_on_track_ready)
 
+func _on_track_ready() -> void:
+	print('track ready')
+	spawn_all_monsters(monsters_container)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func spawn_all_monsters(monster_container: Node2D) -> void:
+	var track: Track = $Track.track
+
+	if track == null:
+		push_warning(\"Track ist noch nicht geladen.\")
+		return
+
+	for time in range(track.length):
+		var notes = track.getMonstersAndPitchbyTime(time)
+
+		for note in notes:
+			var monster_name: String = note[\"monster\"]
+			var pitch: int = note[\"pitch\"]
+
+			var monster: MusicMonster = monster_spawner.spawn_music_monster( monster_name, false)
+			print(\"Spawn-Ergebnis: \", monster)
+			
+			if monster == null:
+				continue
+
+			monster.reparent(monster_container)
+
+			# Jeder Zeitpunkt bekommt eine eigene Spalte.
+			monster.position = START_POSITION - Vector2(time * MONSTER_SPACING, 0)
+			print(
+				\"Monster: \", monster.name,
+				\" | Position: \", monster.position,
+				\" | Sichtbar: \", monster.visible
+			)
+			monster.pitch = pitch
+			monster.change_color_to_pitch()
 "
 
 [node name="PlayerScene" type="Node2D" unique_id=1309657314]
@@ -34,8 +75,14 @@ texture = ExtResource("2_ow4v7")
 region_enabled = true
 region_rect = Rect2(0, 91.45441, 257.95868, 43.636414)
 
+[node name="Monsters" type="Node2D" parent="." unique_id=58071632]
+
+[node name="MonsterSpawner" type="Node" parent="." unique_id=2026637767]
+script = ExtResource("5_ngxxl")
+available_synth_monsters = Array[ExtResource("6_l3nmc")]([ExtResource("7_p8ybu"), ExtResource("8_wdwci"), ExtResource("9_sx041"), ExtResource("10_l3nmc")])
+metadata/_custom_type_script = "uid://b3nnv3wn5yte3"
+
 [node name="Foreground" type="Sprite2D" parent="." unique_id=403462357]
-top_level = true
 position = Vector2(160, 90)
 texture = ExtResource("3_lwufx")
 
@@ -45,4 +92,5 @@ offset_top = -29.0
 offset_right = 62.0
 offset_bottom = -18.0
 
+[connection signal="button_down" from="Foreground/Button" to="." method="_on_play_button_down"]
 [connection signal="button_down" from="Foreground/Button" to="Track" method="_on_play_button_down"]

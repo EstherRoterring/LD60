@@ -1,18 +1,9 @@
 [gd_scene format=3 uid="uid://da2k3gq02v51n"]
 
 [ext_resource type="Script" uid="uid://cim6lgmbh4t2v" path="res://scripts/synth_monster.gd" id="1_pc5ha"]
-[ext_resource type="Script" uid="uid://cobddku7hmwoc" path="res://scripts/SynthMonsterResource.gd" id="2_2yyqo"]
 [ext_resource type="Script" uid="uid://412i0eihh4pi" path="res://scripts/draggable_sprite.gd" id="3_q1xnm"]
 [ext_resource type="Material" uid="uid://brgqrf8wucgvg" path="res://assets/materials/monster_material.tres" id="4_rx7fs"]
 [ext_resource type="Texture2D" uid="uid://lvap7t8vxsi0" path="res://assets/sprites and animations/Toeny.png" id="5_uimll"]
-
-[sub_resource type="WindPreset" id="WindPreset_q77r6"]
-
-[sub_resource type="Resource" id="Resource_3rtpm"]
-script = ExtResource("2_2yyqo")
-name = "TestMonster"
-synthPreset = SubResource("WindPreset_q77r6")
-metadata/_custom_type_script = "uid://cobddku7hmwoc"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5jwa6"]
 atlas = ExtResource("5_uimll")
@@ -47,10 +38,8 @@ animations = [{
 radius = 9.0
 height = 28.0
 
-[node name="SynthMonster" type="Node" unique_id=130309528]
+[node name="SynthMonster" type="Node2D" unique_id=448358320]
 script = ExtResource("1_pc5ha")
-data = SubResource("Resource_3rtpm")
-metadata/_custom_type_script = "uid://cim6lgmbh4t2v"
 
 [node name="DraggableSprite" type="Area2D" parent="." unique_id=343549944]
 position = Vector2(78, 68)

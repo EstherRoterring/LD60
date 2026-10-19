@@ -1,4 +1,4 @@
-extends Node
+class_name MonsterSpawner extends Node
 
 # monster scene for instantiation
 const synth_monster_scene = preload("res://assets/scenes/synth_monster.tscn")
