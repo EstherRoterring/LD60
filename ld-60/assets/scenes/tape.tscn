@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://b1mvar663mno1" path="res://scripts/tape.gd" id="1_7yeak"]
 [ext_resource type="Texture2D" uid="uid://dwka55ufcjwiw" path="res://assets/sprites and animations/TapeSpritesheet.png" id="2_jelrx"]
 [ext_resource type="Texture2D" uid="uid://ctuyojxvji8mf" path="res://assets/sprites and animations/KasetteRad.png" id="3_4we70"]
+[ext_resource type="Script" uid="uid://bpnbk88yaon5b" path="res://assets/scenes/prev_tape.gd" id="4_jtx1k"]
+[ext_resource type="Script" uid="uid://cth61jk34ncll" path="res://assets/scenes/next_tape.gd" id="5_n1g33"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jtx1k"]
 atlas = ExtResource("3_4we70")
@@ -25,7 +27,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_jtx1k")
 }],
 "loop": 0,
-"name": &"default",
+"name": &"rotate",
 "speed": 5.0
 }]
 
@@ -47,11 +49,24 @@ region_rect = Rect2(173.54575, 7.818245, 146.45425, 85.531334)
 [node name="Prev" type="AnimatedSprite2D" parent="Cassette" unique_id=829255802]
 position = Vector2(-44.75, -15.09)
 sprite_frames = SubResource("SpriteFrames_k3qaj")
-frame = 2
-frame_progress = 1.0
+animation = &"rotate"
+script = ExtResource("4_jtx1k")
+
+[node name="Button" type="Button" parent="Cassette/Prev" unique_id=903444966]
+offset_left = -1.25
+offset_top = -4.91
+offset_right = 7.75
+offset_bottom = 5.09
 
 [node name="Next" type="AnimatedSprite2D" parent="Cassette" unique_id=1474317195]
 position = Vector2(-15.75, -15.09)
 sprite_frames = SubResource("SpriteFrames_k3qaj")
-frame = 2
-frame_progress = 1.0
+animation = &"rotate"
+script = ExtResource("5_n1g33")
+
+[node name="Button" type="Button" parent="Cassette/Next" unique_id=1949900927]
+offset_right = 8.0
+offset_bottom = 8.0
+
+[connection signal="button_down" from="Cassette/Prev/Button" to="Cassette/Prev" method="_on_button_down"]
+[connection signal="button_down" from="Cassette/Next/Button" to="Cassette/Next" method="_on_button_button_down"]

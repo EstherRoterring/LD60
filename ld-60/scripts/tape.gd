@@ -65,6 +65,7 @@ func scroll_to_next_segment() -> void:
 		var newRealSlot =  i + (current_segment * 8)
 		var newMonsters = current_track.getMonstersAndPitchbyTime(newRealSlot)
 		set_current_monsters(newMonsters, i)
+	print('nextSec')
 		
 		
 	
@@ -83,12 +84,13 @@ func scroll_to_prev_segment() -> void:
 			#save monster to Track
 				#add_note(instrument: String, time: int, pitch: int)
 			current_track.add_note(m.name, realSlot, m.pitch)
-		#delete monsters from UI and Load Monsteri+8
+		#delete monsters from UI and Load Monsters i-8
 		current_segment = current_segment - 1
 		var newRealSlot =  i + (current_segment * 8)
 		var newMonsters = current_track.getMonstersAndPitchbyTime(newRealSlot)
 		set_current_monsters(newMonsters, i)
-	#Load Monsters i-8
+	print('prevSec')
+	
 	
 #should return current visible monsters as Array[TapeSlot]
 func get_current_monsters() -> Array:
