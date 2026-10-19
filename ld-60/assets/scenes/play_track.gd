@@ -13,8 +13,7 @@ var last_played_step: int = -1
 
 
 func _ready() -> void:
-	API.fetch_track_data("sample01")
-	API.data_received.connect(parse_track)
+	track = TrackLibrary.load_track(TrackLibrary.activeTrack)
 	
 	synth = AudioSynthPlayer.new()
 	synth.configuration = sound

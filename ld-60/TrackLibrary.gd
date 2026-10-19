@@ -13,21 +13,25 @@ var activeTrack : String
 # all tracks are stored in-memory
 var local_tracks : Dictionary[String, Track]
 
+
 func _enter_tree() -> void:
 	activeTrack = ""
+	load_library()
 	
 
-func save_track(name: String, track : Track, allow_overwrite = false):
+func save_track(name: String, track : Track, allow_overwrite = true):
 	if local_tracks.has(name) and not allow_overwrite:
 		return
 	local_tracks[name] = track
 
 
-func load_track(name : String):
+func load_track(name : String) -> Track:
 	if local_tracks.has(name):
 		activeTrack = name
+		return local_tracks.get(name)
 	else:
 		activeTrack = DEFAULT_TRACK_NAME
+		return Track.new()
 
 
 # WARNING: LOADING AND SAVING IS VIBECODED

@@ -10,12 +10,16 @@ extends Node2D
 
 var current_track : Track
 var current_segment : int 	#0: 0-7, 1: 8-15 ...
+var synth 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	current_segment = 0
 	initialize_all_slots()
 	current_track = TrackLibrary.load_track(TrackLibrary.activeTrack)
+	
+	synth = AudioSynthPlayer.new()
+	add_child(synth)
 	
 func initialize_all_slots() -> void:
 	for slot_id in len(current_slots):
@@ -89,3 +93,11 @@ func scroll_to_prev_segment() -> void:
 func start_preview_play() -> void:
 	MonsterDragManager.dragging_enabled = false
 	pass
+
+
+func _on_save_button_button_down() -> void:
+	var track_name : String = $"../SaveTrackUI/NameField".text
+	if track_name.is_empty():
+		return
+	# selber schuld wer überschreibt!
+	TrackLibrary.save_track(track_name, current_track, true)
