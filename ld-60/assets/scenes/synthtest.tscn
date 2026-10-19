@@ -13,9 +13,11 @@ func initialize_synth() -> void:
 	synth.configuration = sound
 	
 func _on_button_pressed() -> void:
-	"
+	
+"
 
-[sub_resource type="SynthAudioStream" id="SynthAudioStream_s6ogt"]
+[sub_resource type="SynthAudioStream" id="SynthAudioStream_rj22v"]
+mix_rate = 48000.0
 
 [node name="Synthtest" type="Node2D" unique_id=1176553388]
 script = SubResource("GDScript_rj22v")
@@ -29,6 +31,7 @@ script = ExtResource("2_s6ogt")
 metadata/_custom_type_script = "uid://kab7n84x5yvd"
 
 [node name="AudioSynthPlayer" type="AudioSynthPlayer" parent="SynthPlayer" unique_id=341267849]
-stream = SubResource("SynthAudioStream_s6ogt")
+stream = SubResource("SynthAudioStream_rj22v")
+stream_paused = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SynthPlayer" unique_id=817260815]

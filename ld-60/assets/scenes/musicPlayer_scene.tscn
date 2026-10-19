@@ -1,9 +1,48 @@
 [gd_scene format=3 uid="uid://dkgj21iqua4pj"]
 
 [ext_resource type="Texture2D" uid="uid://cncok8cokpw0y" path="res://assets/images/Player1.png" id="1_fk7w6"]
+[ext_resource type="PackedScene" uid="uid://gdwaw6jrub4d" path="res://assets/scenes/play_track.tscn" id="1_lwufx"]
+[ext_resource type="Texture2D" uid="uid://dwka55ufcjwiw" path="res://assets/sprites and animations/TapeSpritesheet.png" id="2_ow4v7"]
+[ext_resource type="Texture2D" uid="uid://dplk15mj2tcbd" path="res://assets/sprites and animations/PlayerWithWindow1.png" id="3_lwufx"]
+
+[sub_resource type="GDScript" id="GDScript_lwufx"]
+script/source = "extends Node2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
 
 [node name="PlayerScene" type="Node2D" unique_id=1309657314]
+script = SubResource("GDScript_lwufx")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=403462357]
+[node name="Track" parent="." unique_id=359462611 instance=ExtResource("1_lwufx")]
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1874793441]
 position = Vector2(160, 90)
 texture = ExtResource("1_fk7w6")
+
+[node name="Tape2" type="Sprite2D" parent="." unique_id=1055218016]
+position = Vector2(160, 127)
+texture = ExtResource("2_ow4v7")
+region_enabled = true
+region_rect = Rect2(0, 91.45441, 257.95868, 43.636414)
+
+[node name="Foreground" type="Sprite2D" parent="." unique_id=403462357]
+top_level = true
+position = Vector2(160, 90)
+texture = ExtResource("3_lwufx")
+
+[node name="Button" type="Button" parent="Foreground" unique_id=1481267578]
+offset_left = 46.0
+offset_top = -29.0
+offset_right = 62.0
+offset_bottom = -18.0
+
+[connection signal="button_down" from="Foreground/Button" to="Track" method="_on_play_button_down"]

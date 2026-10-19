@@ -10,6 +10,7 @@ var synth: AudioSynthPlayer
 
 var play_time: float = 0
 var last_played_step: int = -1
+var is_playing: bool = false
 
 
 func _ready() -> void:
@@ -21,7 +22,7 @@ func _ready() -> void:
 	add_child(synth)
 
 func _process(delta: float) -> void:
-	if track == null:
+	if track == null or not is_playing or track.length <= 0:
 		return
 
 	play_time += delta
@@ -44,3 +45,7 @@ func play_note(pitch: int, duration: float):
 
 func parse_track(data: String):
 	track = Track.deserialize(data)
+
+#start playing
+func _on_play_button_down() -> void:
+	is_playing = true

@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://b1mvar663mno1" path="res://scripts/tape.gd" id="1_7yeak"]
 [ext_resource type="Texture2D" uid="uid://dwka55ufcjwiw" path="res://assets/sprites and animations/TapeSpritesheet.png" id="2_jelrx"]
 [ext_resource type="Texture2D" uid="uid://ctuyojxvji8mf" path="res://assets/sprites and animations/KasetteRad.png" id="3_4we70"]
-[ext_resource type="Script" uid="uid://bpnbk88yaon5b" path="res://assets/scenes/prev_tape.gd" id="4_jtx1k"]
-[ext_resource type="Script" uid="uid://cth61jk34ncll" path="res://assets/scenes/next_tape.gd" id="5_n1g33"]
+[ext_resource type="Script" uid="uid://bpnbk88yaon5b" path="res://scripts/prev_tape.gd" id="4_jtx1k"]
+[ext_resource type="Script" uid="uid://cth61jk34ncll" path="res://scripts/next_tape.gd" id="5_n1g33"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jtx1k"]
 atlas = ExtResource("3_4we70")
