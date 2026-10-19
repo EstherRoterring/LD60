@@ -4,9 +4,14 @@
 [ext_resource type="Script" uid="uid://cobddku7hmwoc" path="res://scripts/SynthMonsterResource.gd" id="2_3kv8c"]
 [ext_resource type="Resource" uid="uid://6yeq1hcfaxmq" path="res://resources/amo.tres" id="3_yja5h"]
 [ext_resource type="Resource" uid="uid://i1hwxlwhkrsy" path="res://resources/toeny.tres" id="4_uip5b"]
+[ext_resource type="Resource" uid="uid://cmiii3qifgiwf" path="res://resources/kabi.tres" id="5_cxp4y"]
 [ext_resource type="Resource" uid="uid://cim0varg0g3j5" path="res://resources/klest.tres" id="5_n4sl4"]
+[ext_resource type="Resource" uid="uid://c75nw7mobwg6g" path="res://resources/flo.tres" id="6_xh7mc"]
+[ext_resource type="Resource" uid="uid://bcmy8jrf7ugr4" path="res://resources/glogo.tres" id="8_jtyqk"]
+[ext_resource type="Resource" uid="uid://bd2u5r2ipialo" path="res://resources/eyeeyeeye.tres" id="9_xh7mc"]
+[ext_resource type="Resource" uid="uid://qxs2yw7alu8t" path="res://resources/pho.tres" id="10_jtyqk"]
 
 [node name="MonsterSpawner" type="Node" unique_id=1212346738]
 script = ExtResource("1_lbjd4")
-available_synth_monsters = Array[ExtResource("2_3kv8c")]([ExtResource("3_yja5h"), ExtResource("4_uip5b"), ExtResource("5_n4sl4")])
+available_synth_monsters = Array[ExtResource("2_3kv8c")]([ExtResource("3_yja5h"), ExtResource("5_n4sl4"), ExtResource("5_cxp4y"), ExtResource("6_xh7mc"), ExtResource("4_uip5b"), ExtResource("8_jtyqk"), ExtResource("9_xh7mc"), ExtResource("10_jtyqk")])
 metadata/_custom_type_script = "uid://b3nnv3wn5yte3"

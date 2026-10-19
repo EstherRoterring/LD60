@@ -17,6 +17,7 @@ func _ready() -> void:
 	current_segment = 0
 	initialize_all_slots()
 	current_track = TrackLibrary.load_track(TrackLibrary.activeTrack)
+	$"../SaveTrackUI/NameField".text = TrackLibrary.activeTrack
 	
 	synth = AudioSynthPlayer.new()
 	add_child(synth)

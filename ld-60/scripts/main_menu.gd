@@ -42,3 +42,7 @@ func zoom_to_position(screen_position: Vector2) -> void:
 	return_tween.tween_property(self, "position", original_position, 0.4)
 
 	await return_tween.finished
+
+
+func _on_sprite_browse_clicked() -> void:
+	SceneTransition.change_scene_to_file("res://Storadge.tscn")

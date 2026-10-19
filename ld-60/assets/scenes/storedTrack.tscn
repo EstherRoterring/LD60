@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://t7bicfbfpa2o"]
 
-[ext_resource type="Texture2D" uid="uid://by02ixbbutrcd" path="res://assets/sprites and animations/Tape.png" id="1_j1uhn"]
+[ext_resource type="Texture2D" uid="uid://rsaelqgita5s" path="res://assets/images/libraryItem.png" id="1_4ov5m"]
 [ext_resource type="Script" uid="uid://dfj1nm56a3p55" path="res://assets/scenes/stored_track.gd" id="2_4ov5m"]
 
 [node name="TextureRect" type="TextureRect" unique_id=1589896107]
-texture = ExtResource("1_j1uhn")
+texture = ExtResource("1_4ov5m")
 expand_mode = 5
 script = ExtResource("2_4ov5m")
 
@@ -14,7 +14,8 @@ layout_mode = 0
 offset_left = 24.0
 offset_top = 9.0
 offset_right = 275.0
-offset_bottom = 45.0
+offset_bottom = 30.0
 mouse_filter = 1
+theme_override_font_sizes/font_size = 9
 text = "Track01
 "

@@ -10,6 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://ec7kyx15h36e" path="res://assets/sprites and animations/Monster/KABI.thumbnail.png" id="6_altuk"]
 [ext_resource type="Texture2D" uid="uid://bm1n3srqtif23" path="res://assets/sprites and animations/Monster/Glogo32.thumbnail.png" id="7_altuk"]
 [ext_resource type="Texture2D" uid="uid://k58d2jqog4g1" path="res://assets/sprites and animations/Monster/TOENY.thumbnail.png" id="8_a4xx2"]
+[ext_resource type="Texture2D" uid="uid://dh6xa4x7uujp" path="res://assets/sprites and animations/Monster/eyeeyeeye.thumbnail.png" id="11_v0joc"]
+[ext_resource type="Texture2D" uid="uid://c5flbrojjd3jv" path="res://assets/sprites and animations/Monster/PFO.thumbnail.png" id="12_0jmtk"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0jmtk"]
 resource_local_to_scene = true
@@ -45,6 +47,18 @@ shader_parameter/pitch_colors_texure = ExtResource("3_v0joc")
 resource_local_to_scene = true
 shader = ExtResource("2_abf88")
 shader_parameter/pitch_id = 5
+shader_parameter/pitch_colors_texure = ExtResource("3_v0joc")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_v0joc"]
+resource_local_to_scene = true
+shader = ExtResource("2_abf88")
+shader_parameter/pitch_id = 6
+shader_parameter/pitch_colors_texure = ExtResource("3_v0joc")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rrevx"]
+resource_local_to_scene = true
+shader = ExtResource("2_abf88")
+shader_parameter/pitch_id = 7
 shader_parameter/pitch_colors_texure = ExtResource("3_v0joc")
 
 [node name="Inventory" type="Node2D" unique_id=2024570262]
@@ -106,7 +120,7 @@ texture_hover = ExtResource("6_altuk")
 texture_disabled = ExtResource("6_altuk")
 texture_focused = ExtResource("6_altuk")
 script = ExtResource("3_s1ftr")
-monster_name = "Klest"
+monster_name = "Kabi"
 
 [node name="Flo Spawn Button" type="TextureButton" parent="GridContainer" unique_id=1748441383]
 material = SubResource("ShaderMaterial_sayq5")
@@ -132,7 +146,7 @@ texture_hover = ExtResource("8_a4xx2")
 texture_disabled = ExtResource("8_a4xx2")
 texture_focused = ExtResource("8_a4xx2")
 script = ExtResource("3_s1ftr")
-monster_name = "Flo"
+monster_name = "Toeny"
 
 [node name="Glogo Spawn Button" type="TextureButton" parent="GridContainer" unique_id=504956901]
 material = SubResource("ShaderMaterial_wib41")
@@ -147,9 +161,37 @@ texture_focused = ExtResource("7_altuk")
 script = ExtResource("3_s1ftr")
 monster_name = "Glogo"
 
+[node name="Eyeeyeeye Spawn Button" type="TextureButton" parent="GridContainer" unique_id=533537150]
+material = SubResource("ShaderMaterial_v0joc")
+custom_minimum_size = Vector2(32, 32)
+custom_maximum_size = Vector2(32, -1)
+layout_mode = 2
+texture_normal = ExtResource("11_v0joc")
+texture_pressed = ExtResource("11_v0joc")
+texture_hover = ExtResource("11_v0joc")
+texture_disabled = ExtResource("11_v0joc")
+texture_focused = ExtResource("11_v0joc")
+script = ExtResource("3_s1ftr")
+monster_name = "Eyeeyeeye"
+
+[node name="Pho Spawn Button" type="TextureButton" parent="GridContainer" unique_id=1670808575]
+material = SubResource("ShaderMaterial_rrevx")
+custom_minimum_size = Vector2(32, 32)
+custom_maximum_size = Vector2(32, -1)
+layout_mode = 2
+texture_normal = ExtResource("12_0jmtk")
+texture_pressed = ExtResource("12_0jmtk")
+texture_hover = ExtResource("12_0jmtk")
+texture_disabled = ExtResource("12_0jmtk")
+texture_focused = ExtResource("12_0jmtk")
+script = ExtResource("3_s1ftr")
+monster_name = "Pho"
+
 [connection signal="button_down" from="GridContainer/Amo Spawn Button" to="GridContainer/Amo Spawn Button" method="_on_button_down"]
 [connection signal="button_down" from="GridContainer/Klest Spawn Button" to="GridContainer/Klest Spawn Button" method="_on_button_down"]
 [connection signal="button_down" from="GridContainer/Kabi Spawn Button" to="GridContainer/Kabi Spawn Button" method="_on_button_down"]
 [connection signal="button_down" from="GridContainer/Flo Spawn Button" to="GridContainer/Flo Spawn Button" method="_on_button_down"]
 [connection signal="button_down" from="GridContainer/Toeny Spawn Button" to="GridContainer/Toeny Spawn Button" method="_on_button_down"]
 [connection signal="button_down" from="GridContainer/Glogo Spawn Button" to="GridContainer/Glogo Spawn Button" method="_on_button_down"]
+[connection signal="button_down" from="GridContainer/Eyeeyeeye Spawn Button" to="GridContainer/Eyeeyeeye Spawn Button" method="_on_button_down"]
+[connection signal="button_down" from="GridContainer/Pho Spawn Button" to="GridContainer/Pho Spawn Button" method="_on_button_down"]
