@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bpi1i5axgd5v7" path="res://assets/images/title_recorder.png" id="2_u804d"]
 [ext_resource type="Texture2D" uid="uid://vnfdypnxhk86" path="res://assets/images/title_records.png" id="4_c1eu8"]
 [ext_resource type="Texture2D" uid="uid://byh6d166ntrlm" path="res://assets/images/title_credits.png" id="5_1l0v7"]
-[ext_resource type="Texture2D" uid="uid://doravxy1wol85" path="res://assets/images/title_settings.png" id="6_nory3"]
+[ext_resource type="Texture2D" uid="uid://cg0er0imsu712" path="res://assets/images/title_exit.png" id="8_jrfyc"]
 [ext_resource type="PackedScene" uid="uid://b465b82h0iy7x" path="res://assets/scenes/eye_guy.tscn" id="9_an4tj"]
 [ext_resource type="Texture2D" uid="uid://bjq4xdborjhi0" path="res://assets/images/exit_button.png" id="10_ka3ux"]
 [ext_resource type="Script" uid="uid://de1lxd1jd0j8v" path="res://assets/scenes/exit_button.gd" id="11_jrfyc"]
@@ -68,15 +68,16 @@ offset_bottom = -58.0
 theme = ExtResource("2_kj6rs")
 text = "Credits"
 
-[node name="Sprite_Settings" type="Sprite2D" parent="Container" unique_id=1444327271]
-visible = false
-texture = ExtResource("6_nory3")
+[node name="Sprite_Exit" type="Sprite2D" parent="Container" unique_id=1444327271]
+unique_name_in_owner = true
+texture = ExtResource("8_jrfyc")
+script = ExtResource("2_t6dbj")
 
-[node name="Label" type="Label" parent="Container/Sprite_Settings" unique_id=2120089374]
-offset_left = -5.0
-offset_top = 67.0
-offset_right = 67.0
-offset_bottom = 90.0
+[node name="Label" type="Label" parent="Container/Sprite_Exit" unique_id=2120089374]
+offset_left = 109.0
+offset_top = -65.0
+offset_right = 181.0
+offset_bottom = -42.0
 theme = ExtResource("2_kj6rs")
 text = "Settings"
 
@@ -86,6 +87,7 @@ position = Vector2(-130, -34)
 scale = Vector2(0.3, 0.3)
 
 [node name="ExitButton" type="TextureButton" parent="." unique_id=1260365940]
+visible = false
 offset_left = 297.0
 offset_top = 2.0
 offset_right = 337.0
@@ -97,4 +99,5 @@ script = ExtResource("11_jrfyc")
 
 [connection signal="clicked" from="Container/Sprite_Compose" to="." method="load_game"]
 [connection signal="clicked" from="Container/Sprite_Browse" to="." method="_on_sprite_browse_clicked"]
+[connection signal="clicked" from="Container/Sprite_Exit" to="." method="quit"]
 [connection signal="button_down" from="ExitButton" to="ExitButton" method="_on_button_down"]
