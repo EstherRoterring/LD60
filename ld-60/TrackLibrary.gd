@@ -23,6 +23,7 @@ func save_track(name: String, track : Track, allow_overwrite = true):
 	if local_tracks.has(name) and not allow_overwrite:
 		return
 	local_tracks[name] = track
+	print_debug(local_tracks)
 
 
 func load_track(name : String) -> Track:

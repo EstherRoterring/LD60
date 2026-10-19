@@ -157,6 +157,7 @@ texture = ExtResource("1_fk7w6")
 
 [node name="Foreground" type="Sprite2D" parent="." unique_id=403462357]
 top_level = true
+z_index = 2
 position = Vector2(160, 90)
 texture = ExtResource("3_lwufx")
 
@@ -187,6 +188,7 @@ metadata/_custom_type_script = "uid://b3nnv3wn5yte3"
 
 [node name="TextureButton" type="TextureButton" parent="." unique_id=766073457]
 top_level = true
+z_index = 3
 offset_right = 40.0
 offset_bottom = 40.0
 texture_normal = ExtResource("11_p8ybu")

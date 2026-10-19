@@ -96,4 +96,5 @@ texture_hover = ExtResource("10_ka3ux")
 script = ExtResource("11_jrfyc")
 
 [connection signal="clicked" from="Container/Sprite_Compose" to="." method="load_game"]
+[connection signal="clicked" from="Container/Sprite_Browse" to="." method="_on_sprite_browse_clicked"]
 [connection signal="button_down" from="ExitButton" to="ExitButton" method="_on_button_down"]

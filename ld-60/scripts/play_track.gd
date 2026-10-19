@@ -16,18 +16,13 @@ var is_playing: bool = false
 
 
 func _ready() -> void:
-	API.track_data_result.connect(parse_track)
-	API.fetch_track_data("sample01")
-
+	track = TrackLibrary.load_track(TrackLibrary.activeTrack)
+	print("Track geladen: ", track.instruments.keys())
+	track_ready.emit()
+	
 	synth = AudioSynthPlayer.new()
 	synth.configuration = sound
 	add_child(synth)
-
-
-func parse_track(data: String) -> void:
-	track = Track.deserialize(data)
-	print("Track geladen: ", track.instruments.keys())
-	track_ready.emit()
 
 
 func start_playback() -> void:
