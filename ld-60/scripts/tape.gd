@@ -55,7 +55,26 @@ func scroll_to_next_segment() -> void:
 		
 	
 func scroll_to_prev_segment() -> void:
-	pass
+	#check if exists
+	if current_segment == 0 :
+		printerr('doesnt exist')
+		return
+	#save current Monsters
+	#Schleife über 8 Monster-slots
+	for i in range(8):
+		#Schleife über Monster in dem slot
+		for j in current_monsters[i]: 
+			var m = current_monsters[i][j]
+			var realSlot = i + (current_segment * 8)
+			#save monster to Track
+				#add_note(instrument: String, time: int, pitch: int)
+			current_track.add_note(m.name, realSlot, m.pitch)
+		#delete monsters from UI and Load Monsteri+8
+		current_segment = current_segment - 1
+		var newRealSlot =  i + (current_segment * 8)
+		var newMonsters = current_track.getMonstersAndPitchbyTime(newRealSlot)
+		set_current_monsters(newMonsters, i)
+	#Load Monsters i-8
 	
 #should return current visible monsters as Array[TapeSlot]
 func get_current_monsters() -> Array:
