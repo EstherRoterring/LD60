@@ -114,5 +114,5 @@ script = ExtResource("1_k3dti")
 monster_name = "Kabi"
 soundFrame = 6
 animation = SubResource("SpriteFrames_k3dti")
-default_pitch = 8
+default_pitch = 2
 metadata/_custom_type_script = "uid://cobddku7hmwoc"

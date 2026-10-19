@@ -100,4 +100,5 @@ script = ExtResource("1_e3cfv")
 monster_name = "Glogo"
 soundFrame = 5
 animation = SubResource("SpriteFrames_7p7qi")
+default_pitch = 5
 metadata/_custom_type_script = "uid://cobddku7hmwoc"

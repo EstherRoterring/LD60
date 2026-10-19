@@ -100,5 +100,5 @@ script = ExtResource("1_ksc7t")
 monster_name = "piano"
 soundFrame = 3
 animation = SubResource("SpriteFrames_jmrh2")
-default_pitch = 1
+default_pitch = 6
 metadata/_custom_type_script = "uid://cobddku7hmwoc"

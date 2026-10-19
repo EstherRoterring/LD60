@@ -114,4 +114,5 @@ script = ExtResource("1_y1ydf")
 monster_name = "Klest"
 soundFrame = 7
 animation = SubResource("SpriteFrames_key5k")
+default_pitch = 1
 metadata/_custom_type_script = "uid://cobddku7hmwoc"

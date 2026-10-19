@@ -93,5 +93,5 @@ script = ExtResource("1_i0boa")
 monster_name = "Flo"
 soundFrame = 5
 animation = SubResource("SpriteFrames_ymvj2")
-default_pitch = 4
+default_pitch = 3
 metadata/_custom_type_script = "uid://cobddku7hmwoc"

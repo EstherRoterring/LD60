@@ -68,5 +68,4 @@ monster_name = "Amo"
 synthPreset = SubResource("WindPreset_0vpvg")
 soundFrame = 3
 animation = SubResource("SpriteFrames_w76dg")
-default_pitch = 1
 metadata/_custom_type_script = "uid://cobddku7hmwoc"

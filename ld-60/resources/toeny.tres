@@ -100,4 +100,5 @@ script = ExtResource("1_njnqj")
 monster_name = "Toeny"
 soundFrame = 3
 animation = SubResource("SpriteFrames_ye08e")
+default_pitch = 4
 metadata/_custom_type_script = "uid://cobddku7hmwoc"
