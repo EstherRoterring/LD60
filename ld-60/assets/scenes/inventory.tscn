@@ -1,20 +1,17 @@
 [gd_scene format=3 uid="uid://cvlfrrgrryens"]
 
 [ext_resource type="Texture2D" uid="uid://by02ixbbutrcd" path="res://assets/sprites and animations/Tape.png" id="1_2sjf0"]
-[ext_resource type="Texture2D" uid="uid://b48udonpqxynb" path="res://assets/sprites and animations/Panel.png" id="2_rm8x4"]
-[ext_resource type="PackedScene" uid="uid://b0qhwbik48ont" path="res://assets/scenes/monster01.tscn" id="3_rm8x4"]
-[ext_resource type="Script" uid="uid://dnug5wdypwof8" path="res://scripts/panel.gd" id="3_s1ftr"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k3qaj"]
-texture = ExtResource("2_rm8x4")
+[ext_resource type="Material" uid="uid://brgqrf8wucgvg" path="res://assets/materials/monster_material.tres" id="2_s1ftr"]
+[ext_resource type="Texture2D" uid="uid://dfgnv8in30ooe" path="res://assets/sprites and animations/AMO.png" id="3_mrswc"]
+[ext_resource type="Script" uid="uid://dnug5wdypwof8" path="res://scripts/spawn_button.gd" id="3_s1ftr"]
 
 [node name="Inventory" type="Node2D" unique_id=2024570262]
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=1358782276]
+[node name="Backgound" type="TextureRect" parent="." unique_id=1358782276]
 offset_left = 2.0
-offset_top = 134.0
+offset_top = 137.0
 offset_right = 319.0
-offset_bottom = 174.0
+offset_bottom = 177.0
 texture = ExtResource("1_2sjf0")
 expand_mode = 2
 
@@ -30,65 +27,13 @@ theme_override_constants/h_separation = 5
 theme_override_constants/v_separation = 4
 columns = 10
 
-[node name="Panel1" type="Panel" parent="GridContainer" unique_id=329872628]
+[node name="Amo Spawn Button" type="TextureButton" parent="GridContainer" unique_id=965284055]
+material = ExtResource("2_s1ftr")
 custom_minimum_size = Vector2(32, 32)
 custom_maximum_size = Vector2(32, -1)
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_k3qaj")
+texture_normal = ExtResource("3_mrswc")
 script = ExtResource("3_s1ftr")
+monster_name = "Amo"
 
-[node name="Icon" parent="GridContainer/Panel1" unique_id=1087966743 instance=ExtResource("3_rm8x4")]
-layout_mode = 1
-offset_left = -1.0
-offset_top = -5.0
-offset_right = -1.0
-offset_bottom = -5.0
-
-[node name="Panel2" type="Panel" parent="GridContainer" unique_id=1105262708]
-custom_minimum_size = Vector2(32, 32)
-custom_maximum_size = Vector2(32, -1)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_k3qaj")
-script = ExtResource("3_s1ftr")
-
-[node name="Panel3" type="Panel" parent="GridContainer" unique_id=713448987]
-custom_minimum_size = Vector2(32, 32)
-custom_maximum_size = Vector2(32, -1)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_k3qaj")
-script = ExtResource("3_s1ftr")
-
-[node name="Panel4" type="Panel" parent="GridContainer" unique_id=1825802080]
-custom_minimum_size = Vector2(32, 32)
-custom_maximum_size = Vector2(32, -1)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_k3qaj")
-script = ExtResource("3_s1ftr")
-
-[node name="Panel5" type="Panel" parent="GridContainer" unique_id=751025900]
-custom_minimum_size = Vector2(32, 32)
-custom_maximum_size = Vector2(32, -1)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_k3qaj")
-script = ExtResource("3_s1ftr")
-
-[node name="Panel6" type="Panel" parent="GridContainer" unique_id=248696863]
-custom_minimum_size = Vector2(32, 32)
-custom_maximum_size = Vector2(32, -1)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_k3qaj")
-script = ExtResource("3_s1ftr")
-
-[node name="Panel7" type="Panel" parent="GridContainer" unique_id=1642327521]
-custom_minimum_size = Vector2(32, 32)
-custom_maximum_size = Vector2(32, -1)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_k3qaj")
-script = ExtResource("3_s1ftr")
-
-[node name="Panel8" type="Panel" parent="GridContainer" unique_id=504818053]
-custom_minimum_size = Vector2(32, 32)
-custom_maximum_size = Vector2(32, -1)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_k3qaj")
-script = ExtResource("3_s1ftr")
+[connection signal="button_down" from="GridContainer/Amo Spawn Button" to="GridContainer/Amo Spawn Button" method="_on_button_down"]

@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://bjjtr40vlhtur"]
+
+[ext_resource type="Script" uid="uid://ct8aboxqxjupu" path="res://scripts/tape_slot.gd" id="1_wl7fd"]
+[ext_resource type="Texture2D" uid="uid://b48udonpqxynb" path="res://assets/sprites and animations/Panel.png" id="2_05noo"]
+[ext_resource type="Texture2D" uid="uid://dwka55ufcjwiw" path="res://assets/sprites and animations/TapeSpritesheet.png" id="3_ldb7h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_khwuv"]
+size = Vector2(25, 50)
+
+[node name="TapeSlot" type="Area2D" unique_id=848623725]
+collision_layer = 2
+script = ExtResource("1_wl7fd")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1688922548]
+texture = ExtResource("2_05noo")
+
+[node name="Border" type="Sprite2D" parent="." unique_id=1746773613]
+modulate = Color(0.05000007, 1, 0, 1)
+texture = ExtResource("3_ldb7h")
+region_enabled = true
+region_rect = Rect2(75.38733, 29.467129, 33.205154, 33.044987)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=284592186]
+position = Vector2(-1, -1.5)
+shape = SubResource("RectangleShape2D_khwuv")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

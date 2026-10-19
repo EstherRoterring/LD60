@@ -5,6 +5,5 @@ func _ready() -> void:
 
 
 func _on_button_down() -> void:
-	$".".play("rotate")
+	play("rotate")
 	$"../..".scroll_to_prev_segment()
-	

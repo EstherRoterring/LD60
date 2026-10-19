@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://ctuyojxvji8mf" path="res://assets/sprites and animations/KasetteRad.png" id="3_4we70"]
 [ext_resource type="Script" uid="uid://bpnbk88yaon5b" path="res://scripts/prev_tape.gd" id="4_jtx1k"]
 [ext_resource type="Script" uid="uid://cth61jk34ncll" path="res://scripts/next_tape.gd" id="5_n1g33"]
+[ext_resource type="PackedScene" uid="uid://bjjtr40vlhtur" path="res://assets/scenes/tape_slot.tscn" id="6_idyos"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jtx1k"]
 atlas = ExtResource("3_4we70")
@@ -31,8 +32,9 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Tape" type="Node2D" unique_id=401317544]
+[node name="Tape" type="Node2D" unique_id=401317544 node_paths=PackedStringArray("current_slots")]
 script = ExtResource("1_7yeak")
+current_slots = [NodePath("TapeSlot"), NodePath("TapeSlot2"), NodePath("TapeSlot3"), NodePath("TapeSlot4"), NodePath("TapeSlot5"), NodePath("TapeSlot6"), NodePath("TapeSlot7"), NodePath("TapeSlot8")]
 
 [node name="Tape" type="Sprite2D" parent="." unique_id=561393659]
 position = Vector2(160, 108)
@@ -53,6 +55,7 @@ animation = &"rotate"
 script = ExtResource("4_jtx1k")
 
 [node name="Button" type="Button" parent="Cassette/Prev" unique_id=903444966]
+modulate = Color(1, 1, 1, 0)
 offset_left = -1.25
 offset_top = -4.91
 offset_right = 7.75
@@ -65,8 +68,36 @@ animation = &"rotate"
 script = ExtResource("5_n1g33")
 
 [node name="Button" type="Button" parent="Cassette/Next" unique_id=1949900927]
-offset_right = 8.0
-offset_bottom = 8.0
+modulate = Color(1, 1, 1, 0)
+offset_left = -0.25
+offset_top = -3.9099998
+offset_right = 7.75
+offset_bottom = 4.09
 
+[node name="TapeSlot" parent="." unique_id=848623725 instance=ExtResource("6_idyos")]
+position = Vector2(20, 108)
+
+[node name="TapeSlot2" parent="." unique_id=747413322 instance=ExtResource("6_idyos")]
+position = Vector2(60, 108)
+
+[node name="TapeSlot3" parent="." unique_id=1389149949 instance=ExtResource("6_idyos")]
+position = Vector2(100, 108)
+
+[node name="TapeSlot4" parent="." unique_id=986694837 instance=ExtResource("6_idyos")]
+position = Vector2(140, 108)
+
+[node name="TapeSlot5" parent="." unique_id=965780884 instance=ExtResource("6_idyos")]
+position = Vector2(180, 108)
+
+[node name="TapeSlot6" parent="." unique_id=1512265917 instance=ExtResource("6_idyos")]
+position = Vector2(220, 108)
+
+[node name="TapeSlot7" parent="." unique_id=151723061 instance=ExtResource("6_idyos")]
+position = Vector2(260, 108)
+
+[node name="TapeSlot8" parent="." unique_id=1803674967 instance=ExtResource("6_idyos")]
+position = Vector2(300, 108)
+
+[connection signal="button_down" from="Cassette/Prev/Button" to="." method="_on_button_button_down"]
 [connection signal="button_down" from="Cassette/Prev/Button" to="Cassette/Prev" method="_on_button_down"]
 [connection signal="button_down" from="Cassette/Next/Button" to="Cassette/Next" method="_on_button_button_down"]

@@ -10,11 +10,10 @@ var length: int = 0
 
 func get_notes_for_instrument(value: String, time: int) -> Array:
 	return instruments.get(value, {}).get(time, [])
-	
-#returns Monster Name and Pitch
-func getMonstersAndPitchbyTime(time: int) -> Array :
-	var result: Array = []
 
+#returns instrument (monster name) and pitch
+func get_instrument_pitch_pairs_at_ime(time: int) -> Array :
+	var result: Array = []
 	for i in instruments:
 		if instruments[i].has(time):
 			for pitch in instruments[i][time]:
@@ -22,11 +21,12 @@ func getMonstersAndPitchbyTime(time: int) -> Array :
 					"monster": i,
 					"pitch": pitch
 				})
-
 	return result
 
 func add_note(instrument: String, time: int, pitch: int):
+	print_debug("adding note with pitch: ", pitch)
 	instruments.get_or_add(instrument, {}).get_or_add(time, []).append(pitch)
+	print_debug(instruments)
 	if (time >= length):
 		length = time + 1
 
@@ -78,6 +78,7 @@ static func serialize(track: Track) -> String:
 				output.voices.get_or_add(instrument, []).append(serialize_note(pitch, time))
 
 	return JSON.stringify(output)
+
 
 static func serialize_note(pitch: int, time: int) -> String:
 	var note: String = NOTES[pitch % 12]

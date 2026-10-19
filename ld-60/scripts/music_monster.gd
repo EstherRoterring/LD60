@@ -1,5 +1,6 @@
 @abstract class_name MusicMonster extends Node2D
 
+var instrument_name : String # == name of the monster
 var pitch : int = 0
 var prev_slot : TapeSlot = null # null for monsters picked from bench
 
@@ -28,14 +29,13 @@ func handle_release_over_trash_bin(_trash : TrashBin):
 	
 func handle_release_over_tape_slot(slot : TapeSlot):
 	if slot == prev_slot:
-		my_draggable_sprite.position = slot.get_position_of_monster(self)
+		my_draggable_sprite.global_position = slot.get_position_of_monster(self)
 		return
 	# remove from old slot
 	if prev_slot != null:
 		prev_slot.remove_music_monster(self)
 	# add to new slot (and set to position the slot gave me)
-	my_draggable_sprite.position = slot.add_music_monster(self)
-	prev_slot = slot
+	my_draggable_sprite.global_position = slot.add_music_monster(self)
 	
 
 func change_color_to_pitch():

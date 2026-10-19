@@ -2,7 +2,7 @@ extends Resource
 
 class_name SynthMonsterData
 
-@export var name : String
+@export var monster_name : String
 # Der Ton
 @export var synthPreset : SynthPreset
 @export var soundFrame : int

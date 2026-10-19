@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://dggwas8jpkd2"]
+
+[ext_resource type="Script" uid="uid://b3nnv3wn5yte3" path="res://scripts/monster_spawner.gd" id="1_lbjd4"]
+[ext_resource type="Script" uid="uid://cobddku7hmwoc" path="res://scripts/SynthMonsterResource.gd" id="2_3kv8c"]
+[ext_resource type="Resource" uid="uid://6yeq1hcfaxmq" path="res://resources/amo.tres" id="3_yja5h"]
+[ext_resource type="Resource" uid="uid://i1hwxlwhkrsy" path="res://resources/toeny.tres" id="4_uip5b"]
+[ext_resource type="Resource" uid="uid://cim0varg0g3j5" path="res://resources/klest.tres" id="5_n4sl4"]
+
+[node name="MonsterSpawner" type="Node" unique_id=1212346738]
+script = ExtResource("1_lbjd4")
+available_synth_monsters = Array[ExtResource("2_3kv8c")]([ExtResource("3_yja5h"), ExtResource("4_uip5b"), ExtResource("5_n4sl4")])
+metadata/_custom_type_script = "uid://b3nnv3wn5yte3"

@@ -97,7 +97,7 @@ animations = [{
 
 [resource]
 script = ExtResource("1_njnqj")
-name = "Toeny"
+monster_name = "Toeny"
 soundFrame = 3
 animation = SubResource("SpriteFrames_ye08e")
 metadata/_custom_type_script = "uid://cobddku7hmwoc"

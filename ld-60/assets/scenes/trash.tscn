@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://u0qleer3nvee"]
+
+[ext_resource type="Script" uid="uid://r4mtpa33le7q" path="res://scripts/trash.gd" id="1_w6eer"]
+[ext_resource type="Texture2D" uid="uid://b48udonpqxynb" path="res://assets/sprites and animations/Panel.png" id="2_p1p6g"]
+[ext_resource type="Texture2D" uid="uid://dwka55ufcjwiw" path="res://assets/sprites and animations/TapeSpritesheet.png" id="3_r3721"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_khwuv"]
+size = Vector2(25, 50)
+
+[node name="Trash" type="Area2D" unique_id=2045366340]
+collision_layer = 2
+script = ExtResource("1_w6eer")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=836069826]
+texture = ExtResource("2_p1p6g")
+
+[node name="HoverImage" type="Sprite2D" parent="." unique_id=538815353]
+modulate = Color(0.05000007, 1, 0, 1)
+texture = ExtResource("3_r3721")
+region_enabled = true
+region_rect = Rect2(75.38733, 29.467129, 33.205154, 33.044987)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=571866922]
+position = Vector2(-1, -1.5)
+shape = SubResource("RectangleShape2D_khwuv")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

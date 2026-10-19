@@ -111,7 +111,7 @@ animations = [{
 
 [resource]
 script = ExtResource("1_y1ydf")
-name = "Klest"
+monster_name = "Klest"
 soundFrame = 7
 animation = SubResource("SpriteFrames_key5k")
 metadata/_custom_type_script = "uid://cobddku7hmwoc"

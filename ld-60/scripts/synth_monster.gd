@@ -35,4 +35,4 @@ func _on_draggable_sprite_dragging_ended(collider) -> void:
 	elif prev_slot == null:
 		straight_into_the_trash()
 	else:
-		my_draggable_sprite.position = prev_slot.get_position_of_monster(self)
+		my_draggable_sprite.global_position = prev_slot.get_position_of_monster(self)

@@ -42,6 +42,7 @@ height = 28.0
 script = ExtResource("1_pc5ha")
 
 [node name="DraggableSprite" type="Area2D" parent="." unique_id=343549944]
+z_index = 1
 position = Vector2(78, 68)
 script = ExtResource("3_q1xnm")
 

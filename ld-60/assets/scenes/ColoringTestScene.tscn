@@ -1,27 +1,28 @@
 [gd_scene format=3 uid="uid://b8cv04ww638xh"]
 
 [ext_resource type="PackedScene" uid="uid://da2k3gq02v51n" path="res://assets/scenes/synth_monster.tscn" id="1_jhj55"]
+[ext_resource type="Script" uid="uid://cobddku7hmwoc" path="res://scripts/SynthMonsterResource.gd" id="2_jhj55"]
+[ext_resource type="Resource" uid="uid://6yeq1hcfaxmq" path="res://resources/amo.tres" id="3_sqfxh"]
+[ext_resource type="Resource" uid="uid://cim0varg0g3j5" path="res://resources/klest.tres" id="4_cd7ni"]
 [ext_resource type="PackedScene" uid="uid://gh81trgswhjs" path="res://assets/scenes/Tape.tscn" id="4_khwuv"]
-[ext_resource type="Script" uid="uid://ct8aboxqxjupu" path="res://scripts/tape_slot.gd" id="5_5jwa6"]
-[ext_resource type="Texture2D" uid="uid://b48udonpqxynb" path="res://assets/sprites and animations/Panel.png" id="5_6ay74"]
 [ext_resource type="Script" uid="uid://cni5312bglolc" path="res://coloring_pot.gd" id="5_7blep"]
+[ext_resource type="Resource" uid="uid://i1hwxlwhkrsy" path="res://resources/toeny.tres" id="5_lf46u"]
 [ext_resource type="Texture2D" uid="uid://rpbk4xqjma7b" path="res://icon.svg" id="5_vbl84"]
-[ext_resource type="Texture2D" uid="uid://dwka55ufcjwiw" path="res://assets/sprites and animations/TapeSpritesheet.png" id="7_6ay74"]
 [ext_resource type="Script" uid="uid://b3nnv3wn5yte3" path="res://scripts/monster_spawner.gd" id="8_5jwa6"]
-[ext_resource type="Script" uid="uid://r4mtpa33le7q" path="res://scripts/trash.gd" id="9_e2xi8"]
+[ext_resource type="PackedScene" uid="uid://bjjtr40vlhtur" path="res://assets/scenes/tape_slot.tscn" id="10_hjqu5"]
+[ext_resource type="PackedScene" uid="uid://u0qleer3nvee" path="res://assets/scenes/trash.tscn" id="11_c0o1h"]
+[ext_resource type="PackedScene" uid="uid://cvlfrrgrryens" path="res://assets/scenes/inventory.tscn" id="14_t64h5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3rtpm"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_khwuv"]
-size = Vector2(25, 50)
 
 [node name="ColoringTestScene" type="Node2D" unique_id=2078247448]
 
 [node name="MonsterSpawner" type="Node" parent="." unique_id=388030531]
 script = ExtResource("8_5jwa6")
-available_synth_monsters = null
+available_synth_monsters = Array[ExtResource("2_jhj55")]([ExtResource("3_sqfxh"), ExtResource("4_cd7ni"), ExtResource("5_lf46u")])
 
 [node name="SynthMonster" parent="." unique_id=130309528 instance=ExtResource("1_jhj55")]
+position = Vector2(26, 5)
 
 [node name="SynthMonster2" parent="." unique_id=1763127153 instance=ExtResource("1_jhj55")]
 
@@ -50,44 +51,12 @@ texture = ExtResource("5_vbl84")
 shape = SubResource("CircleShape2D_3rtpm")
 
 [node name="MusicTape" parent="." unique_id=401317544 instance=ExtResource("4_khwuv")]
+total_number_of_tape_segments = 256
 
-[node name="TapeSlot" type="Area2D" parent="." unique_id=2017800742]
+[node name="TapeSlot" parent="." unique_id=848623725 instance=ExtResource("10_hjqu5")]
 position = Vector2(200, 120)
-collision_layer = 2
-script = ExtResource("5_5jwa6")
 
-[node name="Background" type="Sprite2D" parent="TapeSlot" unique_id=1854674993]
-texture = ExtResource("5_6ay74")
+[node name="Trash" parent="." unique_id=2045366340 instance=ExtResource("11_c0o1h")]
+position = Vector2(286, 138)
 
-[node name="Border" type="Sprite2D" parent="TapeSlot" unique_id=2090783332]
-modulate = Color(0.05000007, 1, 0, 1)
-texture = ExtResource("7_6ay74")
-region_enabled = true
-region_rect = Rect2(75.38733, 29.467129, 33.205154, 33.044987)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TapeSlot" unique_id=1407642711]
-position = Vector2(-1, -1.5)
-shape = SubResource("RectangleShape2D_khwuv")
-
-[node name="Trash" type="Area2D" parent="TapeSlot" unique_id=646468679]
-position = Vector2(86, 18)
-collision_layer = 2
-script = ExtResource("9_e2xi8")
-
-[node name="Background" type="Sprite2D" parent="TapeSlot/Trash" unique_id=1026680697]
-texture = ExtResource("5_6ay74")
-
-[node name="HoverImage" type="Sprite2D" parent="TapeSlot/Trash" unique_id=1111180877]
-modulate = Color(0.05000007, 1, 0, 1)
-texture = ExtResource("7_6ay74")
-region_enabled = true
-region_rect = Rect2(75.38733, 29.467129, 33.205154, 33.044987)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TapeSlot/Trash" unique_id=919039950]
-position = Vector2(-1, -1.5)
-shape = SubResource("RectangleShape2D_khwuv")
-
-[connection signal="mouse_entered" from="TapeSlot" to="TapeSlot" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="TapeSlot" to="TapeSlot" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="TapeSlot/Trash" to="TapeSlot/Trash" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="TapeSlot/Trash" to="TapeSlot/Trash" method="_on_mouse_exited"]
+[node name="Inventory" parent="." unique_id=2024570262 instance=ExtResource("14_t64h5")]

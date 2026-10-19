@@ -16,13 +16,16 @@ func _ready() -> void:
 func get_position_of_monster(monster : MusicMonster) -> Vector2:
 	return monsters.get(monster, Vector2(0,0))
 
-func add_music_monster(monster : MusicMonster) -> Vector2:
+func add_music_monster(monster : MusicMonster, silent : bool = false) -> Vector2:
 	$Border.hide()
 	if monsters.has(monster):
 		return get_position_of_monster(monster)
 	var position_of_new_monster = to_global(Vector2(0,0))
 	monsters.set(monster, position_of_new_monster)
-	stored_monster_signal.emit(monster, id)
+	monster.reparent(self) # make this slot parent of the monster
+	monster.prev_slot = self
+	if not silent:
+		stored_monster_signal.emit(monster, id)
 	return position_of_new_monster
 	
 func remove_music_monster(monster : MusicMonster) -> void:

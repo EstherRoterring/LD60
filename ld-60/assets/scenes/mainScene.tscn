@@ -2,7 +2,9 @@
 
 [ext_resource type="Texture2D" uid="uid://763h83jnrc32" path="res://assets/sprites and animations/Table.png" id="1_im3ye"]
 [ext_resource type="PackedScene" uid="uid://cvlfrrgrryens" path="res://assets/scenes/inventory.tscn" id="2_a55cb"]
-[ext_resource type="PackedScene" uid="uid://gh81trgswhjs" path="res://assets/scenes/tape.tscn" id="3_lldoe"]
+[ext_resource type="PackedScene" uid="uid://gh81trgswhjs" path="res://assets/scenes/Tape.tscn" id="3_lldoe"]
+[ext_resource type="PackedScene" uid="uid://u0qleer3nvee" path="res://assets/scenes/trash.tscn" id="4_llb4w"]
+[ext_resource type="PackedScene" uid="uid://dggwas8jpkd2" path="res://assets/scenes/monster_spawner.tscn" id="5_q43bj"]
 
 [node name="Node2D" type="Node2D" unique_id=1915051101]
 
@@ -13,3 +15,9 @@ texture = ExtResource("1_im3ye")
 [node name="Inventory" parent="." unique_id=2024570262 instance=ExtResource("2_a55cb")]
 
 [node name="Tape" parent="." unique_id=126190304 instance=ExtResource("3_lldoe")]
+total_number_of_tape_segments = 256
+
+[node name="Trash" parent="." unique_id=2045366340 instance=ExtResource("4_llb4w")]
+position = Vector2(23, 22)
+
+[node name="MonsterSpawner" parent="." unique_id=1212346738 instance=ExtResource("5_q43bj")]
