@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c155ydqol1bpt"
-path="res://.godot/imported/AMO.thumbnail.png-c0bc798904da7233361f0e3b72fd7ea3.ctex"
+uid="uid://dfgnv8in30ooe"
+path="res://.godot/imported/AMO.png-dc94c674787d7e75d006c24bcb4205d3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites and animations/AMO.thumbnail.png"
-dest_files=["res://.godot/imported/AMO.thumbnail.png-c0bc798904da7233361f0e3b72fd7ea3.ctex"]
+source_file="res://assets/sprites and animations/Monster/AMO.png"
+dest_files=["res://.godot/imported/AMO.png-dc94c674787d7e75d006c24bcb4205d3.ctex"]
 
 [params]
 
