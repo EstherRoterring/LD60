@@ -12,9 +12,9 @@ texture = ExtResource("2_rm8x4")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1358782276]
 offset_left = 2.0
-offset_top = 138.0
+offset_top = 134.0
 offset_right = 319.0
-offset_bottom = 178.0
+offset_bottom = 174.0
 texture = ExtResource("1_2sjf0")
 expand_mode = 2
 
@@ -39,6 +39,10 @@ script = ExtResource("3_s1ftr")
 
 [node name="Icon" parent="GridContainer/Panel1" unique_id=1087966743 instance=ExtResource("3_rm8x4")]
 layout_mode = 1
+offset_left = -1.0
+offset_top = -5.0
+offset_right = -1.0
+offset_bottom = -5.0
 
 [node name="Panel2" type="Panel" parent="GridContainer" unique_id=1105262708]
 custom_minimum_size = Vector2(32, 32)

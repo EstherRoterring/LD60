@@ -65,7 +65,6 @@ animations = [{
 [resource]
 script = ExtResource("2_vgj1c")
 name = "Amo"
-instrument = "default"
 synthPreset = SubResource("WindPreset_0vpvg")
 soundFrame = 3
 animation = SubResource("SpriteFrames_w76dg")

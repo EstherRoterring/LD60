@@ -2,12 +2,56 @@
 
 [ext_resource type="Script" uid="uid://b1mvar663mno1" path="res://scripts/tape.gd" id="1_7yeak"]
 [ext_resource type="Texture2D" uid="uid://dwka55ufcjwiw" path="res://assets/sprites and animations/TapeSpritesheet.png" id="2_jelrx"]
+[ext_resource type="Texture2D" uid="uid://ctuyojxvji8mf" path="res://assets/sprites and animations/KasetteRad.png" id="3_4we70"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jtx1k"]
+atlas = ExtResource("3_4we70")
+region = Rect2(256, 13, 32, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n1g33"]
+atlas = ExtResource("3_4we70")
+region = Rect2(576, 13, 32, 13)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k3qaj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jtx1k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n1g33")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jtx1k")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Tape" type="Node2D" unique_id=401317544]
 script = ExtResource("1_7yeak")
 
 [node name="Tape" type="Sprite2D" parent="." unique_id=561393659]
-position = Vector2(160, 120)
+position = Vector2(160, 108)
 texture = ExtResource("2_jelrx")
 region_enabled = true
 region_rect = Rect2(0, 93.96534, 320, 35.996758)
+
+[node name="Cassette" type="Sprite2D" parent="." unique_id=778326591]
+position = Vector2(247, 47)
+texture = ExtResource("2_jelrx")
+region_enabled = true
+region_rect = Rect2(173.54575, 7.818245, 146.45425, 85.531334)
+
+[node name="Prev" type="AnimatedSprite2D" parent="Cassette" unique_id=829255802]
+position = Vector2(-44.75, -15.09)
+sprite_frames = SubResource("SpriteFrames_k3qaj")
+frame = 2
+frame_progress = 1.0
+
+[node name="Next" type="AnimatedSprite2D" parent="Cassette" unique_id=1474317195]
+position = Vector2(-15.75, -15.09)
+sprite_frames = SubResource("SpriteFrames_k3qaj")
+frame = 2
+frame_progress = 1.0
