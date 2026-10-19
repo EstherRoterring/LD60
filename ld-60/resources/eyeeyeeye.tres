@@ -1,0 +1,167 @@
+[gd_resource type="Resource" script_class="SynthMonsterData" format=3 uid="uid://bd2u5r2ipialo"]
+
+[ext_resource type="Texture2D" uid="uid://xemj54unn8jl" path="res://assets/sprites and animations/Monster/eyeeyeeye.png" id="1_1274d"]
+[ext_resource type="Script" uid="uid://cobddku7hmwoc" path="res://scripts/SynthMonsterResource.gd" id="1_uji2l"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_323q2"]
+atlas = ExtResource("1_1274d")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jif8i"]
+atlas = ExtResource("1_1274d")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h8hyh"]
+atlas = ExtResource("1_1274d")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0eg0k"]
+atlas = ExtResource("1_1274d")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0cqn2"]
+atlas = ExtResource("1_1274d")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hwbek"]
+atlas = ExtResource("1_1274d")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uwix0"]
+atlas = ExtResource("1_1274d")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kukcx"]
+atlas = ExtResource("1_1274d")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jj10h"]
+atlas = ExtResource("1_1274d")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hg774"]
+atlas = ExtResource("1_1274d")
+region = Rect2(288, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wfdqb"]
+atlas = ExtResource("1_1274d")
+region = Rect2(320, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jauxj"]
+atlas = ExtResource("1_1274d")
+region = Rect2(352, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mu2ky"]
+atlas = ExtResource("1_1274d")
+region = Rect2(384, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p7c2m"]
+atlas = ExtResource("1_1274d")
+region = Rect2(416, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vlyv5"]
+atlas = ExtResource("1_1274d")
+region = Rect2(448, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mkaf4"]
+atlas = ExtResource("1_1274d")
+region = Rect2(480, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f4qrr"]
+atlas = ExtResource("1_1274d")
+region = Rect2(512, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1laeb"]
+atlas = ExtResource("1_1274d")
+region = Rect2(544, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y3rnu"]
+atlas = ExtResource("1_1274d")
+region = Rect2(576, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_efwa1"]
+atlas = ExtResource("1_1274d")
+region = Rect2(608, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_opvpc"]
+atlas = ExtResource("1_1274d")
+region = Rect2(640, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1274d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_323q2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jif8i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h8hyh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0eg0k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0cqn2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hwbek")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uwix0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kukcx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jj10h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hg774")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wfdqb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jauxj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mu2ky")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p7c2m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vlyv5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mkaf4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f4qrr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1laeb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y3rnu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_efwa1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_opvpc")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[resource]
+script = ExtResource("1_uji2l")
+monster_name = "Eyeeyeeye"
+soundFrame = 5
+animation = SubResource("SpriteFrames_1274d")
+default_pitch = 6
+metadata/_custom_type_script = "uid://cobddku7hmwoc"
