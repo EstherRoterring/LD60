@@ -14,9 +14,9 @@ var activeTrack : String
 var local_tracks : Dictionary[String, Track]
 
 
-#func _enter_tree() -> void:
-	#activeTrack = ""
-	#load_library()
+func _enter_tree() -> void:
+	activeTrack = ""
+	load_library()
 	
 
 func save_track(name: String, track : Track, allow_overwrite = true):
