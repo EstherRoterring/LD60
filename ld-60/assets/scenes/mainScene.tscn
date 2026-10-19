@@ -1,94 +1,15 @@
 [gd_scene format=3 uid="uid://bnmhleomltbt1"]
 
-[ext_resource type="Script" uid="uid://bqahyourp6gvh" path="res://assets/scenes/main_scene.gd" id="1_128fa"]
-[ext_resource type="Texture2D" uid="uid://763h83jnrc32" path="res://assets/sprites and animations/Table.png" id="1_im3ye"]
+[ext_resource type="Texture2D" uid="uid://cdryywpuqxohw" path="res://assets/sprites and animations/Scene01Background.png" id="1_crt2f"]
 [ext_resource type="PackedScene" uid="uid://cvlfrrgrryens" path="res://assets/scenes/inventory.tscn" id="2_a55cb"]
-[ext_resource type="PackedScene" uid="uid://chgfghi2ehuts" path="res://assets/scenes/Tape.tscn" id="3_lldoe"]
-[ext_resource type="PackedScene" uid="uid://u0qleer3nvee" path="res://assets/scenes/trash.tscn" id="4_llb4w"]
-[ext_resource type="PackedScene" uid="uid://dggwas8jpkd2" path="res://assets/scenes/monster_spawner.tscn" id="5_q43bj"]
-[ext_resource type="Texture2D" uid="uid://6fdq0ji1kxmb" path="res://assets/images/savebutton_default.png" id="6_c1ps1"]
-[ext_resource type="Texture2D" uid="uid://cq7bd30jhn7r6" path="res://assets/sprites and animations/Tashcan.png" id="6_gsncv"]
-[ext_resource type="Texture2D" uid="uid://x5j61e7hhc27" path="res://assets/images/savebutton_pressed.png" id="7_yovb7"]
-[ext_resource type="Texture2D" uid="uid://c8btxcf3i23o1" path="res://assets/images/savebutton_hovered.png" id="8_ajq5s"]
-[ext_resource type="Texture2D" uid="uid://cscat102eerpv" path="res://assets/images/homeButton.png" id="9_yovb7"]
-[ext_resource type="Texture2D" uid="uid://br2u50h3dogic" path="res://assets/sprites and animations/home.png" id="10_128fa"]
-[ext_resource type="Texture2D" uid="uid://dy6nkhfo6o4hw" path="res://assets/sprites and animations/Front Arrow.png" id="13_j3j8d"]
+[ext_resource type="PackedScene" uid="uid://bmowvvjc83dmu" path="res://assets/scenes/tape.tscn" id="3_lldoe"]
 
-[sub_resource type="GDScript" id="GDScript_ajq5s"]
-script/source = "extends TextureButton
+[node name="Node2D2" type="Node2D" unique_id=1915051101]
 
-
-func _on_button_down() -> void:
-	SceneTransition.change_scene_to_file(\"res://assets/scenes/MainMenu.tscn\")
-"
-
-[node name="Node2D" type="Node2D" unique_id=1915051101]
-script = ExtResource("1_128fa")
-
-[node name="Background" type="Sprite2D" parent="." unique_id=126575879]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=126575879]
 position = Vector2(160, 90)
-texture = ExtResource("1_im3ye")
+texture = ExtResource("1_crt2f")
 
 [node name="Inventory" parent="." unique_id=2024570262 instance=ExtResource("2_a55cb")]
 
 [node name="Tape" parent="." unique_id=126190304 instance=ExtResource("3_lldoe")]
-total_number_of_tape_segments = 256
-
-[node name="Trash" parent="." unique_id=2045366340 instance=ExtResource("4_llb4w")]
-position = Vector2(20, 57.955)
-
-[node name="Sprite2D" type="Sprite2D" parent="Trash" unique_id=102427523]
-texture = ExtResource("6_gsncv")
-
-[node name="MonsterSpawner" parent="." unique_id=1212346738 instance=ExtResource("5_q43bj")]
-
-[node name="SaveTrackUI" type="HBoxContainer" parent="." unique_id=1275498388]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 49.0
-offset_top = 35.0
-offset_right = 166.0
-offset_bottom = 57.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="NameField" type="LineEdit" parent="SaveTrackUI" unique_id=1305110345]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_constants/caret_width = 1
-theme_override_constants/minimum_character_width = 4
-theme_override_font_sizes/font_size = 10
-placeholder_text = "track name"
-max_length = 30
-
-[node name="SaveButton" type="TextureButton" parent="SaveTrackUI" unique_id=917314336]
-layout_mode = 2
-size_flags_vertical = 4
-texture_normal = ExtResource("6_c1ps1")
-texture_pressed = ExtResource("7_yovb7")
-texture_hover = ExtResource("8_ajq5s")
-texture_disabled = ExtResource("6_c1ps1")
-texture_focused = ExtResource("6_c1ps1")
-
-[node name="HomeButton" type="TextureButton" parent="." unique_id=1536212450]
-offset_right = 40.0
-offset_bottom = 40.0
-texture_normal = ExtResource("10_128fa")
-texture_pressed = ExtResource("9_yovb7")
-texture_hover = ExtResource("9_yovb7")
-script = SubResource("GDScript_ajq5s")
-
-[node name="ToPlayerButton" type="TextureButton" parent="." unique_id=958641680]
-offset_left = 282.0
-offset_top = 2.0
-offset_right = 321.29498
-offset_bottom = 42.0
-texture_normal = ExtResource("13_j3j8d")
-
-[node name="Trash2" type="Sprite2D" parent="." unique_id=650494715]
-
-[connection signal="button_down" from="SaveTrackUI/SaveButton" to="Tape" method="_on_save_button_button_down"]
-[connection signal="button_down" from="HomeButton" to="." method="_on_home_button_down"]
-[connection signal="button_down" from="HomeButton" to="HomeButton" method="_on_button_down"]
-[connection signal="button_down" from="ToPlayerButton" to="." method="_on_to_player_button_down"]
