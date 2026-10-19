@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://k58d2jqog4g1"
-path="res://.godot/imported/TOENY.thumbnail.png-a425e2344b8de41addc6c42340f88519.ctex"
+uid="uid://dlw6l3oct5c1w"
+path="res://.godot/imported/Arrow Normal Right.png-2c7f370ce3d186fcfff54a536e55f9f2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites and animations/TOENY.thumbnail.png"
-dest_files=["res://.godot/imported/TOENY.thumbnail.png-a425e2344b8de41addc6c42340f88519.ctex"]
+source_file="res://assets/sprites and animations/Arrow Normal Right.png"
+dest_files=["res://.godot/imported/Arrow Normal Right.png-2c7f370ce3d186fcfff54a536e55f9f2.ctex"]
 
 [params]
 

@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="SynthMonsterData" format=3 uid="uid://6yeq1hcfaxmq"]
 
-[ext_resource type="Texture2D" uid="uid://dfgnv8in30ooe" path="res://assets/sprites and animations/AMO.png" id="1_3wgx3"]
+[ext_resource type="Texture2D" uid="uid://dfgnv8in30ooe" path="res://assets/sprites and animations/Monster/AMO.png" id="1_3wgx3"]
 [ext_resource type="Script" uid="uid://cobddku7hmwoc" path="res://scripts/SynthMonsterResource.gd" id="2_vgj1c"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ajd1v"]
@@ -68,5 +68,4 @@ monster_name = "Amo"
 synthPreset = SubResource("WindPreset_0vpvg")
 soundFrame = 3
 animation = SubResource("SpriteFrames_w76dg")
-default_pitch = 1
 metadata/_custom_type_script = "uid://cobddku7hmwoc"

@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="SynthMonsterData" format=3 uid="uid://cim0varg0g3j5"]
 
-[ext_resource type="Texture2D" uid="uid://50tx4tis4uhn" path="res://assets/sprites and animations/KLEST.png" id="1_key5k"]
+[ext_resource type="Texture2D" uid="uid://50tx4tis4uhn" path="res://assets/sprites and animations/Monster/KLEST.png" id="1_key5k"]
 [ext_resource type="Script" uid="uid://cobddku7hmwoc" path="res://scripts/SynthMonsterResource.gd" id="1_y1ydf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pyb8j"]
@@ -114,4 +114,5 @@ script = ExtResource("1_y1ydf")
 monster_name = "Klest"
 soundFrame = 7
 animation = SubResource("SpriteFrames_key5k")
+default_pitch = 1
 metadata/_custom_type_script = "uid://cobddku7hmwoc"

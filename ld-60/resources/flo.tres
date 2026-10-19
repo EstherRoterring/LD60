@@ -1,0 +1,97 @@
+[gd_resource type="Resource" script_class="SynthMonsterData" format=3 uid="uid://c75nw7mobwg6g"]
+
+[ext_resource type="Script" uid="uid://cobddku7hmwoc" path="res://scripts/SynthMonsterResource.gd" id="1_i0boa"]
+[ext_resource type="Texture2D" uid="uid://b2q5v04x3a1wo" path="res://assets/sprites and animations/Monster/Flo.png" id="1_ymvj2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tr74q"]
+atlas = ExtResource("1_ymvj2")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e3k75"]
+atlas = ExtResource("1_ymvj2")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8kalf"]
+atlas = ExtResource("1_ymvj2")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ajjt"]
+atlas = ExtResource("1_ymvj2")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_owcyb"]
+atlas = ExtResource("1_ymvj2")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_olocr"]
+atlas = ExtResource("1_ymvj2")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_loo7m"]
+atlas = ExtResource("1_ymvj2")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fg1q6"]
+atlas = ExtResource("1_ymvj2")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2f2nt"]
+atlas = ExtResource("1_ymvj2")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ovi4x"]
+atlas = ExtResource("1_ymvj2")
+region = Rect2(288, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ggc70"]
+atlas = ExtResource("1_ymvj2")
+region = Rect2(320, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ymvj2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tr74q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e3k75")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8kalf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ajjt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_owcyb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_olocr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_loo7m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fg1q6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2f2nt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ovi4x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ggc70")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[resource]
+script = ExtResource("1_i0boa")
+monster_name = "Flo"
+soundFrame = 5
+animation = SubResource("SpriteFrames_ymvj2")
+default_pitch = 3
+metadata/_custom_type_script = "uid://cobddku7hmwoc"

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://lvap7t8vxsi0"
-path="res://.godot/imported/Toeny.png-62f79b89940ef90101fc7933643bdd9f.ctex"
+uid="uid://byw183b34en74"
+path="res://.godot/imported/Film.png-db25c1c26d420abe5262ce5d9d715ff4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites and animations/Toeny.png"
-dest_files=["res://.godot/imported/Toeny.png-62f79b89940ef90101fc7933643bdd9f.ctex"]
+source_file="res://assets/sprites and animations/Film.png"
+dest_files=["res://.godot/imported/Film.png-db25c1c26d420abe5262ce5d9d715ff4.ctex"]
 
 [params]
 

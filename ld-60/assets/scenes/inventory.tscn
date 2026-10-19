@@ -1,9 +1,51 @@
 [gd_scene format=3 uid="uid://cvlfrrgrryens"]
 
-[ext_resource type="Texture2D" uid="uid://by02ixbbutrcd" path="res://assets/sprites and animations/Tape.png" id="1_2sjf0"]
-[ext_resource type="Material" uid="uid://brgqrf8wucgvg" path="res://assets/materials/monster_material.tres" id="2_s1ftr"]
-[ext_resource type="Texture2D" uid="uid://c155ydqol1bpt" path="res://assets/sprites and animations/AMO.thumbnail.png" id="3_mrswc"]
+[ext_resource type="Texture2D" uid="uid://byw183b34en74" path="res://assets/sprites and animations/Film.png" id="1_s1ftr"]
+[ext_resource type="Shader" uid="uid://df46x1m5jf624" path="res://shaders/monster_material.gdshader" id="2_abf88"]
+[ext_resource type="Texture2D" uid="uid://c155ydqol1bpt" path="res://assets/sprites and animations/Monster/AMO.thumbnail.png" id="3_mrswc"]
 [ext_resource type="Script" uid="uid://dnug5wdypwof8" path="res://scripts/spawn_button.gd" id="3_s1ftr"]
+[ext_resource type="Texture2D" uid="uid://1d6g055x2k3w" path="res://assets/images/ColorTexture.png" id="3_v0joc"]
+[ext_resource type="Texture2D" uid="uid://dh3makayvcaop" path="res://assets/sprites and animations/Monster/Flo.thumbnail.png" id="5_mrswc"]
+[ext_resource type="Texture2D" uid="uid://c36rmhdlilrnc" path="res://assets/sprites and animations/Monster/KLEST.thumbnail.png" id="5_yuoi5"]
+[ext_resource type="Texture2D" uid="uid://ec7kyx15h36e" path="res://assets/sprites and animations/Monster/KABI.thumbnail.png" id="6_altuk"]
+[ext_resource type="Texture2D" uid="uid://bm1n3srqtif23" path="res://assets/sprites and animations/Monster/Glogo32.thumbnail.png" id="7_altuk"]
+[ext_resource type="Texture2D" uid="uid://k58d2jqog4g1" path="res://assets/sprites and animations/Monster/TOENY.thumbnail.png" id="8_a4xx2"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0jmtk"]
+resource_local_to_scene = true
+shader = ExtResource("2_abf88")
+shader_parameter/pitch_id = 0
+shader_parameter/pitch_colors_texure = ExtResource("3_v0joc")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_imrvf"]
+resource_local_to_scene = true
+shader = ExtResource("2_abf88")
+shader_parameter/pitch_id = 1
+shader_parameter/pitch_colors_texure = ExtResource("3_v0joc")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qbhoy"]
+resource_local_to_scene = true
+shader = ExtResource("2_abf88")
+shader_parameter/pitch_id = 2
+shader_parameter/pitch_colors_texure = ExtResource("3_v0joc")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sayq5"]
+resource_local_to_scene = true
+shader = ExtResource("2_abf88")
+shader_parameter/pitch_id = 3
+shader_parameter/pitch_colors_texure = ExtResource("3_v0joc")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hhor1"]
+resource_local_to_scene = true
+shader = ExtResource("2_abf88")
+shader_parameter/pitch_id = 4
+shader_parameter/pitch_colors_texure = ExtResource("3_v0joc")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wib41"]
+resource_local_to_scene = true
+shader = ExtResource("2_abf88")
+shader_parameter/pitch_id = 5
+shader_parameter/pitch_colors_texure = ExtResource("3_v0joc")
 
 [node name="Inventory" type="Node2D" unique_id=2024570262]
 
@@ -12,7 +54,7 @@ offset_left = 2.0
 offset_top = 137.0
 offset_right = 319.0
 offset_bottom = 177.0
-texture = ExtResource("1_2sjf0")
+texture = ExtResource("1_s1ftr")
 expand_mode = 2
 
 [node name="GridContainer" type="GridContainer" parent="." unique_id=141350822]
@@ -28,7 +70,7 @@ theme_override_constants/v_separation = 4
 columns = 10
 
 [node name="Amo Spawn Button" type="TextureButton" parent="GridContainer" unique_id=965284055]
-material = ExtResource("2_s1ftr")
+material = SubResource("ShaderMaterial_0jmtk")
 custom_minimum_size = Vector2(32, 32)
 custom_maximum_size = Vector2(32, -1)
 layout_mode = 2
@@ -40,4 +82,74 @@ texture_focused = ExtResource("3_mrswc")
 script = ExtResource("3_s1ftr")
 monster_name = "Amo"
 
+[node name="Klest Spawn Button" type="TextureButton" parent="GridContainer" unique_id=2023113195]
+material = SubResource("ShaderMaterial_imrvf")
+custom_minimum_size = Vector2(32, 32)
+custom_maximum_size = Vector2(32, -1)
+layout_mode = 2
+texture_normal = ExtResource("5_yuoi5")
+texture_pressed = ExtResource("5_yuoi5")
+texture_hover = ExtResource("5_yuoi5")
+texture_disabled = ExtResource("5_yuoi5")
+texture_focused = ExtResource("5_yuoi5")
+script = ExtResource("3_s1ftr")
+monster_name = "Klest"
+
+[node name="Kabi Spawn Button" type="TextureButton" parent="GridContainer" unique_id=1318445982]
+material = SubResource("ShaderMaterial_qbhoy")
+custom_minimum_size = Vector2(32, 32)
+custom_maximum_size = Vector2(32, -1)
+layout_mode = 2
+texture_normal = ExtResource("6_altuk")
+texture_pressed = ExtResource("6_altuk")
+texture_hover = ExtResource("6_altuk")
+texture_disabled = ExtResource("6_altuk")
+texture_focused = ExtResource("6_altuk")
+script = ExtResource("3_s1ftr")
+monster_name = "Klest"
+
+[node name="Flo Spawn Button" type="TextureButton" parent="GridContainer" unique_id=1748441383]
+material = SubResource("ShaderMaterial_sayq5")
+custom_minimum_size = Vector2(32, 32)
+custom_maximum_size = Vector2(32, -1)
+layout_mode = 2
+texture_normal = ExtResource("5_mrswc")
+texture_pressed = ExtResource("5_mrswc")
+texture_hover = ExtResource("5_mrswc")
+texture_disabled = ExtResource("5_mrswc")
+texture_focused = ExtResource("5_mrswc")
+script = ExtResource("3_s1ftr")
+monster_name = "Flo"
+
+[node name="Toeny Spawn Button" type="TextureButton" parent="GridContainer" unique_id=18826395]
+material = SubResource("ShaderMaterial_hhor1")
+custom_minimum_size = Vector2(32, 32)
+custom_maximum_size = Vector2(32, -1)
+layout_mode = 2
+texture_normal = ExtResource("8_a4xx2")
+texture_pressed = ExtResource("8_a4xx2")
+texture_hover = ExtResource("8_a4xx2")
+texture_disabled = ExtResource("8_a4xx2")
+texture_focused = ExtResource("8_a4xx2")
+script = ExtResource("3_s1ftr")
+monster_name = "Flo"
+
+[node name="Glogo Spawn Button" type="TextureButton" parent="GridContainer" unique_id=504956901]
+material = SubResource("ShaderMaterial_wib41")
+custom_minimum_size = Vector2(32, 32)
+custom_maximum_size = Vector2(32, -1)
+layout_mode = 2
+texture_normal = ExtResource("7_altuk")
+texture_pressed = ExtResource("7_altuk")
+texture_hover = ExtResource("7_altuk")
+texture_disabled = ExtResource("7_altuk")
+texture_focused = ExtResource("7_altuk")
+script = ExtResource("3_s1ftr")
+monster_name = "Glogo"
+
 [connection signal="button_down" from="GridContainer/Amo Spawn Button" to="GridContainer/Amo Spawn Button" method="_on_button_down"]
+[connection signal="button_down" from="GridContainer/Klest Spawn Button" to="GridContainer/Klest Spawn Button" method="_on_button_down"]
+[connection signal="button_down" from="GridContainer/Kabi Spawn Button" to="GridContainer/Kabi Spawn Button" method="_on_button_down"]
+[connection signal="button_down" from="GridContainer/Flo Spawn Button" to="GridContainer/Flo Spawn Button" method="_on_button_down"]
+[connection signal="button_down" from="GridContainer/Toeny Spawn Button" to="GridContainer/Toeny Spawn Button" method="_on_button_down"]
+[connection signal="button_down" from="GridContainer/Glogo Spawn Button" to="GridContainer/Glogo Spawn Button" method="_on_button_down"]

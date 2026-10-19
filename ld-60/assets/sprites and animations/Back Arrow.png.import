@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c155ydqol1bpt"
-path="res://.godot/imported/AMO.thumbnail.png-c0bc798904da7233361f0e3b72fd7ea3.ctex"
+uid="uid://bqb7mqko141pf"
+path="res://.godot/imported/Back Arrow.png-1029112628700b6b611b8022623bc8e9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites and animations/AMO.thumbnail.png"
-dest_files=["res://.godot/imported/AMO.thumbnail.png-c0bc798904da7233361f0e3b72fd7ea3.ctex"]
+source_file="res://assets/sprites and animations/Back Arrow.png"
+dest_files=["res://.godot/imported/Back Arrow.png-1029112628700b6b611b8022623bc8e9.ctex"]
 
 [params]
 

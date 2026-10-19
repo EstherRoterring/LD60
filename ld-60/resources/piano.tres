@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="SynthMonsterData" format=3 uid="uid://dcbo0jqqp5hkh"]
 
-[ext_resource type="Texture2D" uid="uid://lvap7t8vxsi0" path="res://assets/sprites and animations/Toeny.png" id="1_jmrh2"]
+[ext_resource type="Texture2D" uid="uid://lvap7t8vxsi0" path="res://assets/sprites and animations/Monster/Toeny.png" id="1_jmrh2"]
 [ext_resource type="Script" uid="uid://cobddku7hmwoc" path="res://scripts/SynthMonsterResource.gd" id="1_ksc7t"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_senua"]
@@ -100,5 +100,5 @@ script = ExtResource("1_ksc7t")
 monster_name = "piano"
 soundFrame = 3
 animation = SubResource("SpriteFrames_jmrh2")
-default_pitch = 1
+default_pitch = 6
 metadata/_custom_type_script = "uid://cobddku7hmwoc"

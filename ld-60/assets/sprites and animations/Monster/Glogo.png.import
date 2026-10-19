@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c36rmhdlilrnc"
-path="res://.godot/imported/KLEST.thumbnail.png-e4bb79c92b4a902a9e1e7d6a568f8a74.ctex"
+uid="uid://di10pfnhhwsn3"
+path="res://.godot/imported/Glogo.png-70e52db756c189146ab6975dc38d0b0e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites and animations/KLEST.thumbnail.png"
-dest_files=["res://.godot/imported/KLEST.thumbnail.png-e4bb79c92b4a902a9e1e7d6a568f8a74.ctex"]
+source_file="res://assets/sprites and animations/Monster/Glogo.png"
+dest_files=["res://.godot/imported/Glogo.png-70e52db756c189146ab6975dc38d0b0e.ctex"]
 
 [params]
 

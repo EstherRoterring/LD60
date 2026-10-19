@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://50tx4tis4uhn"
-path="res://.godot/imported/KLEST.png-051293436de7b15d1f75067cfce09007.ctex"
+uid="uid://djel1wobry1u7"
+path="res://.godot/imported/Arrow Flat Left.png-4a6ee74bafb93fe92acce096baae5ed6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites and animations/KLEST.png"
-dest_files=["res://.godot/imported/KLEST.png-051293436de7b15d1f75067cfce09007.ctex"]
+source_file="res://assets/sprites and animations/Arrow Flat Left.png"
+dest_files=["res://.godot/imported/Arrow Flat Left.png-4a6ee74bafb93fe92acce096baae5ed6.ctex"]
 
 [params]
 

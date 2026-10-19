@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="SynthMonsterData" format=3 uid="uid://i1hwxlwhkrsy"]
 
 [ext_resource type="Script" uid="uid://cobddku7hmwoc" path="res://scripts/SynthMonsterResource.gd" id="1_njnqj"]
-[ext_resource type="Texture2D" uid="uid://lvap7t8vxsi0" path="res://assets/sprites and animations/Toeny.png" id="1_ye08e"]
+[ext_resource type="Texture2D" uid="uid://lvap7t8vxsi0" path="res://assets/sprites and animations/Monster/Toeny.png" id="1_ye08e"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bg5ue"]
 atlas = ExtResource("1_ye08e")
@@ -100,4 +100,5 @@ script = ExtResource("1_njnqj")
 monster_name = "Toeny"
 soundFrame = 3
 animation = SubResource("SpriteFrames_ye08e")
+default_pitch = 4
 metadata/_custom_type_script = "uid://cobddku7hmwoc"
