@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://763h83jnrc32" path="res://assets/sprites and animations/Table.png" id="1_im3ye"]
 [ext_resource type="PackedScene" uid="uid://cvlfrrgrryens" path="res://assets/scenes/inventory.tscn" id="2_a55cb"]
-[ext_resource type="PackedScene" uid="uid://gh81trgswhjs" path="res://assets/scenes/Tape.tscn" id="3_lldoe"]
+[ext_resource type="PackedScene" uid="uid://bmowvvjc83dmu" path="res://assets/scenes/Tape.tscn" id="3_lldoe"]
 [ext_resource type="PackedScene" uid="uid://u0qleer3nvee" path="res://assets/scenes/trash.tscn" id="4_llb4w"]
 [ext_resource type="PackedScene" uid="uid://dggwas8jpkd2" path="res://assets/scenes/monster_spawner.tscn" id="5_q43bj"]
 [ext_resource type="Texture2D" uid="uid://6fdq0ji1kxmb" path="res://assets/images/savebutton_default.png" id="6_c1ps1"]
