@@ -17,13 +17,27 @@ func _ready() -> void:
 	current_monsters.resize(8)
 	current_segment = 0
 	
+func initialize_all_slots() -> void:
+	for slot_id in len(slots):
+		var curr_slot : TapeSlot = slots[slot_id]
+		curr_slot.id = slot_id
+		curr_slot.stored_monster_signal.connect(place_music_monster)
+		curr_slot.removed_monster_signal.connect(remove_music_monster)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
 
+
+func get_time_from_slot_id(slot_id: int) -> int:
+	return current_segment * 8 + slot_id
+
 func place_music_monster(monster : MusicMonster, slot_id : int):
-	pass
+	current_track.add_note(monster.name, get_time_from_slot_id(slot_id), monster.pitch)
+
+func remove_music_monster(monster : MusicMonster, slot_id : int):
+	current_track.delete_note(monster.name, get_time_from_slot_id(slot_id), monster.pitch)
+
 
 #func load_track(track : Track) -> void:
 	#pass
@@ -79,7 +93,7 @@ func scroll_to_prev_segment() -> void:
 #should return current visible monsters as Array[TapeSlot]
 func get_current_monsters() -> Array:
 	return []
-	
+
 # should spawn Monsters m: [{"monster": "amo", "pitch": 36}] to slot 
 # should remove old Monsters
 func set_current_monsters(m:Array, slot:int) -> void:

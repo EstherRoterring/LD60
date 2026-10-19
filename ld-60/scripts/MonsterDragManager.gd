@@ -24,7 +24,8 @@ func sprite_is_draggable(key: int) -> bool:
 	return hover_scores.get(key) == largest_score
 	
 func unregister_hovered_sprite(key: int):
-	assert(hover_scores.has(key))
+	if not hover_scores.has(key):
+		return
 	
 	print_debug("unregistering: ",key)
 		
