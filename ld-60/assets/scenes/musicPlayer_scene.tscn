@@ -18,7 +18,10 @@ script/source = "extends Node2D
 @onready var monster_spawner = $MonsterSpawner
 
 const START_POSITION := Vector2(75, 45)
-const MONSTER_SPACING := 35.0
+const MONSTER_SPACING := 64.0
+var scrolling = false
+const SCROLL_SPEED := 64.0 # Pixel pro Sekunde
+const STEP_DURATION := 0.3
 
 func _ready() -> void:
 	$Track.track_ready.connect(_on_track_ready)
@@ -35,29 +38,48 @@ func spawn_all_monsters(monster_container: Node2D) -> void:
 		return
 
 	for time in range(track.length):
-		var notes = track.getMonstersAndPitchbyTime(time)
+		var notes = track.get_instrument_pitch_pairs_at_ime(time)
 
 		for note in notes:
 			var monster_name: String = note[\"monster\"]
 			var pitch: int = note[\"pitch\"]
 
-			var monster: MusicMonster = monster_spawner.spawn_music_monster( monster_name, false)
+			var monster: MusicMonster = monster_spawner.spawn_music_monster( monster_name, false, monster_container)
 			print(\"Spawn-Ergebnis: \", monster)
 			
 			if monster == null:
 				continue
 
-			monster.reparent(monster_container)
-
 			# Jeder Zeitpunkt bekommt eine eigene Spalte.
 			monster.position = START_POSITION - Vector2(time * MONSTER_SPACING, 0)
+			monster.top_level = false
 			print(
 				\"Monster: \", monster.name,
 				\" | Position: \", monster.position,
-				\" | Sichtbar: \", monster.visible
+				\" | Sichtbar: \", monster.visible,
+				\" | Parent: \", monster.get_parent()
 			)
 			monster.pitch = pitch
 			monster.change_color_to_pitch()
+
+func _on_play_button_down() -> void:
+	scrolling = true
+	$Track.is_playing = true
+func _on_pause_button_down() -> void:
+	scrolling = false
+	$Track.is_playing = false
+		
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	if not scrolling:
+		return
+
+	# Monster-Band gleichmäßig nach rechts bewegen.
+	monsters_container.position.x += SCROLL_SPEED * delta
+
+	for c in monsters_container.get_children():	#c is Musicmonster
+		var m: MusicMonster = c
+		m.my_sprite.play('default')
 "
 
 [node name="PlayerScene" type="Node2D" unique_id=1309657314]
@@ -68,6 +90,23 @@ script = SubResource("GDScript_lwufx")
 [node name="Background" type="Sprite2D" parent="." unique_id=1874793441]
 position = Vector2(160, 90)
 texture = ExtResource("1_fk7w6")
+
+[node name="Foreground" type="Sprite2D" parent="." unique_id=403462357]
+top_level = true
+position = Vector2(160, 90)
+texture = ExtResource("3_lwufx")
+
+[node name="PlayButton" type="Button" parent="Foreground" unique_id=1481267578]
+offset_left = 46.0
+offset_top = -29.0
+offset_right = 62.0
+offset_bottom = -18.0
+
+[node name="PauseButton" type="Button" parent="Foreground" unique_id=1548541608]
+offset_left = -9.0
+offset_top = -29.0
+offset_right = 9.0
+offset_bottom = -18.0
 
 [node name="Tape2" type="Sprite2D" parent="." unique_id=1055218016]
 position = Vector2(160, 127)
@@ -82,15 +121,6 @@ script = ExtResource("5_ngxxl")
 available_synth_monsters = Array[ExtResource("6_l3nmc")]([ExtResource("7_p8ybu"), ExtResource("8_wdwci"), ExtResource("9_sx041"), ExtResource("10_l3nmc")])
 metadata/_custom_type_script = "uid://b3nnv3wn5yte3"
 
-[node name="Foreground" type="Sprite2D" parent="." unique_id=403462357]
-position = Vector2(160, 90)
-texture = ExtResource("3_lwufx")
-
-[node name="Button" type="Button" parent="Foreground" unique_id=1481267578]
-offset_left = 46.0
-offset_top = -29.0
-offset_right = 62.0
-offset_bottom = -18.0
-
-[connection signal="button_down" from="Foreground/Button" to="." method="_on_play_button_down"]
-[connection signal="button_down" from="Foreground/Button" to="Track" method="_on_play_button_down"]
+[connection signal="button_down" from="Foreground/PlayButton" to="." method="_on_play_button_down"]
+[connection signal="button_down" from="Foreground/PlayButton" to="Track" method="_on_play_button_down"]
+[connection signal="button_down" from="Foreground/PauseButton" to="." method="_on_pause_button_down"]

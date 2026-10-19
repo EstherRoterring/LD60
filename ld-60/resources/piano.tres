@@ -90,14 +90,14 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_wsarj")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"default",
 "speed": 5.0
 }]
 
 [resource]
 script = ExtResource("1_ksc7t")
-name = "piano"
+monster_name = "piano"
 soundFrame = 3
 animation = SubResource("SpriteFrames_jmrh2")
 default_pitch = 1

@@ -39,7 +39,7 @@ func spawn_music_monster(
 		
 		# sad case
 		if music_monster == null:
-			push_warning("Monster spawner could not find any monster for given monster_name")
+			printerr("Monster spawner could not find any monster for given monster_name")
 			return null
 		
 		# tell the monster it has been spawned

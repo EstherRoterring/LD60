@@ -48,8 +48,3 @@ func play_note(pitch: int, duration: float):
 	context.note_on(pitch, 6)
 	await  get_tree().create_timer(duration).timeout
 	context.note_off(context.absolute_time)
-
-
-#start playing
-func _on_play_button_down() -> void:
-	is_playing = true
