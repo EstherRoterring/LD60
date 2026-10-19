@@ -61,7 +61,6 @@ func spawn_music_monster(
 		
 		# correct appearance
 		music_monster.my_sprite.sprite_frames = sprite_frames
-		music_monster.my_sprite.autoplay = "default"
-		music_monster.my_sprite.play("default")
+
 		
 		return music_monster

@@ -113,7 +113,8 @@ func _animate_step(time: int) -> void:
 			continue
 
 		monster.my_sprite.stop()
-		monster.my_sprite.frame = 0
+		monster.my_sprite.frame = monster.data.soundFrame - 1
+		monster.my_sprite.speed_scale = 2.5
 		monster.my_sprite.play(\"default\")
 
 
