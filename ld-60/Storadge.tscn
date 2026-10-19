@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://d0bqvy0qihkfu"]
 
 [ext_resource type="Script" uid="uid://b0ihsp6sxgnkc" path="res://scripts/libaryUi.gd" id="1_ikyhy"]
-[ext_resource type="PackedScene" uid="uid://biy0ayraoug2f" path="res://assets/scenes/storedTrack.tscn" id="2_pbpj6"]
+[ext_resource type="PackedScene" uid="uid://t7bicfbfpa2o" path="res://assets/scenes/storedTrack.tscn" id="2_pbpj6"]
+[ext_resource type="Texture2D" uid="uid://byw183b34en74" path="res://assets/sprites and animations/Film.png" id="3_pbpj6"]
 
 [node name="Node2D" type="Node2D" unique_id=348526237]
 
@@ -45,5 +46,6 @@ size_flags_vertical = 3
 
 [node name="TextureRect2" parent="UI/ScrollContainer/VBoxContainer" unique_id=1589896107 instance=ExtResource("2_pbpj6")]
 layout_mode = 2
+texture = ExtResource("3_pbpj6")
 
 [connection signal="button_down" from="UI/BackButton" to="UI" method="_on_back_button_button_down"]
