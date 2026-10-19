@@ -12,74 +12,132 @@
 [ext_resource type="Resource" uid="uid://dcbo0jqqp5hkh" path="res://resources/piano.tres" id="10_l3nmc"]
 
 [sub_resource type="GDScript" id="GDScript_lwufx"]
-script/source = "extends Node2D
+script/source = "
+extends Node2D
 
 @onready var monsters_container: Node2D = $Monsters
 @onready var monster_spawner = $MonsterSpawner
+@onready var track_player = $Track
 
 const START_POSITION := Vector2(75, 45)
 const MONSTER_SPACING := 64.0
-var scrolling = false
-const SCROLL_SPEED := 64.0 # Pixel pro Sekunde
 const STEP_DURATION := 0.3
 
+var scrolling := false
+var container_start_x: float = 0.0
+var animated_steps: Array[int] = []
+
+
 func _ready() -> void:
-	$Track.track_ready.connect(_on_track_ready)
+	container_start_x = monsters_container.position.x
+
+	track_player.track_ready.connect(_on_track_ready)
+	track_player.step_changed.connect(_on_step_changed)
+
 
 func _on_track_ready() -> void:
-	print('track ready')
 	spawn_all_monsters(monsters_container)
 
+
 func spawn_all_monsters(monster_container: Node2D) -> void:
-	var track: Track = $Track.track
+	var track: Track = track_player.track
 
 	if track == null:
 		push_warning(\"Track ist noch nicht geladen.\")
 		return
 
 	for time in range(track.length):
-		var notes = track.get_instrument_pitch_pairs_at_ime(time)
+		var notes := track.get_instrument_pitch_pairs_at_ime(time)
 
 		for note in notes:
 			var monster_name: String = note[\"monster\"]
 			var pitch: int = note[\"pitch\"]
 
-			var monster: MusicMonster = monster_spawner.spawn_music_monster( monster_name, false, monster_container)
-			print(\"Spawn-Ergebnis: \", monster)
-			
+			var monster: MusicMonster = monster_spawner.spawn_music_monster(
+				monster_name,
+				false,
+				monster_container
+			)
+
 			if monster == null:
 				continue
 
-			# Jeder Zeitpunkt bekommt eine eigene Spalte.
-			monster.position = START_POSITION - Vector2(time * MONSTER_SPACING, 0)
-			monster.top_level = false
-			print(
-				\"Monster: \", monster.name,
-				\" | Position: \", monster.position,
-				\" | Sichtbar: \", monster.visible,
-				\" | Parent: \", monster.get_parent()
+			monster.set_meta(\"track_time\", time)
+
+			# Die zeitlich späteren Monster starten weiter links.
+			monster.position = START_POSITION - Vector2(
+				time * MONSTER_SPACING,
+				0
 			)
+
+			monster.top_level = false
 			monster.pitch = pitch
 			monster.change_color_to_pitch()
 
+
 func _on_play_button_down() -> void:
-	scrolling = true
-	$Track.is_playing = true
+	if track_player.track == null:
+		return
+
+	animated_steps.clear()
+	monsters_container.position.x = container_start_x
+
+	track_player.start_playback()
+	scrolling = track_player.is_playing
+
+	if scrolling:
+		# Das erste Monster startet sofort.
+		_animate_step(0)
+
+
 func _on_pause_button_down() -> void:
 	scrolling = false
-	$Track.is_playing = false
-		
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+	track_player.is_playing = false
+
+
+func _on_step_changed(step: int) -> void:
+	# Den nächsten Schritt bereits 0,3 Sekunden vorher animieren.
+	_animate_step(step + 1)
+
+
+func _animate_step(time: int) -> void:
+	if animated_steps.has(time):
+		return
+
+	animated_steps.append(time)
+
+	for child in monsters_container.get_children():
+		var monster: MusicMonster = child
+
+		if monster.get_meta(\"track_time\", -1) != time:
+			continue
+
+		monster.my_sprite.stop()
+		monster.my_sprite.frame = 0
+		monster.my_sprite.play(\"default\")
+
+
+func _process(_delta: float) -> void:
 	if not scrolling:
 		return
 
-	# Monster-Band gleichmäßig nach rechts bewegen.
-	monsters_container.position.x += SCROLL_SPEED * delta
+	var track: Track = track_player.track
 
-	for c in monsters_container.get_children():	#c is Musicmonster
-		var m: MusicMonster = c
-		m.my_sprite.play('default')
+	if track == null:
+		return
+
+	# Die Bewegung folgt der Zeit des Audio-Players.
+	var progress: float = min(
+		track_player.play_time / STEP_DURATION,
+		float(track.length)
+	)
+
+	monsters_container.position.x = (
+		container_start_x + progress * MONSTER_SPACING
+	)
+
+	if not track_player.is_playing and progress >= track.length:
+		scrolling = false
 "
 
 [node name="PlayerScene" type="Node2D" unique_id=1309657314]
