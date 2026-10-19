@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://k58d2jqog4g1"
-path="res://.godot/imported/TOENY.thumbnail.png-a425e2344b8de41addc6c42340f88519.ctex"
+uid="uid://c36rmhdlilrnc"
+path="res://.godot/imported/KLEST.thumbnail.png-0a2f0888e3ab0c4b32e95788a2ef5195.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites and animations/TOENY.thumbnail.png"
-dest_files=["res://.godot/imported/TOENY.thumbnail.png-a425e2344b8de41addc6c42340f88519.ctex"]
+source_file="res://assets/sprites and animations/Monster/KLEST.thumbnail.png"
+dest_files=["res://.godot/imported/KLEST.thumbnail.png-0a2f0888e3ab0c4b32e95788a2ef5195.ctex"]
 
 [params]
 

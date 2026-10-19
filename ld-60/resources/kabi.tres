@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="SynthMonsterData" format=3 uid="uid://cmiii3qifgiwf"]
 
-[ext_resource type="Texture2D" uid="uid://d3k4qurgx585m" path="res://assets/sprites and animations/KABI.png" id="1_afbyy"]
+[ext_resource type="Texture2D" uid="uid://d3k4qurgx585m" path="res://assets/sprites and animations/Monster/KABI.png" id="1_afbyy"]
 [ext_resource type="Script" uid="uid://cobddku7hmwoc" path="res://scripts/SynthMonsterResource.gd" id="1_k3dti"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_efx2l"]

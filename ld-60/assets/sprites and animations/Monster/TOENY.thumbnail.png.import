@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b2q5v04x3a1wo"
-path="res://.godot/imported/Flo.png-a3b8dd305ee67bb2f37211d4538a13f6.ctex"
+uid="uid://k58d2jqog4g1"
+path="res://.godot/imported/TOENY.thumbnail.png-a6af0d11aaeb4db96b8e19197260cef5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites and animations/Flo.png"
-dest_files=["res://.godot/imported/Flo.png-a3b8dd305ee67bb2f37211d4538a13f6.ctex"]
+source_file="res://assets/sprites and animations/Monster/TOENY.thumbnail.png"
+dest_files=["res://.godot/imported/TOENY.thumbnail.png-a6af0d11aaeb4db96b8e19197260cef5.ctex"]
 
 [params]
 

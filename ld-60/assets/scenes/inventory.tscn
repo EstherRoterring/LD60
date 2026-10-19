@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://byw183b34en74" path="res://assets/sprites and animations/inventory.png" id="1_s1ftr"]
 [ext_resource type="Material" uid="uid://brgqrf8wucgvg" path="res://assets/materials/monster_material.tres" id="2_s1ftr"]
-[ext_resource type="Texture2D" uid="uid://c155ydqol1bpt" path="res://assets/sprites and animations/AMO.thumbnail.png" id="3_mrswc"]
+[ext_resource type="Texture2D" uid="uid://c155ydqol1bpt" path="res://assets/sprites and animations/Monster/AMO.thumbnail.png" id="3_mrswc"]
 [ext_resource type="Script" uid="uid://dnug5wdypwof8" path="res://scripts/spawn_button.gd" id="3_s1ftr"]
 
 [node name="Inventory" type="Node2D" unique_id=2024570262]

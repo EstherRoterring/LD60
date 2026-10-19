@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ec7kyx15h36e"
-path="res://.godot/imported/KABI.thumbnail.png-07240cb848f29566531c0eb804a5e8d3.ctex"
+uid="uid://bm1n3srqtif23"
+path="res://.godot/imported/Glogo32.thumbnail.png-7a20f6bf4fbb67e870edb43f10512629.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites and animations/KABI.thumbnail.png"
-dest_files=["res://.godot/imported/KABI.thumbnail.png-07240cb848f29566531c0eb804a5e8d3.ctex"]
+source_file="res://assets/sprites and animations/Monster/Glogo32.thumbnail.png"
+dest_files=["res://.godot/imported/Glogo32.thumbnail.png-7a20f6bf4fbb67e870edb43f10512629.ctex"]
 
 [params]
 

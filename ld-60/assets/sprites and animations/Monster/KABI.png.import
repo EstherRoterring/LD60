@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d3k4qurgx585m"
-path="res://.godot/imported/KABI.png-2f110968ed725e0f87066f6ed221bbfa.ctex"
+path="res://.godot/imported/KABI.png-f87c1dae2c1f625f96f41956f1080fbf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites and animations/KABI.png"
-dest_files=["res://.godot/imported/KABI.png-2f110968ed725e0f87066f6ed221bbfa.ctex"]
+source_file="res://assets/sprites and animations/Monster/KABI.png"
+dest_files=["res://.godot/imported/KABI.png-f87c1dae2c1f625f96f41956f1080fbf.ctex"]
 
 [params]
 
