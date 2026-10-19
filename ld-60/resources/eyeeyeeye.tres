@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="SynthMonsterData" format=3 uid="uid://bd2u5r2ipialo"]
 
-[ext_resource type="Texture2D" uid="uid://xemj54unn8jl" path="res://assets/sprites and animations/Monster/eyeeyeeye.png" id="1_1274d"]
+[ext_resource type="Texture2D" uid="uid://dvbxqp6q62vy0" path="res://assets/sprites and animations/Monster/eyeeyeeye.png" id="1_1274d"]
 [ext_resource type="Script" uid="uid://cobddku7hmwoc" path="res://scripts/SynthMonsterResource.gd" id="1_uji2l"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_323q2"]

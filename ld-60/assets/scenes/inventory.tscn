@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://ec7kyx15h36e" path="res://assets/sprites and animations/Monster/KABI.thumbnail.png" id="6_altuk"]
 [ext_resource type="Texture2D" uid="uid://bm1n3srqtif23" path="res://assets/sprites and animations/Monster/Glogo32.thumbnail.png" id="7_altuk"]
 [ext_resource type="Texture2D" uid="uid://k58d2jqog4g1" path="res://assets/sprites and animations/Monster/TOENY.thumbnail.png" id="8_a4xx2"]
-[ext_resource type="Texture2D" uid="uid://kw3278pt3mo" path="res://assets/sprites and animations/Monster/eyeeyeeye.thumbnail.png" id="11_v0joc"]
+[ext_resource type="Texture2D" uid="uid://dh6xa4x7uujp" path="res://assets/sprites and animations/Monster/eyeeyeeye.thumbnail.png" id="11_v0joc"]
 [ext_resource type="Texture2D" uid="uid://c5flbrojjd3jv" path="res://assets/sprites and animations/Monster/PFO.thumbnail.png" id="12_0jmtk"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0jmtk"]
@@ -120,7 +120,7 @@ texture_hover = ExtResource("6_altuk")
 texture_disabled = ExtResource("6_altuk")
 texture_focused = ExtResource("6_altuk")
 script = ExtResource("3_s1ftr")
-monster_name = "Klest"
+monster_name = "Kabi"
 
 [node name="Flo Spawn Button" type="TextureButton" parent="GridContainer" unique_id=1748441383]
 material = SubResource("ShaderMaterial_sayq5")
@@ -146,7 +146,7 @@ texture_hover = ExtResource("8_a4xx2")
 texture_disabled = ExtResource("8_a4xx2")
 texture_focused = ExtResource("8_a4xx2")
 script = ExtResource("3_s1ftr")
-monster_name = "Flo"
+monster_name = "Toeny"
 
 [node name="Glogo Spawn Button" type="TextureButton" parent="GridContainer" unique_id=504956901]
 material = SubResource("ShaderMaterial_wib41")
@@ -185,7 +185,7 @@ texture_hover = ExtResource("12_0jmtk")
 texture_disabled = ExtResource("12_0jmtk")
 texture_focused = ExtResource("12_0jmtk")
 script = ExtResource("3_s1ftr")
-monster_name = "pho"
+monster_name = "Pho"
 
 [connection signal="button_down" from="GridContainer/Amo Spawn Button" to="GridContainer/Amo Spawn Button" method="_on_button_down"]
 [connection signal="button_down" from="GridContainer/Klest Spawn Button" to="GridContainer/Klest Spawn Button" method="_on_button_down"]
