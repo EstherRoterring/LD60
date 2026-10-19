@@ -1,0 +1,118 @@
+[gd_resource type="Resource" script_class="SynthMonsterData" format=3 uid="uid://cmiii3qifgiwf"]
+
+[ext_resource type="Texture2D" uid="uid://d3k4qurgx585m" path="res://assets/sprites and animations/KABI.png" id="1_afbyy"]
+[ext_resource type="Script" uid="uid://cobddku7hmwoc" path="res://scripts/SynthMonsterResource.gd" id="1_k3dti"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_efx2l"]
+atlas = ExtResource("1_afbyy")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r00nx"]
+atlas = ExtResource("1_afbyy")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ldwc8"]
+atlas = ExtResource("1_afbyy")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qjhcr"]
+atlas = ExtResource("1_afbyy")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yv2ia"]
+atlas = ExtResource("1_afbyy")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_22ygr"]
+atlas = ExtResource("1_afbyy")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n77fw"]
+atlas = ExtResource("1_afbyy")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2at1m"]
+atlas = ExtResource("1_afbyy")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_su10t"]
+atlas = ExtResource("1_afbyy")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qeyno"]
+atlas = ExtResource("1_afbyy")
+region = Rect2(288, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7dsil"]
+atlas = ExtResource("1_afbyy")
+region = Rect2(320, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rd03s"]
+atlas = ExtResource("1_afbyy")
+region = Rect2(352, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wqdvd"]
+atlas = ExtResource("1_afbyy")
+region = Rect2(384, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q43ls"]
+atlas = ExtResource("1_afbyy")
+region = Rect2(416, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k3dti"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_efx2l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r00nx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ldwc8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qjhcr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yv2ia")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_22ygr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n77fw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2at1m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_su10t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qeyno")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7dsil")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rd03s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wqdvd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q43ls")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[resource]
+script = ExtResource("1_k3dti")
+monster_name = "Kabi"
+soundFrame = 6
+animation = SubResource("SpriteFrames_k3dti")
+default_pitch = 8
+metadata/_custom_type_script = "uid://cobddku7hmwoc"

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cvlfrrgrryens"]
 
-[ext_resource type="Texture2D" uid="uid://by02ixbbutrcd" path="res://assets/sprites and animations/Tape.png" id="1_2sjf0"]
+[ext_resource type="Texture2D" uid="uid://byw183b34en74" path="res://assets/sprites and animations/inventory.png" id="1_s1ftr"]
 [ext_resource type="Material" uid="uid://brgqrf8wucgvg" path="res://assets/materials/monster_material.tres" id="2_s1ftr"]
 [ext_resource type="Texture2D" uid="uid://c155ydqol1bpt" path="res://assets/sprites and animations/AMO.thumbnail.png" id="3_mrswc"]
 [ext_resource type="Script" uid="uid://dnug5wdypwof8" path="res://scripts/spawn_button.gd" id="3_s1ftr"]
@@ -12,7 +12,7 @@ offset_left = 2.0
 offset_top = 137.0
 offset_right = 319.0
 offset_bottom = 177.0
-texture = ExtResource("1_2sjf0")
+texture = ExtResource("1_s1ftr")
 expand_mode = 2
 
 [node name="GridContainer" type="GridContainer" parent="." unique_id=141350822]

@@ -10,6 +10,7 @@
 [ext_resource type="Resource" uid="uid://cim0varg0g3j5" path="res://resources/klest.tres" id="8_wdwci"]
 [ext_resource type="Resource" uid="uid://i1hwxlwhkrsy" path="res://resources/toeny.tres" id="9_sx041"]
 [ext_resource type="Resource" uid="uid://dcbo0jqqp5hkh" path="res://resources/piano.tres" id="10_l3nmc"]
+[ext_resource type="Texture2D" uid="uid://bqb7mqko141pf" path="res://assets/sprites and animations/Back Arrow.png" id="11_p8ybu"]
 
 [sub_resource type="GDScript" id="GDScript_lwufx"]
 script/source = "
@@ -139,6 +140,10 @@ func _process(_delta: float) -> void:
 
 	if not track_player.is_playing and progress >= track.length:
 		scrolling = false
+
+
+func _on_texture_button_button_down() -> void:
+	SceneTransition.change_scene_to_file(\"res://assets/scenes/MainMenu.tscn\")
 "
 
 [node name="PlayerScene" type="Node2D" unique_id=1309657314]
@@ -180,6 +185,13 @@ script = ExtResource("5_ngxxl")
 available_synth_monsters = Array[ExtResource("6_l3nmc")]([ExtResource("7_p8ybu"), ExtResource("8_wdwci"), ExtResource("9_sx041"), ExtResource("10_l3nmc")])
 metadata/_custom_type_script = "uid://b3nnv3wn5yte3"
 
+[node name="TextureButton" type="TextureButton" parent="." unique_id=766073457]
+top_level = true
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("11_p8ybu")
+
 [connection signal="button_down" from="Foreground/PlayButton" to="." method="_on_play_button_down"]
 [connection signal="button_down" from="Foreground/PlayButton" to="Track" method="_on_play_button_down"]
 [connection signal="button_down" from="Foreground/PauseButton" to="." method="_on_pause_button_down"]
+[connection signal="button_down" from="TextureButton" to="." method="_on_texture_button_button_down"]
