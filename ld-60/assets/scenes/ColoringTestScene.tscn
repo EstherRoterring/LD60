@@ -7,6 +7,8 @@
 [ext_resource type="Script" uid="uid://cni5312bglolc" path="res://coloring_pot.gd" id="5_7blep"]
 [ext_resource type="Texture2D" uid="uid://rpbk4xqjma7b" path="res://icon.svg" id="5_vbl84"]
 [ext_resource type="Texture2D" uid="uid://dwka55ufcjwiw" path="res://assets/sprites and animations/TapeSpritesheet.png" id="7_6ay74"]
+[ext_resource type="Script" uid="uid://b3nnv3wn5yte3" path="res://scripts/monster_spawner.gd" id="8_5jwa6"]
+[ext_resource type="Script" uid="uid://r4mtpa33le7q" path="res://scripts/trash.gd" id="9_e2xi8"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3rtpm"]
 
@@ -14,6 +16,10 @@
 size = Vector2(25, 50)
 
 [node name="ColoringTestScene" type="Node2D" unique_id=2078247448]
+
+[node name="MonsterSpawner" type="Node" parent="." unique_id=388030531]
+script = ExtResource("8_5jwa6")
+available_synth_monsters = null
 
 [node name="SynthMonster" parent="." unique_id=130309528 instance=ExtResource("1_jhj55")]
 
@@ -47,6 +53,7 @@ shape = SubResource("CircleShape2D_3rtpm")
 
 [node name="TapeSlot" type="Area2D" parent="." unique_id=2017800742]
 position = Vector2(200, 120)
+collision_layer = 2
 script = ExtResource("5_5jwa6")
 
 [node name="Background" type="Sprite2D" parent="TapeSlot" unique_id=1854674993]
@@ -62,5 +69,25 @@ region_rect = Rect2(75.38733, 29.467129, 33.205154, 33.044987)
 position = Vector2(-1, -1.5)
 shape = SubResource("RectangleShape2D_khwuv")
 
+[node name="Trash" type="Area2D" parent="TapeSlot" unique_id=646468679]
+position = Vector2(86, 18)
+collision_layer = 2
+script = ExtResource("9_e2xi8")
+
+[node name="Background" type="Sprite2D" parent="TapeSlot/Trash" unique_id=1026680697]
+texture = ExtResource("5_6ay74")
+
+[node name="HoverImage" type="Sprite2D" parent="TapeSlot/Trash" unique_id=1111180877]
+modulate = Color(0.05000007, 1, 0, 1)
+texture = ExtResource("7_6ay74")
+region_enabled = true
+region_rect = Rect2(75.38733, 29.467129, 33.205154, 33.044987)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TapeSlot/Trash" unique_id=919039950]
+position = Vector2(-1, -1.5)
+shape = SubResource("RectangleShape2D_khwuv")
+
 [connection signal="mouse_entered" from="TapeSlot" to="TapeSlot" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="TapeSlot" to="TapeSlot" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="TapeSlot/Trash" to="TapeSlot/Trash" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="TapeSlot/Trash" to="TapeSlot/Trash" method="_on_mouse_exited"]

@@ -67,4 +67,5 @@ position = Vector2(0, 1)
 shape = SubResource("CapsuleShape2D_q77r6")
 
 [connection signal="dragged_over_trigger" from="DraggableSprite" to="." method="_on_draggable_sprite_dragged_over_trigger"]
+[connection signal="dragging_ended" from="DraggableSprite" to="." method="_on_draggable_sprite_dragging_ended"]
 [connection signal="mouse_entered" from="DraggableSprite" to="DraggableSprite" method="_on_mouse_entered"]

@@ -88,4 +88,21 @@ func end_dragging() -> void:
 	if is_monster:
 		MonsterDragManager.monster_sprite_is_dragged = false
 	is_being_dragged = false
-	dragging_ended.emit(get_global_mouse_position())
+	
+	# check for any tape slot under mouse position
+	var space_state = get_world_2d().direct_space_state
+	var query = PhysicsPointQueryParameters2D.new()
+	query.position = get_global_mouse_position()
+	query.collide_with_areas = true
+	query.exclude = [get_rid()]
+	query.collision_mask = 0b10
+	var results = space_state.intersect_point(query, 1)
+	
+	if results.size() > 0:
+		dragging_ended.emit(results[0].collider)
+	dragging_ended.emit(null)
+	
+# when removing the dragged object, tell this to drag manager
+func removal_hook() -> void:
+	if MonsterDragManager.hover_scores.has(id_for_drag_manager):
+		MonsterDragManager.unregister_hovered_sprite(id_for_drag_manager)
