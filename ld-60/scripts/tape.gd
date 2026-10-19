@@ -19,6 +19,8 @@ func _ready() -> void:
 	current_track = TrackLibrary.load_track(TrackLibrary.activeTrack)
 	$"../SaveTrackUI/NameField".text = TrackLibrary.activeTrack
 	
+	fill_current_segment_with_monsters()
+	
 	synth = AudioSynthPlayer.new()
 	add_child(synth)
 	
@@ -88,9 +90,9 @@ func scroll_to_prev_segment() -> void:
 		return
 	clear_current_segment() # visually remove all monsters
 	current_segment -= 1
-	fill_current_segment_with_monsters() # add all monsters from the next segment
-	
-	
+	fill_current_segment_with_monsters() # add all monsters from the next segment	
+
+
 func start_preview_play() -> void:
 	MonsterDragManager.dragging_enabled = false
 	pass
@@ -102,3 +104,9 @@ func _on_save_button_button_down() -> void:
 		return
 	# selber schuld wer überschreibt!
 	TrackLibrary.save_track(track_name, current_track, true)
+
+
+func _on_upload_button_button_down() -> void:
+	if not current_track == null:
+		print_debug("uploading track.. lol")
+		API.save_track_data(Track.serialize(current_track))

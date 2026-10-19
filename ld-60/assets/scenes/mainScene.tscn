@@ -9,7 +9,10 @@
 [ext_resource type="Texture2D" uid="uid://6fdq0ji1kxmb" path="res://assets/images/savebutton_default.png" id="6_c1ps1"]
 [ext_resource type="Texture2D" uid="uid://x5j61e7hhc27" path="res://assets/images/savebutton_pressed.png" id="7_yovb7"]
 [ext_resource type="Texture2D" uid="uid://c8btxcf3i23o1" path="res://assets/images/savebutton_hovered.png" id="8_ajq5s"]
+[ext_resource type="Texture2D" uid="uid://dxokfdvk86nq6" path="res://assets/images/cloud_save_default.png" id="10_1fx4r"]
 [ext_resource type="Texture2D" uid="uid://br2u50h3dogic" path="res://assets/sprites and animations/home.png" id="10_128fa"]
+[ext_resource type="Texture2D" uid="uid://c56qkj8dssjsv" path="res://assets/images/cloud_save_pressed..png" id="11_1gqmp"]
+[ext_resource type="Texture2D" uid="uid://dbv18v5dlup6t" path="res://assets/images/cloud_save_hovered.png" id="12_8ii2w"]
 [ext_resource type="Texture2D" uid="uid://dy6nkhfo6o4hw" path="res://assets/sprites and animations/Front Arrow.png" id="13_j3j8d"]
 
 [sub_resource type="GDScript" id="GDScript_ajq5s"]
@@ -66,6 +69,15 @@ texture_hover = ExtResource("8_ajq5s")
 texture_disabled = ExtResource("6_c1ps1")
 texture_focused = ExtResource("6_c1ps1")
 
+[node name="UploadButton" type="TextureButton" parent="SaveTrackUI" unique_id=481897711]
+layout_mode = 2
+size_flags_vertical = 4
+texture_normal = ExtResource("10_1fx4r")
+texture_pressed = ExtResource("11_1gqmp")
+texture_hover = ExtResource("12_8ii2w")
+texture_disabled = ExtResource("6_c1ps1")
+texture_focused = ExtResource("6_c1ps1")
+
 [node name="HomeButton" type="TextureButton" parent="." unique_id=1536212450]
 offset_left = 3.0
 offset_top = 3.0
@@ -87,6 +99,7 @@ texture_normal = ExtResource("13_j3j8d")
 position = Vector2(2, 2)
 
 [connection signal="button_down" from="SaveTrackUI/SaveButton" to="Tape" method="_on_save_button_button_down"]
+[connection signal="button_down" from="SaveTrackUI/UploadButton" to="Tape" method="_on_upload_button_button_down"]
 [connection signal="button_down" from="HomeButton" to="." method="_on_home_button_down"]
 [connection signal="button_down" from="HomeButton" to="HomeButton" method="_on_button_down"]
 [connection signal="button_down" from="ToPlayerButton" to="." method="_on_to_player_button_down"]
