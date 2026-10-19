@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://biy0ayraoug2f"]
+
+[ext_resource type="Texture2D" uid="uid://by02ixbbutrcd" path="res://assets/sprites and animations/Tape.png" id="1_j1uhn"]
+[ext_resource type="Script" uid="uid://dfj1nm56a3p55" path="res://assets/scenes/stored_track.gd" id="2_4ov5m"]
+
+[node name="TextureRect" type="TextureRect" unique_id=1589896107]
+texture = ExtResource("1_j1uhn")
+expand_mode = 5
+script = ExtResource("2_4ov5m")
+
+[node name="Button" type="Button" parent="." unique_id=1774971480]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 9.0
+offset_right = 275.0
+offset_bottom = 45.0
+mouse_filter = 1
+text = "Track01
+"

@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://d0bqvy0qihkfu"]
+
+[ext_resource type="Script" uid="uid://b0ihsp6sxgnkc" path="res://scripts/libaryUi.gd" id="1_ikyhy"]
+[ext_resource type="PackedScene" uid="uid://biy0ayraoug2f" path="res://assets/scenes/storedTrack.tscn" id="2_pbpj6"]
+
+[node name="Node2D" type="Node2D" unique_id=348526237]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=303809251]
+
+[node name="UI" type="Control" parent="." unique_id=1282111220]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_ikyhy")
+
+[node name="BackButton" type="Button" parent="UI" unique_id=1162320783]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 3.0
+offset_right = 53.0
+offset_bottom = 34.0
+text = "Back"
+
+[node name="Heading" type="Label" parent="UI" unique_id=328195376]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 7.0
+offset_right = 309.0
+offset_bottom = 33.0
+text = "Libary"
+horizontal_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="UI" unique_id=1415207874]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 35.0
+offset_right = 310.0
+offset_bottom = 170.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/ScrollContainer" unique_id=186350237]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TextureRect2" parent="UI/ScrollContainer/VBoxContainer" unique_id=1589896107 instance=ExtResource("2_pbpj6")]
+layout_mode = 2
+
+[connection signal="button_down" from="UI/BackButton" to="UI" method="_on_back_button_button_down"]
