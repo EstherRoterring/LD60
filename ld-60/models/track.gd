@@ -24,9 +24,7 @@ func get_instrument_pitch_pairs_at_ime(time: int) -> Array :
 	return result
 
 func add_note(instrument: String, time: int, pitch: int):
-	print_debug("adding note with pitch: ", pitch)
 	instruments.get_or_add(instrument, {}).get_or_add(time, []).append(pitch)
-	print_debug(instruments)
 	if (time >= length):
 		length = time + 1
 

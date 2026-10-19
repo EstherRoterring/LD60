@@ -8,13 +8,14 @@ extends Node2D
 
 @onready var monster_spawner : MonsterSpawner = $"../MonsterSpawner"
 
+var current_track : Track
 var current_segment : int 	#0: 0-7, 1: 8-15 ...
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	current_segment = 0
 	initialize_all_slots()
-
+	current_track = TrackLibrary.load_track(TrackLibrary.activeTrack)
 	
 func initialize_all_slots() -> void:
 	for slot_id in len(current_slots):
@@ -35,12 +36,12 @@ func get_time_from_slot_id(slot_id: int) -> int:
 
 # adds music monster to track
 func place_music_monster(monster : MusicMonster, slot_id : int):
-	TrackLibrary.activeTrack.add_note(monster.instrument_name, get_time_from_slot_id(slot_id), monster.pitch)
+	current_track.add_note(monster.instrument_name, get_time_from_slot_id(slot_id), monster.pitch)
 
 
 # removes music monster from track
 func remove_music_monster(monster : MusicMonster, slot_id : int):
-	TrackLibrary.activeTrack.delete_note(monster.instrument_name, get_time_from_slot_id(slot_id), monster.pitch)
+	current_track.delete_note(monster.instrument_name, get_time_from_slot_id(slot_id), monster.pitch)
 
 
 # visually removes all monsters (without editing track)
@@ -54,19 +55,18 @@ func clear_current_segment() -> void:
 # fills all slots with monsters from the track
 func fill_current_segment_with_monsters() -> void:
 	for slot_id in len(current_slots):
-		var current_notes = TrackLibrary.activeTrack.get_instrument_pitch_pairs_at_ime(get_time_from_slot_id(slot_id))
+		var current_notes = current_track.get_instrument_pitch_pairs_at_ime(get_time_from_slot_id(slot_id))
 		var slot = current_slots[slot_id]
 		for note in current_notes:
 			var name = note["monster"]
 			var pitch = note["pitch"]
-			print_debug("loaded monster with pitch: ", pitch)
 			var monster : MusicMonster = monster_spawner.spawn_music_monster(name, false, slot)
 			# placement
 			monster.pitch = pitch
 			monster.change_color_to_pitch()
 			# assigning a monster to a slot 
 			monster.my_draggable_sprite.global_position = slot.add_music_monster(monster, true)
-			
+
 
 func scroll_to_next_segment() -> void:
 	# max track length reached
@@ -76,7 +76,7 @@ func scroll_to_next_segment() -> void:
 	current_segment += 1
 	fill_current_segment_with_monsters() # add all monsters from the next segment
 		
-		
+
 func scroll_to_prev_segment() -> void:
 	# at track start
 	if current_segment == 0:

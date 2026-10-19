@@ -6,6 +6,7 @@ const synth_monster_scene = preload("res://assets/scenes/synth_monster.tscn")
 @export var available_synth_monsters : Array[SynthMonsterData]
 
 var synth_monster_ids_by_name : Dictionary[String, int]
+var sprite_frames : SpriteFrames # spaget
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -23,6 +24,8 @@ func __spawn_synth_monster(name: String) -> SynthMonster:
 		synth_monster.pitch = monster_preset.default_pitch
 		synth_monster.data = monster_preset
 		synth_monster.instrument_name = monster_preset.monster_name
+		sprite_frames = monster_preset.animation
+		
 		return synth_monster
 
 func spawn_music_monster(
@@ -55,5 +58,10 @@ func spawn_music_monster(
 		
 		# sync monster color with pitch
 		music_monster.change_color_to_pitch()
+		
+		# correct appearance
+		music_monster.my_sprite.sprite_frames = sprite_frames
+		music_monster.my_sprite.autoplay = "default"
+		music_monster.my_sprite.play("default")
 		
 		return music_monster

@@ -6,5 +6,5 @@
 [resource]
 resource_local_to_scene = true
 shader = ExtResource("1_2ugtg")
-shader_parameter/pitch_id = 3
+shader_parameter/pitch_id = 1
 shader_parameter/pitch_colors_texure = ExtResource("2_jeqlp")
