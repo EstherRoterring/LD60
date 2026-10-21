@@ -95,4 +95,4 @@ static func serialize(track: Track) -> String:
 static func serialize_note(pitch: int, time: int) -> String:
 	var note: String = NOTES[pitch % 12]
 	@warning_ignore("integer_division")
-	return str(time) + ":" + note + str(pitch / 12 - 1)
+	return str(time) + ":" + note + str(max(0, pitch / 12 - 1))

@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dvbxqp6q62vy0" path="res://assets/sprites and animations/Monster/eyeeyeeye.png" id="1_1274d"]
 [ext_resource type="Script" uid="uid://cobddku7hmwoc" path="res://scripts/SynthMonsterResource.gd" id="1_uji2l"]
+[ext_resource type="Texture2D" uid="uid://dh6xa4x7uujp" path="res://assets/sprites and animations/Monster/eyeeyeeye.thumbnail.png" id="3_323q2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_323q2"]
 atlas = ExtResource("1_1274d")
@@ -163,5 +164,6 @@ script = ExtResource("1_uji2l")
 monster_name = "Eyeeyeeye"
 soundFrame = 5
 animation = SubResource("SpriteFrames_1274d")
-default_pitch = 6
+thumbnail = ExtResource("3_323q2")
+default_pitch = 30
 metadata/_custom_type_script = "uid://cobddku7hmwoc"

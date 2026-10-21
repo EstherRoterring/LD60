@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dfgnv8in30ooe" path="res://assets/sprites and animations/Monster/AMO.png" id="1_3wgx3"]
 [ext_resource type="Script" uid="uid://cobddku7hmwoc" path="res://scripts/SynthMonsterResource.gd" id="2_vgj1c"]
+[ext_resource type="Texture2D" uid="uid://c155ydqol1bpt" path="res://assets/sprites and animations/Monster/AMO.thumbnail.png" id="3_vgj1c"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ajd1v"]
 atlas = ExtResource("1_3wgx3")
@@ -68,4 +69,6 @@ monster_name = "Amo"
 synthPreset = SubResource("WindPreset_0vpvg")
 soundFrame = 3
 animation = SubResource("SpriteFrames_w76dg")
+thumbnail = ExtResource("3_vgj1c")
+default_pitch = 24
 metadata/_custom_type_script = "uid://cobddku7hmwoc"

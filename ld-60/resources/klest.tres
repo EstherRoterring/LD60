@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://50tx4tis4uhn" path="res://assets/sprites and animations/Monster/KLEST.png" id="1_key5k"]
 [ext_resource type="Script" uid="uid://cobddku7hmwoc" path="res://scripts/SynthMonsterResource.gd" id="1_y1ydf"]
+[ext_resource type="Texture2D" uid="uid://c36rmhdlilrnc" path="res://assets/sprites and animations/Monster/KLEST.thumbnail.png" id="3_pyb8j"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pyb8j"]
 atlas = ExtResource("1_key5k")
@@ -114,5 +115,6 @@ script = ExtResource("1_y1ydf")
 monster_name = "Klest"
 soundFrame = 7
 animation = SubResource("SpriteFrames_key5k")
-default_pitch = 1
+thumbnail = ExtResource("3_pyb8j")
+default_pitch = 25
 metadata/_custom_type_script = "uid://cobddku7hmwoc"

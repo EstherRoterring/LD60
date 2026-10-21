@@ -8,11 +8,14 @@ const synth_monster_scene = preload("res://assets/scenes/synth_monster.tscn")
 var synth_monster_ids_by_name : Dictionary[String, int]
 var sprite_frames : SpriteFrames # spaget
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
+func init_spawner() -> void:
 	synth_monster_ids_by_name.clear()
 	for i in len(available_synth_monsters):
 		synth_monster_ids_by_name[available_synth_monsters[i].monster_name] = i
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	init_spawner()
 
 func __spawn_synth_monster(name: String) -> SynthMonster:
 		assert(synth_monster_ids_by_name.has(name))

@@ -15,7 +15,6 @@ script = ExtResource("1_wl7fd")
 texture = ExtResource("2_05noo")
 
 [node name="Border" type="Sprite2D" parent="." unique_id=1746773613]
-modulate = Color(0.05000007, 1, 0, 1)
 texture = ExtResource("3_ldb7h")
 region_enabled = true
 region_rect = Rect2(75.38733, 29.467129, 33.205154, 33.044987)

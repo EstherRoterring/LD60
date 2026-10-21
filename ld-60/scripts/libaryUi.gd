@@ -70,8 +70,7 @@ func _on_online_track_selected(track_id: String) -> void:
 
 
 func _on_offline_track_selected(track_id: String) -> void:
-	var track : Track = TrackLibrary.load_track(track_id)
-	TrackLibrary.activeTrack = track_id
+	TrackLibrary.load_track(track_id)
 	
 	SceneTransition.change_scene_to_file("res://assets/scenes/musicPlayer_scene.tscn")
 

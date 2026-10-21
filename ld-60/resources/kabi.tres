@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://d3k4qurgx585m" path="res://assets/sprites and animations/Monster/KABI.png" id="1_afbyy"]
 [ext_resource type="Script" uid="uid://cobddku7hmwoc" path="res://scripts/SynthMonsterResource.gd" id="1_k3dti"]
+[ext_resource type="Texture2D" uid="uid://ec7kyx15h36e" path="res://assets/sprites and animations/Monster/KABI.thumbnail.png" id="3_efx2l"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_efx2l"]
 atlas = ExtResource("1_afbyy")
@@ -114,5 +115,6 @@ script = ExtResource("1_k3dti")
 monster_name = "Kabi"
 soundFrame = 6
 animation = SubResource("SpriteFrames_k3dti")
-default_pitch = 2
+thumbnail = ExtResource("3_efx2l")
+default_pitch = 26
 metadata/_custom_type_script = "uid://cobddku7hmwoc"

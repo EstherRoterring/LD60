@@ -16,7 +16,7 @@ var is_playing: bool = false
 
 
 func _ready() -> void:
-	track = TrackLibrary.load_track(TrackLibrary.activeTrack)
+	track = TrackLibrary.activeTrack
 	print("Track geladen: ", track.instruments.keys())
 	track_ready.emit()
 	

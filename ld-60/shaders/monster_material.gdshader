@@ -31,7 +31,8 @@ void fragment() {
 	input_color_id += int(colors_match(main_c, pitch_colors_texure, ivec2(1,0))) * 1;
 	input_color_id += int(colors_match(main_c, pitch_colors_texure, ivec2(2,0))) * 2;
 	
-	ivec2 target_color_coord = colorIDToTextureCoordinate((pitch_id + 1) * 3 + input_color_id, color_texture_res);
+	// midi pitches start at 12
+	ivec2 target_color_coord = colorIDToTextureCoordinate((pitch_id + 1 - 12) * 3 + input_color_id, color_texture_res);
 	vec4 remapped_c = texelFetch(pitch_colors_texure, target_color_coord, 0);
 	COLOR = remapped_c;
 }

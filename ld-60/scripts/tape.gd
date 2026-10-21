@@ -16,9 +16,10 @@ var synth
 func _ready() -> void:
 	current_segment = 0
 	initialize_all_slots()
-	current_track = TrackLibrary.load_track(TrackLibrary.activeTrack)
-	$"../SaveTrackUI/NameField".text = TrackLibrary.activeTrack
+	current_track = TrackLibrary.activeTrack
+	$"../SaveTrackUI/NameField".text = TrackLibrary.activeTrackName
 	
+	monster_spawner.init_spawner()
 	fill_current_segment_with_monsters()
 	
 	synth = AudioSynthPlayer.new()

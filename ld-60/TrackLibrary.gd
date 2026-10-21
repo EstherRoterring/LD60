@@ -8,16 +8,17 @@ const SAVE_PATH = "user://tracks.json"
 const DEFAULT_TRACK_NAME = "My first track"
 
 # active track that can be edited or listened to
-var activeTrack : String
+var activeTrack : Track
+var activeTrackName : String
 
 # all tracks are stored in-memory
 var local_tracks : Dictionary[String, Track]
 
-
-func _enter_tree() -> void:
-	activeTrack = ""
+func _init() -> void:
+	activeTrackName = DEFAULT_TRACK_NAME
+	activeTrack = Track.new()
 	load_library()
-	
+
 
 func save_track(name: String, track : Track, allow_overwrite = true):
 	if local_tracks.has(name) and not allow_overwrite:
@@ -28,11 +29,12 @@ func save_track(name: String, track : Track, allow_overwrite = true):
 
 func load_track(name : String) -> Track:
 	if local_tracks.has(name):
-		activeTrack = name
-		return local_tracks.get(name)
+		activeTrack = local_tracks.get(name)
+		activeTrackName = name
 	else:
-		activeTrack = DEFAULT_TRACK_NAME
-		return Track.new()
+		activeTrackName = DEFAULT_TRACK_NAME
+		activeTrack = Track.new()
+	return activeTrack
 
 
 # WARNING: LOADING AND SAVING IS VIBECODED

@@ -30,9 +30,7 @@ func _ready() -> void:
 	track_player.track_ready.connect(_on_track_ready)
 	track_player.step_changed.connect(_on_step_changed)
 	
-	print(\"before spawn\")
 	spawn_all_monsters(monsters_container)
-	print(\"after spawn\")
 
 
 func _on_track_ready() -> void:
@@ -40,20 +38,14 @@ func _on_track_ready() -> void:
 
 
 func spawn_all_monsters(monster_container: Node2D) -> void:
-	print(\"spawn_all_monsters gestartet\")
-
 	var track: Track = track_player.track
-	print(\"Track: \", track)
 
 	if track == null:
 		print(\"FEHLER: Track ist null\")
 		return
 
-	print(\"Track-Länge: \", track.length)
-
 	for time in range(track.length):
 		var notes := track.get_instrument_pitch_pairs_at_ime(time)
-		print(\"Zeit: \", time, \" | Noten: \", notes)
 
 		for note in notes:
 			var monster_name: String = note[\"monster\"]
@@ -64,12 +56,6 @@ func spawn_all_monsters(monster_container: Node2D) -> void:
 				false,
 				monster_container
 			)
-			print(
-				\"Monster: \", monster_name,
-				\" | Position lokal: \", monster.position,
-				\" | Global: \", monster.global_position,
-				\" | Sichtbar: \", monster.visible
-			)
 			
 			if monster == null:
 				continue
@@ -78,11 +64,8 @@ func spawn_all_monsters(monster_container: Node2D) -> void:
 
 			# Die zeitlich späteren Monster starten weiter links.
 			var ziel_position := START_POSITION - Vector2(time * MONSTER_SPACING, 0)
-			print(\"Berechnete Zielposition: \", ziel_position)
 
 			monster.position = ziel_position
-			print(\"Position direkt danach: \", monster.position)
-			print(\"Globale Position danach: \", monster.global_position)
 
 			monster.top_level = false
 			monster.pitch = pitch
