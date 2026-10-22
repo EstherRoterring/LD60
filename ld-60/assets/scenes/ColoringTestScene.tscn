@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://cobddku7hmwoc" path="res://scripts/SynthMonsterResource.gd" id="2_jhj55"]
 [ext_resource type="Resource" uid="uid://6yeq1hcfaxmq" path="res://resources/amo.tres" id="3_sqfxh"]
 [ext_resource type="Resource" uid="uid://cim0varg0g3j5" path="res://resources/klest.tres" id="4_cd7ni"]
-[ext_resource type="PackedScene" uid="uid://gh81trgswhjs" path="res://assets/scenes/Tape.tscn" id="4_khwuv"]
+[ext_resource type="PackedScene" uid="uid://bmowvvjc83dmu" path="res://assets/scenes/Tape.tscn" id="4_khwuv"]
 [ext_resource type="Script" uid="uid://cni5312bglolc" path="res://coloring_pot.gd" id="5_7blep"]
 [ext_resource type="Resource" uid="uid://i1hwxlwhkrsy" path="res://resources/toeny.tres" id="5_lf46u"]
 [ext_resource type="Texture2D" uid="uid://rpbk4xqjma7b" path="res://icon.svg" id="5_vbl84"]

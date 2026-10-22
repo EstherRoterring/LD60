@@ -58,6 +58,7 @@ text = "Library"
 unique_name_in_owner = true
 visible = false
 texture = ExtResource("7_an4tj")
+script = ExtResource("2_t6dbj")
 
 [node name="Label" type="Label" parent="Container/Sprite_Player" unique_id=1402878458]
 offset_left = 29.0
@@ -88,4 +89,5 @@ scale = Vector2(0.3, 0.3)
 
 [connection signal="clicked" from="Container/Sprite_Compose" to="." method="load_game"]
 [connection signal="clicked" from="Container/Sprite_Browse" to="." method="_on_sprite_browse_clicked"]
+[connection signal="clicked" from="Container/Sprite_Player" to="." method="_on_sprite_player_clicked"]
 [connection signal="clicked" from="Container/Sprite_Exit" to="." method="quit"]
