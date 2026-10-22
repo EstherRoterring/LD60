@@ -6,11 +6,9 @@
 [ext_resource type="Script" uid="uid://8fxqps718mvv" path="res://scripts/clickable_sprite.gd" id="2_t6dbj"]
 [ext_resource type="Texture2D" uid="uid://bpi1i5axgd5v7" path="res://assets/images/title_recorder.png" id="2_u804d"]
 [ext_resource type="Texture2D" uid="uid://vnfdypnxhk86" path="res://assets/images/title_records.png" id="4_c1eu8"]
-[ext_resource type="Texture2D" uid="uid://byh6d166ntrlm" path="res://assets/images/title_credits.png" id="5_1l0v7"]
+[ext_resource type="Texture2D" uid="uid://1d6qcx1vji83" path="res://assets/images/title_player.png" id="7_an4tj"]
 [ext_resource type="Texture2D" uid="uid://cg0er0imsu712" path="res://assets/images/title_exit.png" id="8_jrfyc"]
 [ext_resource type="PackedScene" uid="uid://b465b82h0iy7x" path="res://assets/scenes/eye_guy.tscn" id="9_an4tj"]
-[ext_resource type="Texture2D" uid="uid://bjq4xdborjhi0" path="res://assets/images/exit_button.png" id="10_ka3ux"]
-[ext_resource type="Script" uid="uid://de1lxd1jd0j8v" path="res://assets/scenes/exit_button.gd" id="11_jrfyc"]
 
 [node name="MainMenu" type="Node2D" unique_id=1578142257]
 script = ExtResource("1_7metd")
@@ -49,55 +47,45 @@ texture = ExtResource("4_c1eu8")
 script = ExtResource("2_t6dbj")
 
 [node name="Label" type="Label" parent="Container/Sprite_Browse" unique_id=466351963]
-offset_left = 93.0
-offset_top = -66.0
-offset_right = 165.0
-offset_bottom = -49.0
+offset_left = 101.0
+offset_top = -63.0
+offset_right = 160.0
+offset_bottom = -43.0
 theme = ExtResource("2_kj6rs")
-text = "Browse"
+text = "Library"
 
-[node name="Sprite_Credits" type="Sprite2D" parent="Container" unique_id=1721316690]
+[node name="Sprite_Player" type="Sprite2D" parent="Container" unique_id=1721316690]
+unique_name_in_owner = true
 visible = false
-texture = ExtResource("5_1l0v7")
+texture = ExtResource("7_an4tj")
 
-[node name="Label" type="Label" parent="Container/Sprite_Credits" unique_id=1402878458]
-offset_left = -41.0
-offset_top = -81.0
-offset_right = 31.0
-offset_bottom = -58.0
+[node name="Label" type="Label" parent="Container/Sprite_Player" unique_id=1402878458]
+offset_left = 29.0
+offset_top = 35.0
+offset_right = 77.0
+offset_bottom = 52.0
 theme = ExtResource("2_kj6rs")
-text = "Credits"
+text = "Listen"
 
 [node name="Sprite_Exit" type="Sprite2D" parent="Container" unique_id=1444327271]
 unique_name_in_owner = true
+visible = false
 texture = ExtResource("8_jrfyc")
 script = ExtResource("2_t6dbj")
 
 [node name="Label" type="Label" parent="Container/Sprite_Exit" unique_id=2120089374]
-offset_left = 109.0
-offset_top = -65.0
-offset_right = 181.0
-offset_bottom = -42.0
+offset_left = 113.0
+offset_top = -84.0
+offset_right = 144.0
+offset_bottom = -67.0
 theme = ExtResource("2_kj6rs")
-text = "Settings"
+text = "Exit"
 
 [node name="EyeGuy" parent="." unique_id=915826791 instance=ExtResource("9_an4tj")]
 visible = false
 position = Vector2(-130, -34)
 scale = Vector2(0.3, 0.3)
 
-[node name="ExitButton" type="TextureButton" parent="." unique_id=1260365940]
-visible = false
-offset_left = 297.0
-offset_top = 2.0
-offset_right = 337.0
-offset_bottom = 42.0
-texture_normal = ExtResource("10_ka3ux")
-texture_pressed = ExtResource("10_ka3ux")
-texture_hover = ExtResource("10_ka3ux")
-script = ExtResource("11_jrfyc")
-
 [connection signal="clicked" from="Container/Sprite_Compose" to="." method="load_game"]
 [connection signal="clicked" from="Container/Sprite_Browse" to="." method="_on_sprite_browse_clicked"]
 [connection signal="clicked" from="Container/Sprite_Exit" to="." method="quit"]
-[connection signal="button_down" from="ExitButton" to="ExitButton" method="_on_button_down"]

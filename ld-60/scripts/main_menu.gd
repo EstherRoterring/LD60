@@ -13,12 +13,14 @@ func _ready():
 
 
 func show_objects_for_2_seconds():
+	print("show stuff")
 	%Sprite_Browse.visible = true
 	%Sprite_Exit.visible = true
 	%Sprite_Compose.visible = true
 
 	await get_tree().create_timer(2.0).timeout
 
+	print("make stuff invisible again")
 	%Sprite_Browse.visible = false
 	%Sprite_Exit.visible = false
 	%Sprite_Compose.visible = false
@@ -46,3 +48,7 @@ func zoom_to_position(screen_position: Vector2) -> void:
 
 func _on_sprite_browse_clicked() -> void:
 	SceneTransition.change_scene_to_file("res://Storadge.tscn")
+
+
+func _on_sprite_player_clicked() -> void:
+	SceneTransition.change_scene_to_file("res://assets/scenes/musicPlayer_scene.tscn")
