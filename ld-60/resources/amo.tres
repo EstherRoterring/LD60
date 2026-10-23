@@ -61,12 +61,9 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="WindPreset" id="WindPreset_0vpvg"]
-
 [resource]
 script = ExtResource("2_vgj1c")
 monster_name = "Amo"
-synthPreset = SubResource("WindPreset_0vpvg")
 soundFrame = 3
 animation = SubResource("SpriteFrames_w76dg")
 thumbnail = ExtResource("3_vgj1c")

@@ -22,20 +22,12 @@ func _ready() -> void:
 	monster_spawner.init_spawner()
 	fill_current_segment_with_monsters()
 	
-	synth = AudioSynthPlayer.new()
-	add_child(synth)
-	
 func initialize_all_slots() -> void:
 	for slot_id in len(current_slots):
 		var curr_slot : TapeSlot = current_slots[slot_id]
 		curr_slot.id = slot_id
 		curr_slot.stored_monster_signal.connect(place_music_monster)
 		curr_slot.removed_monster_signal.connect(remove_music_monster)
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
 
 
 func get_time_from_slot_id(slot_id: int) -> int:

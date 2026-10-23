@@ -6,10 +6,8 @@ signal step_changed(step: int)
 
 const STEP_DURATION := 0.3
 
-@export var sound: VASynthConfiguration
 @export var track: Track = null
 
-var synth: AudioSynthPlayer
 var play_time: float = 0.0
 var last_played_step: int = -1
 var is_playing: bool = false
@@ -19,10 +17,6 @@ func _ready() -> void:
 	track = TrackLibrary.activeTrack
 	print("Track geladen: ", track.instruments.keys())
 	track_ready.emit()
-	
-	synth = AudioSynthPlayer.new()
-	synth.configuration = sound
-	add_child(synth)
 
 
 func start_playback() -> void:

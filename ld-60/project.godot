@@ -33,10 +33,6 @@ window/stretch/scale_mode="integer"
 
 project/assembly_name="LD60"
 
-[editor_plugins]
-
-enabled=PackedStringArray("res://addons/godot_synth/plugin.cfg")
-
 [input]
 
 click={

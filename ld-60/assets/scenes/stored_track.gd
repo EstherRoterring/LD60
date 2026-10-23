@@ -3,7 +3,6 @@ extends Control
 signal track_selected(track_id: String)
 
 @onready var track_button: Button = $Button
-@onready var texture_rect: TextureRect = $TextureRect
 
 var track_id: String = ""
 
